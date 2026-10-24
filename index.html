@@ -5,19 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="Assets/Images/Logo.jpeg" type="image/x-icon">
     <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
+
         .con1{
             height:690px;
             width:100%;
             /* background-color:#A6E1FA; */
             background: radial-gradient(#A6E1FA, #FFFFFF);
             }
-        .left>h1{
+        /* .left>h1{
             font-family: courier-new;
             font-size: 17px;
         }
@@ -35,8 +38,8 @@
             display:flex;
             justify-content: space-around;
             margin-left: 60px;
-        }
-        ul{
+        } */
+        /* ul{
             list-style:none;
             display:flex;
             gap:25px;
@@ -47,13 +50,13 @@
         }
         a:hover{
             color:#A6E1FA;
-        }
-        .nav>img{
+        } */
+        /* .nav>img{
             margin-left:50px;   
             height:70%;
             width:5%;
             border-radius:50%;
-        }
+        } */
         /* .conleft{
             height: 80%;
             margin-left: 50px;
@@ -123,6 +126,7 @@
         .button1>a{
             color: #FFFFFF;
             font-size: 15px;
+            text-decoration: none;
         }
         .button1:hover{
             background: radial-gradient(#0E6BA8, #A6E1FA);
@@ -137,6 +141,7 @@
         .button2>a{
             color: #FFFFFF;
             font-size: 15px;
+            text-decoration: none;
         }
         .button2:hover{
             background: radial-gradient(#0E6BA8, #A6E1FA);
@@ -246,6 +251,7 @@
         }
         .square1:hover, .square2:hover, .square3:hover, .square4:hover,
         .square5:hover, .square6:hover, .square7:hover, .square8:hover {
+            transition: 0.3s ease;
             transform: translateY(-10px);
             box-shadow: 0 15px 25px #FFFFFF;
         }
@@ -260,49 +266,135 @@
 
             /* CONTAINER 4 */
 
-        .con4{
-            height:500px;
-            width:100%;
-            background-color:#001C55;
-        }
-        .c1>h1{
-            /* margin-top: 50px; */
-            font-size: 70px;
+                
+        /* FOOTER */
+        /* .con4 {
+            min-height: 500px;
+            width: 100%;
+            background-color: #001C55;
             color: #FFFFFF;
-            line-height: 80px;
-            font-family: 
-            font-weight: 500;
-            margin-left: -550px;
-        }
-        .c4-main {
-            /* flex-wrap: wrap; */
+        } */
+
+        /* TOP ROW: BRAND + THREE LINK COLUMNS */
+        /* .c4-main {
             display: flex;
             justify-content: space-between;
-            padding: 100px;
-            gap: 40px;
+            align-items: flex-start;
+            padding: 70px 8% 50px;
+            gap: 50px;
         }
-        .brand>h2{
+
+        .brand {
+            flex-shrink: 0;
+        }
+
+        .brand > h2 {
             font-size: 50px;
         }
-        .brand>h2, .brand>p{
-            color: white;
+
+        .brand > h2,
+        .brand > p {
+            color: #FFFFFF;
         }
-        .c4-main>.columns{
-            margin-left: 100px;
-            column-count: 3;
+
+        .c4-main > .columns {
+            display: flex;
+            justify-content: space-between;
+            gap: 50px;
+            margin-left: 0;
         }
-        .c4-col>h3{
+
+        .c4-col {
+            min-width: 120px;
+        }
+
+        .c4-col > h3 {
             color: #A6E1FA;
+            margin-bottom: 15px;
         }
-        .c4-col>a{
+
+        .c4-col > a {
             display: block;
             line-height: 35px;
             color: #FFFFFF;
+            text-decoration: none;
+            transition: 0.3s ease;
         }
-        .c4-below{
+
+        .c4-col > a:hover {
+            color: #A6E1FA;
+            text-decoration: underline;
+            text-underline-offset: 5px;
+        } */
+
+        /* BOTTOM ROW: CONTACT + SOCIAL ICONS */
+        /* .c4-below {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8% 30px;
+            gap: 30px;
+            border-top: 1px solid #294675;
+        }
+
+        .c4-contact {
+            display: block;
+            font-size: 18px;
+        }
+
+        .c4-contact > p {
+            margin-bottom: 15px;
+        }
+
+        .c4-contact .socials {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .c4-contact .socials p {
             color: #FFFFFF;
-            margin-left: 100px;
         }
+
+        .c4-contact a {
+            color: #FFFFFF;
+            text-decoration: none;
+            transition: 0.3s ease;
+        }
+
+        .c4-contact a:hover {
+            color: #A6E1FA;
+            text-decoration: underline;
+            text-underline-offset: 5px;
+        } */
+
+        /* SOCIAL ICONS */
+        /* .c4-socials .socials {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .c4-socials i {
+            font-size: 25px;
+            color: #FFFFFF;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .c4-socials i:hover {
+            color: #A6E1FA;
+            transform: translateY(-4px);
+        } */
+
+        /* COPYRIGHT */
+        /* .c4-bottom {
+            padding: 15px 8%;
+            border-top: 1px solid #294675;
+            color: #FFFFFF;
+            text-align: center;
+        } */
+
     </style>
 </head>
 <body>
@@ -317,7 +409,7 @@
             </div>
             <div class="right">
                 <ul>
-                    <li><a href="home.html">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="story.html">Our Story</a></li>
                     <li><a href="shop.html">Shop</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
@@ -436,23 +528,33 @@
 
                 </div>
             </div>
+            
             <div class="c4-below">
+
                 <div class="c4-contact">
                     <p>Get in touch with us</p>
+
                     <div class="socials">
-                        <i class="fa fa-brands fa-instagram"></i>
-                        <i class="fa fa-brands fa-whatsapp"></i>
-                        <i class="fa fa-solid fa-map-location-dot"></i>
+                        <p>✉ <a href="houseofhandmade25@gmail.com">houseofhandmade25@gmail.com</a></p>
+
+                        <p>☎ <a href="tel:+919828466656">+91 98284 66656</a></p>
                     </div>
                 </div>
-                <div class="c4-bottom">
-                    <p>© House Of Handmade. All rights reserved.</p>
-                    <div>
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms & Conditions</a>
+
+                <div class="c4-socials">
+                    <div class="socials">
+                        <a href="https://www.instagram.com/houseofhandmadebynandini/reels/"><i class="fa fa-brands fa-instagram"></i></a>
+                        <a href="https://wa.me/919828466656"><i class="fa fa-brands fa-whatsapp"></i></a>
+                        <a href="https://www.google.com/maps/place/House+Of+Handmade/@26.4775908,74.5973778,17z/data=!3m1!4b1!4m6!3m5!1s0x396be72bc41f3697:0x2d3fc124467b0dc5!8m2!3d26.4775908!4d74.5973778!16s%2Fg%2F11jp8xmbd_?entry=ttu&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D"><i class="fa fa-solid fa-map-location-dot"></i></a>
                     </div>
                 </div>
+
             </div>
+
+            <div class="c4-bottom">
+                <p>© House Of Handmade. All rights reserved.</p>
+            </div>
+
     </div>
 </body>
 </html>
