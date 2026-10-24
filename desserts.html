@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dessert Collection | House of Handmade</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 20px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #FFFEFA;
+    color: #172747;
+}
+
+/* SIDEBAR */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 225px;
+    height: 100vh;
+    overflow-y: auto;
+    background: #F3F7F8;
+    padding: 35px 20px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar h2 {
+    font-family: Georgia, serif;
+    font-size: 27px;
+    line-height: 1.1;
+    margin: 0 0 40px 8px;
+}
+
+.sidebar nav a,
+.sidebar summary {
+    display: block;
+    padding: 14px 10px;
+    border-radius: 4px;
+    color: #172747;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    list-style: none;
+    transition: 0.25s;
+}
+
+.sidebar summary::-webkit-details-marker {
+    display: none;
+}
+
+.sidebar nav a:hover,
+.sidebar summary:hover {
+    background: #D9F0FA;
+    color: #477F9F;
+}
+
+.submenu {
+    border-left: 2px solid #C7E4F1;
+    margin: 3px 0 8px 17px;
+    padding-left: 8px;
+}
+
+.sidebar nav .submenu a {
+    font-weight: normal;
+    padding: 11px 10px;
+}
+
+.sidebar-note {
+    margin-top: auto;
+    padding: 18px;
+    text-align: center;
+    background: #D9F0FA;
+    font-family: Georgia, serif;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+/* MAIN CONTENT */
+.main-content {
+    margin-left: 225px;
+}
+
+/* VIDEO BANNER */
+.hero {
+    min-height: 420px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 50px;
+    background: #D9F0FA;
+}
+
+.hero video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(217, 240, 250, 0.97),
+        rgba(217, 240, 250, 0.84) 50%,
+        rgba(217, 240, 250, 0.15)
+    );
+}
+
+.hero-text {
+    position: relative;
+    z-index: 2;
+    max-width: 480px;
+}
+
+.eyebrow {
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: #477F9F;
+    margin-bottom: 17px;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(34px, 4vw, 55px);
+    line-height: 1.15;
+    margin-bottom: 18px;
+}
+
+.hero h1 span {
+    color: #477F9F;
+    font-style: italic;
+}
+
+.hero-text > p:not(.eyebrow) {
+    max-width: 390px;
+    font-size: 14px;
+    line-height: 1.9;
+    margin-bottom: 25px;
+}
+
+.hero-button {
+    display: inline-block;
+    background: #172747;
+    color: white;
+    padding: 16px 22px;
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.hero-button:hover {
+    background: #477F9F;
+}
+
+/* CATEGORY BOXES */
+.category-section {
+    padding: 65px 35px;
+    background: #FFFEFA;
+    scroll-margin-top: 0;
+}
+
+.category-section.alternate {
+    background: #F0F8FC;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 38px;
+}
+
+.section-heading h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(28px, 3vw, 39px);
+    margin: 12px 0;
+}
+
+.section-heading > p:last-child {
+    color: #657184;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* NINE PRODUCTS PER SECTION */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+/* PRODUCT CARDS */
+.product-card {
+    min-width: 0;
+    overflow: hidden;
+    background: white;
+    border: 1px solid #E4EBEF;
+    border-radius: 5px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(23, 39, 71, 0.12);
+}
+
+.product-card img {
+    display: block;
+    width: 100%;
+    height: 175px;
+    object-fit: cover;
+    transition: transform 0.4s;
+}
+
+.product-card:hover img {
+    transform: scale(1.04);
+}
+
+.product-info {
+    padding: 17px;
+}
+
+.product-info h3 {
+    font-family: Georgia, serif;
+    font-size: 19px;
+    margin-bottom: 9px;
+}
+
+.product-info p {
+    color: #657184;
+    font-size: 12px;
+    line-height: 1.7;
+    min-height: 41px;
+    margin-bottom: 14px;
+}
+
+.product-info strong {
+    display: block;
+    padding-top: 13px;
+    border-top: 1px solid #E4EBEF;
+    color: #477F9F;
+    font-size: 13px;
+}
+
+/* FOOTER */
+footer {
+    padding: 35px 20px;
+    text-align: center;
+    background: #D9F0FA;
+}
+
+footer h2 {
+    font-family: Georgia, serif;
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+footer p {
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 12px;
+}
+
+/* TABLET */
+@media (max-width: 1050px) {
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .category-section {
+        padding: 45px 24px;
+    }
+
+    .hero {
+        padding: 35px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 650px) {
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 22px;
+    }
+
+    .sidebar h2 {
+        margin-bottom: 20px;
+    }
+
+    .sidebar-note {
+        display: none;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .hero {
+        min-height: 370px;
+        padding: 25px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .product-card img {
+        height: 145px;
+    }
+
+    .product-info {
+        padding: 12px;
+    }
+
+    .product-info h3 {
+        font-size: 16px;
+    }
+
+    .category-section {
+        padding: 38px 14px;
+    }
+}
+
+@media (max-width: 380px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+    <h2>House of<br>Handmade</h2>
+
+    <nav>
+        <a href="index.html">⌂ &nbsp; Bouquets</a>
+
+        <details open>
+            <summary>♡ &nbsp; Desserts</summary>
+            <div class="submenu">
+                <a href="#cake">Cake</a>
+                <a href="#chocolates">Chocolates</a>
+                <a href="#waffles">Waffles</a>
+                <a href="#cupcakes">Cupcakes</a>
+                <a href="#cookies">Cookies</a>
+                <a href="#donuts">Donuts</a>
+            </div>
+        </details>
+
+        <a href="gifts.html">♡ &nbsp; Handmade Gifts</a>
+        <a href="story.html">♡ &nbsp; Our Story</a>
+        <a href="contact.html">♡ &nbsp; Contact</a>
+    </nav>
+
+    <p class="sidebar-note">Little things,<br>big feelings ♡</p>
+</aside>
+
+
+<!-- MAIN PAGE -->
+<main class="main-content">
+
+                    <!-- .....NAV BAR..... -->
+
+        <div class="nav">
+            <img src="Assets/Images/Logo.png" alt="Logo">
+            <div class="left">
+                <h1>House Of <br> Handmade</h1>
+            </div>
+            <div class="right">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About.html">Our Story</a></li>
+                    <li><a href="collection.html">Shop</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+
+    <!-- VIDEO BANNER -->
+    <header class="hero">
+        <video autoplay muted loop playsinline>
+            <source src="desserts.mp4" type="video/mp4">
+        </video>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-text">
+            <p class="eyebrow">THE SWEET CORNER</p>
+            <h1>A little sweetness.<br>
+                <span>A lot of love.</span>
+            </h1>
+            <p>
+                Cakes, chocolates and little treats,
+                handmade to make your moments sweeter.
+            </p>
+            <a href="#cake" class="hero-button">
+                EXPLORE DESSERTS ↓
+            </a>
+        </div>
+    </header>
+
+
+    <!-- CAKES -->
+    <section class="category-section" id="cake">
+        <div class="section-heading">
+            <p class="eyebrow">01 / BAKED WITH LOVE</p>
+            <h2>Our Cakes</h2>
+            <p>Made for celebrations, surprises and everything in between.</p>
+        </div>
+
+        <div class="product-grid">
+
+            <article class="product-card">
+                <img src="Assets/Images/truffle.PNG" alt="Chocolate truffle cake">
+                <div class="product-info">
+                    <h3>Chocolate Truffle</h3>
+                    <p>Rich chocolate layers with silky ganache.</p>
+                    <strong>From ₹499</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="cake2.jpg" alt="Red velvet cake">
+                <div class="product-info">
+                    <h3>Red Velvet</h3>
+                    <p>Soft red velvet with creamy frosting.</p>
+                    <strong>From ₹549</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="cake3.jpg" alt="Vanilla cake">
+                <div class="product-info">
+                    <h3>Vanilla Dream</h3>
+                    <p>Classic vanilla sponge with smooth cream.</p>
+                    <strong>From ₹449</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="cake4.jpg" alt="Strawberry cake">
+                <div class="product-info">
+                    <h3>Strawberry Bliss</h3>
+                    <p>Sweet strawberry flavours and fluffy cream.</p>
+                    <strong>From ₹499</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="cake5.jpg" alt="Butterscotch cake">
+                <div class="product-info">
+                    <h3>Butterscotch Crunch</h3>
+                    <p>Caramel notes with a delicious crunchy finish.</p>
+                    <strong>From ₹499</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="cake6.jpg" alt="Black forest cake">
+                <div class="product-info">
+                    <h3>Black Forest</h3>
+                    <p>Chocolate sponge, cherries and whipped cream.</p>
+                    <strong>From ₹549</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="Assets/Images/Blueberry.png" alt="Blueberry cake">
+                <div class="product-info">
+                    <h3>Blueberry Delight</h3>
+                    <p>A fruity treat with a creamy finish.</p>
+                    <strong>From ₹599</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="cake8.jpg" alt="Coffee cake">
+                <div class="product-info">
+                    <h3>Coffee Caramel</h3>
+                    <p>Gentle coffee flavours with caramel cream.</p>
+                    <strong>From ₹549</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="cake9.jpg" alt="Custom celebration cake">
+                <div class="product-info">
+                    <h3>Custom Celebration</h3>
+                    <p>A personalised cake for your special moments.</p>
+                    <strong>From ₹799</strong>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+
+    <!-- CHOCOLATES -->
+    <section class="category-section alternate" id="chocolates">
+        <div class="section-heading">
+            <p class="eyebrow">02 / LITTLE BITES OF JOY</p>
+            <h2>Our Chocolates</h2>
+            <p>Thoughtful little treats for gifting and indulging.</p>
+        </div>
+
+        <div class="product-grid">
+
+            <article class="product-card">
+                <img src="chocolate1.jpg" alt="Chocolate truffles">
+                <div class="product-info">
+                    <h3>Chocolate Truffles</h3>
+                    <p>Rich, smooth bites of chocolate.</p>
+                    <strong>From ₹199</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="chocolate2.jpg" alt="Chocolate bonbons">
+                <div class="product-info">
+                    <h3>Bonbon Box</h3>
+                    <p>Little chocolates made for gifting.</p>
+                    <strong>From ₹249</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="chocolate3.jpg" alt="Chocolate strawberries">
+                <div class="product-info">
+                    <h3>Choco Strawberries</h3>
+                    <p>Juicy strawberries dipped in chocolate.</p>
+                    <strong>From ₹299</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="chocolate4.jpg" alt="Chocolate fudge">
+                <div class="product-info">
+                    <h3>Chocolate Fudge</h3>
+                    <p>Dense, fudgy chocolate squares.</p>
+                    <strong>From ₹199</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="chocolate5.jpg" alt="Chocolate bark">
+                <div class="product-info">
+                    <h3>Choco Bark</h3>
+                    <p>Chocolate pieces with crunchy toppings.</p>
+                    <strong>From ₹179</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="chocolate6.jpg" alt="Chocolate gift box">
+                <div class="product-info">
+                    <h3>Sweet Gift Box</h3>
+                    <p>A lovely assortment for someone special.</p>
+                    <strong>From ₹399</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="chocolate7.jpg" alt="Chocolate lollipops">
+                <div class="product-info">
+                    <h3>Choco Pops</h3>
+                    <p>Fun chocolate treats with pretty designs.</p>
+                    <strong>From ₹149</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="chocolate8.jpg" alt="Chocolate pralines">
+                <div class="product-info">
+                    <h3>Crunchy Pralines</h3>
+                    <p>Chocolate bites with a nutty crunch.</p>
+                    <strong>From ₹249</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="chocolate9.jpg" alt="Assorted chocolates">
+                <div class="product-info">
+                    <h3>Chocolate Collection</h3>
+                    <p>A mix of favourites in one sweet box.</p>
+                    <strong>From ₹499</strong>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+
+    <!-- WAFFLES -->
+    <section class="category-section" id="waffles">
+        <div class="section-heading">
+            <p class="eyebrow">03 / YOUR COMFORT TREAT</p>
+            <h2>Our Waffles</h2>
+            <p>Golden, crispy and ready for your favourite toppings.</p>
+        </div>
+
+        <div class="product-grid">
+
+            <article class="product-card">
+                <img src="waffle1.jpg" alt="Classic waffle">
+                <div class="product-info">
+                    <h3>Classic Waffle</h3>
+                    <p>Golden waffle with a buttery finish.</p>
+                    <strong>From ₹149</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="waffle2.jpg" alt="Chocolate waffle">
+                <div class="product-info">
+                    <h3>Choco Overload</h3>
+                    <p>Chocolate sauce in every delicious bite.</p>
+                    <strong>From ₹199</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="waffle3.jpg" alt="Strawberry waffle">
+                <div class="product-info">
+                    <h3>Strawberry Waffle</h3>
+                    <p>Fresh fruity flavours with a sweet finish.</p>
+                    <strong>From ₹219</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="waffle4.jpg" alt="Oreo waffle">
+                <div class="product-info">
+                    <h3>Oreo Crunch</h3>
+                    <p>A chocolatey favourite with cookie crumbs.</p>
+                    <strong>From ₹199</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="waffle5.jpg" alt="Caramel waffle">
+                <div class="product-info">
+                    <h3>Caramel Drizzle</h3>
+                    <p>Sweet caramel over warm, crispy waffles.</p>
+                    <strong>From ₹189</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="waffle6.jpg" alt="Brownie waffle">
+                <div class="product-info">
+                    <h3>Brownie Waffle</h3>
+                    <p>A decadent treat for chocolate lovers.</p>
+                    <strong>From ₹249</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="waffle7.jpg" alt="Nutella waffle">
+                <div class="product-info">
+                    <h3>Hazelnut Dream</h3>
+                    <p>Chocolate hazelnut spread and crispy waffles.</p>
+                    <strong>From ₹229</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="waffle8.jpg" alt="Banana waffle">
+                <div class="product-info">
+                    <h3>Banana Bliss</h3>
+                    <p>Banana slices with your favourite toppings.</p>
+                    <strong>From ₹179</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="waffle9.jpg" alt="Loaded waffle">
+                <div class="product-info">
+                    <h3>Loaded Waffle</h3>
+                    <p>A little bit of everything in one treat.</p>
+                    <strong>From ₹279</strong>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+
+    <!-- CUPCAKES -->
+    <section class="category-section alternate" id="cupcakes">
+        <div class="section-heading">
+            <p class="eyebrow">04 / SMALL BUT SPECIAL</p>
+            <h2>Our Cupcakes</h2>
+            <p>Little cakes with lots of personality.</p>
+        </div>
+
+        <div class="product-grid">
+
+            <article class="product-card">
+                <img src="cupcake1.jpg" alt="Vanilla cupcake">
+                <div class="product-info">
+                    <h3>Vanilla Cloud</h3>
+                    <p>Soft vanilla cake with fluffy frosting.</p>
+                    <strong>From ₹79</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="cupcake2.jpg" alt="Chocolate cupcake">
+                <div class="product-info">
+                    <h3>Chocolate Swirl</h3>
+                    <p>Chocolate cake with creamy chocolate icing.</p>
+                    <strong>From ₹89</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="cupcake3.jpg" alt="Red velvet cupcake">
+                <div class="product-info">
+                    <h3>Red Velvet Mini</h3>
+                    <p>Classic red velvet with cream cheese-style frosting.</p>
+                    <strong>From ₹99</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="cupcake4.jpg" alt="Strawberry cupcake">
+                <div class="product-info">
+                    <h3>Strawberry Kiss</h3>
+                    <p>Sweet strawberry flavours in every bite.</p>
+                    <strong>From ₹89</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="cupcake5.jpg" alt="Caramel cupcake">
+                <div class="product-info">
+                    <h3>Caramel Cupcake</h3>
+                    <p>A soft cupcake topped with caramel frosting.</p>
+                    <strong>From ₹99</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="cupcake6.jpg" alt="Oreo cupcake">
+                <div class="product-info">
+                    <h3>Cookies & Cream</h3>
+                    <p>Cookie crumbs and creamy topping.</p>
+                    <strong>From ₹99</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="cupcake7.jpg" alt="Blueberry cupcake">
+                <div class="product-info">
+                    <h3>Blueberry Pop</h3>
+                    <p>A fruity cupcake with a creamy finish.</p>
+                    <strong>From ₹109</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="cupcake8.jpg" alt="Coffee cupcake">
+                <div class="product-info">
+                    <h3>Coffee Cream</h3>
+                    <p>A gentle coffee flavour with sweet frosting.</p>
+                    <strong>From ₹99</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="cupcake9.jpg" alt="Assorted cupcakes">
+                <div class="product-info">
+                    <h3>Party Cupcake Box</h3>
+                    <p>An assorted box for celebrations and sharing.</p>
+                    <strong>From ₹399</strong>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+
+    <!-- COOKIES -->
+    <section class="category-section" id="cookies">
+        <div class="section-heading">
+            <p class="eyebrow">05 / FRESH FROM THE OVEN</p>
+            <h2>Our Cookies</h2>
+            <p>Crunchy edges, delicious centres and cosy little moments.</p>
+        </div>
+
+        <div class="product-grid">
+
+            <article class="product-card">
+                <img src="cookie1.jpg" alt="Chocolate chip cookies">
+                <div class="product-info">
+                    <h3>Choco Chip</h3>
+                    <p>A classic cookie packed with chocolate chips.</p>
+                    <strong>From ₹149</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="cookie2.jpg" alt="Double chocolate cookies">
+                <div class="product-info">
+                    <h3>Double Chocolate</h3>
+                    <p>Deep chocolate flavour for cocoa lovers.</p>
+                    <strong>From ₹169</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="cookie3.jpg" alt="Butter cookies">
+                <div class="product-info">
+                    <h3>Butter Bites</h3>
+                    <p>Simple, buttery cookies with a delicate crunch.</p>
+                    <strong>From ₹129</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="cookie4.jpg" alt="Oatmeal cookies">
+                <div class="product-info">
+                    <h3>Oatmeal Crunch</h3>
+                    <p>Rustic cookies with a satisfying bite.</p>
+                    <strong>From ₹149</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="cookie5.jpg" alt="Red velvet cookies">
+                <div class="product-info">
+                    <h3>Red Velvet Cookies</h3>
+                    <p>Colourful cookies with a soft centre.</p>
+                    <strong>From ₹179</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="cookie6.jpg" alt="Peanut butter cookies">
+                <div class="product-info">
+                    <h3>Peanut Butter</h3>
+                    <p>Nutty, rich cookies with a tender texture.</p>
+                    <strong>From ₹159</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="cookie7.jpg" alt="Jam-filled cookies">
+                <div class="product-info">
+                    <h3>Jammy Hearts</h3>
+                    <p>Sweet cookies with a fruity centre.</p>
+                    <strong>From ₹149</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="cookie8.jpg" alt="Double chocolate brownie cookies">
+                <div class="product-info">
+                    <h3>Brownie Cookies</h3>
+                    <p>Crackly tops and a fudgy chocolate centre.</p>
+                    <strong>From ₹179</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="cookie9.jpg" alt="Assorted cookie gift box">
+                <div class="product-info">
+                    <h3>Cookie Gift Box</h3>
+                    <p>A sweet assortment ready to be gifted.</p>
+                    <strong>From ₹299</strong>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+
+    <!-- DONUTS -->
+    <section class="category-section alternate" id="donuts">
+        <div class="section-heading">
+            <p class="eyebrow">06 / ROUND LITTLE HAPPINESS</p>
+            <h2>Our Donuts</h2>
+            <p>Colourful toppings and sweet treats for every mood.</p>
+        </div>
+
+        <div class="product-grid">
+
+            <article class="product-card">
+                <img src="donut1.jpg" alt="Classic glazed donut">
+                <div class="product-info">
+                    <h3>Classic Glaze</h3>
+                    <p>A soft donut with a delicate sugar glaze.</p>
+                    <strong>From ₹69</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="donut2.jpg" alt="Chocolate donut">
+                <div class="product-info">
+                    <h3>Chocolate Dip</h3>
+                    <p>A fluffy donut dipped in chocolate.</p>
+                    <strong>From ₹89</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="donut3.jpg" alt="Strawberry glazed donut">
+                <div class="product-info">
+                    <h3>Strawberry Pop</h3>
+                    <p>Strawberry glaze with a colourful finish.</p>
+                    <strong>From ₹89</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="donut4.jpg" alt="Sprinkle donut">
+                <div class="product-info">
+                    <h3>Rainbow Sprinkles</h3>
+                    <p>A cheerful treat covered in colourful sprinkles.</p>
+                    <strong>From ₹79</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="donut5.jpg" alt="Oreo donut">
+                <div class="product-info">
+                    <h3>Oreo Crunch</h3>
+                    <p>Chocolate glaze topped with cookie crumbs.</p>
+                    <strong>From ₹99</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="donut6.jpg" alt="Caramel donut">
+                <div class="product-info">
+                    <h3>Caramel Swirl</h3>
+                    <p>A sweet caramel topping on a soft donut.</p>
+                    <strong>From ₹89</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="donut7.jpg" alt="White chocolate donut">
+                <div class="product-info">
+                    <h3>White Chocolate</h3>
+                    <p>A creamy white chocolate finish.</p>
+                    <strong>From ₹99</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="donut8.jpg" alt="Filled donut">
+                <div class="product-info">
+                    <h3>Choco Filled</h3>
+                    <p>A soft donut with a chocolate-filled centre.</p>
+                    <strong>From ₹109</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="donut9.jpg" alt="Assorted donuts">
+                <div class="product-info">
+                    <h3>Donut Party Box</h3>
+                    <p>An assorted box for parties and sweet surprises.</p>
+                    <strong>From ₹399</strong>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+     <div class="con4">
+
+        <div class="c4-main">
+
+            <div class="brand">
+                <h2>HOUSE OF<br>HANDMADE</h2>
+                <p>YOU CRAVE WE MAKE</p>
+            </div>
+
+            <div class="columns">
+
+                <div class="c4-col">
+                    <h3>SHOP</h3>
+                    <a href="shop.html">Cakes and Desserts</a>
+                    <a href="shop.html">Gift Hampers</a>
+                    <a href="shop.html">Chocolates</a>
+                </div>
+
+                <div class="c4-col">
+                    <h3>BRAND</h3>
+                    <a href="story.html">Our Story</a>
+                    <a href="shop.html">Gallery</a>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+
+                <div class="c4-col">
+                    <h3>HELP</h3>
+                    <a href="contact.html">Order Enquiries</a>
+                    <a href="contact.html">FAQs</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="c4-below">
+
+            <div class="c4-contact">
+                <p>Get in touch with us</p>
+
+                <div class="socials">
+                    <p>✉ <a href="mailto:houseofhandmade25@gmail.com">houseofhandmade25@gmail.com</a></p>
+                    <p>☎ <a href="tel:+919828466656">+91 98284 66656</a></p>
+                </div>
+            </div>
+
+            <div class="c4-socials">
+                <div class="socials">
+                    <a href="https://www.instagram.com/houseofhandmadebynandini/reels/">
+                        <i class="fa fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="https://wa.me/919828466656">
+                        <i class="fa fa-brands fa-whatsapp"></i>
+                    </a>
+
+                    <a href="https://www.google.com/maps/place/House+Of+Handmade/@26.4775908,74.5973778,17z/">
+                        <i class="fa fa-solid fa-map-location-dot"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="c4-bottom">
+            <p>© House Of Handmade. All rights reserved.</p>
+        </div>
+    </div>
+
+</main>
+</body>
+</html>

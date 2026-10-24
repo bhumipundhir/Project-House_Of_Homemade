@@ -1,103 +1,51 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="Assets/Images/Logo.png" type="image/x-icon">
+ 
     <style>
-
+ 
         * {
             box-sizing: border-box;
             scroll-behavior: smooth;
         }
-
+ 
         body {
             margin: 0;
             font-family: Arial, sans-serif;
             color: #14264B;
             background-color: white;
         }
-
+ 
         h1, h2, h3 {
             font-family: Georgia, "Times New Roman", serif;
             font-weight: normal;
         }
-
+ 
         p {
             line-height: 1.7;
         }
-
+ 
         a {
             transition: 0.3s;
         }
-
-        /* NAVIGATION */
-
-        header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 18px 6%;
-            background-color: white;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: #14264B;
-            text-decoration: none;
-        }
-
-        .logo > span:first-child {
-            border: 1px solid #286B91;
-            border-radius: 50%;
-            padding: 9px 13px;
-            font-family: Georgia, serif;
-            font-size: 23px;
-        }
-
-        .brand-name {
-            font-size: 10px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            line-height: 1.5;
-        }
-
-        nav a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: #14264B;
-            font-size: 13px;
-        }
-
-        nav a:hover,
-        nav .active {
-            color: #287BA4;
-            border-bottom: 1px solid #287BA4;
-            padding-bottom: 5px;
-        }
-
-        .nav-button {
-            background-color: #14264B;
-            color: white;
-            text-decoration: none;
-            padding: 12px 17px;
-            font-size: 12px;
-        }
-
+ 
         /* COMMON LABELS */
-
+ 
         .label {
             font-size: 10px;
             font-weight: bold;
             letter-spacing: 3px;
             color: #287BA4;
         }
-
+ 
         /* HERO SECTION */
-
+ 
         .hero {
             position: relative;
             display: flex;
@@ -107,27 +55,27 @@
             background-color: #D8F1FA;
             overflow: hidden;
         }
-
+ 
         .hero-text {
             width: 52%;
         }
-
+ 
         .hero h1 {
             font-size: 49px;
             line-height: 1.1;
             margin: 20px 0;
         }
-
+ 
         .hero h1 em {
             color: #287BA4;
         }
-
+ 
         .hero-text > p:not(.label) {
             max-width: 420px;
             font-size: 14px;
             color: #405570;
         }
-
+ 
         .main-button {
             display: inline-block;
             margin-top: 20px;
@@ -138,30 +86,30 @@
             font-size: 11px;
             letter-spacing: 1px;
         }
-
+ 
         .main-button:hover {
             background-color: #287BA4;
             transform: translateY(-3px);
         }
-
+ 
         .hero-image {
             width: 48%;
         }
-
+ 
         .hero-image img {
             width: 100%;
             height: 340px;
             object-fit: cover;
             box-shadow: 12px 12px 0 #B9E8F7;
         }
-
+ 
         .image-note {
             text-align: right;
             font-family: Georgia, serif;
             font-style: italic;
             font-size: 14px;
         }
-
+ 
         .floating-note {
             position: absolute;
             left: 43%;
@@ -173,25 +121,25 @@
             font-size: 13px;
             transform: rotate(-7deg);
         }
-
+ 
         /* CATEGORY LINKS */
-
+ 
         .category-section {
             text-align: center;
             padding: 55px 6%;
             background-color: #FFFDF8;
         }
-
+ 
         .category-section h2 {
             font-size: 35px;
             margin-bottom: 5px;
         }
-
+ 
         .section-description {
             color: #63748A;
             font-size: 13px;
         }
-
+ 
         .categories {
             display: flex;
             justify-content: center;
@@ -199,7 +147,7 @@
             gap: 15px;
             margin-top: 30px;
         }
-
+ 
         .category {
             display: flex;
             align-items: center;
@@ -212,86 +160,77 @@
             background-color: white;
             font-size: 13px;
         }
-
+ 
         .category span {
             font-size: 20px;
             color: #287BA4;
         }
-
+ 
         .category:hover {
             background-color: #D8F1FA;
             border-color: #287BA4;
             transform: translateY(-4px);
         }
-
+ 
         /* PRODUCT SECTIONS */
-
+ 
         .product-section {
             padding: 55px 7%;
             background-color: white;
         }
-
+ 
         .alternate {
             background-color: #F0F8FB;
         }
-
+ 
         .section-heading {
             display: flex;
             align-items: center;
             justify-content: space-between;
             margin-bottom: 30px;
         }
-
+ 
         .section-heading h2 {
             font-size: 36px;
             margin: 12px 0;
         }
-
+ 
         .section-heading p:not(.label) {
             color: #52657B;
             font-size: 13px;
         }
-
+ 
         .section-symbol {
             font-size: 45px;
             color: #287BA4;
             margin-right: 20px;
         }
-
+ 
         /* PRODUCT CARDS */
-
+ 
         .product-grid {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 25px 0;
-        }
-
-        .product-grid > a {
-            display: block;
-            width: 48%;
-            text-decoration: none;
-            color: black;
-        }
-
+            gap: 25px;
+        } 
+ 
         .product-card {
-            width: 100%;
-            height: 100%;
+            width: 45%;
             background-color: white;
             border: 1px solid #E1EAF0;
             transition: 0.3s;
         }
-
+ 
         .product-card:hover {
             transform: translateY(-6px);
             box-shadow: 0 12px 25px #14264B12;
         }
-
+ 
         .product-image {
             position: relative;
             overflow: hidden;
         }
-
+ 
         .product-image img {
             display: block;
             width: 100%;
@@ -299,11 +238,11 @@
             object-fit: cover;
             transition: 0.4s;
         }
-
+ 
         .product-card:hover .product-image img {
             transform: scale(1.04);
         }
-
+ 
         .product-tag {
             position: absolute;
             top: 15px;
@@ -314,23 +253,23 @@
             font-size: 9px;
             letter-spacing: 1px;
         }
-
+ 
         .product-info {
             padding: 22px;
         }
-
+ 
         .product-type {
             color: #287BA4;
             font-size: 9px;
             font-weight: bold;
             letter-spacing: 2px;
         }
-
+ 
         .product-info h3 {
             font-size: 25px;
             margin: 10px 0;
         }
-
+ 
         .product-info > p:not(.product-type) {
             font-size: 13px;
             color: #52657B;
@@ -343,28 +282,28 @@
             text-decoration: none;
             color: #0E6BA8;
         }
-
+ 
         /* EXPANDABLE PRODUCT DETAILS */
-
+ 
         details {
             margin-top: 18px;
             padding: 12px 0;
             border-top: 1px solid #E1EAF0;
             border-bottom: 1px solid #E1EAF0;
         }
-
+ 
         summary {
             cursor: pointer;
             font-size: 12px;
             font-weight: bold;
             color: #14264B;
         }
-
+ 
         details p {
             font-size: 12px;
             color: #52657B;
         }
-
+ 
         .product-link {
             display: inline-block;
             margin-top: 18px;
@@ -376,31 +315,31 @@
             border-bottom: 1px solid #14264B;
             padding-bottom: 5px;
         }
-
+ 
         .product-link:hover {
             color: #287BA4;
             border-color: #287BA4;
         }
-
+ 
         /* GIFT FINDER */
-
+ 
         .gift-finder {
             padding: 65px 7%;
             text-align: center;
             background-color: #D8F1FA;
         }
-
+ 
         .gift-finder h2 {
             font-size: 36px;
         }
-
+ 
         .gift-finder > p:not(.label) {
             max-width: 500px;
             margin: 15px auto;
             color: #405570;
             font-size: 13px;
         }
-
+ 
         .occasion-list {
             display: flex;
             justify-content: center;
@@ -408,7 +347,7 @@
             gap: 12px;
             margin: 30px 0;
         }
-
+ 
         .occasion-list a {
             padding: 13px 18px;
             background-color: white;
@@ -418,14 +357,14 @@
             text-decoration: none;
             font-size: 12px;
         }
-
+ 
         .occasion-list a:hover {
             background-color: #14264B;
             color: white;
         }
-
+ 
         /* CUSTOM ORDER */
-
+ 
         .custom-order {
             display: flex;
             justify-content: space-between;
@@ -434,17 +373,17 @@
             padding: 40px 7%;
             background-color: #FFFDF8;
         }
-
+ 
         .custom-order h2 {
             font-size: 30px;
             margin: 12px 0;
         }
-
+ 
         .custom-order p:not(.label) {
             color: #52657B;
             font-size: 13px;
         }
-
+ 
         .custom-button {
             padding: 16px 20px;
             background-color: #14264B;
@@ -453,20 +392,20 @@
             font-size: 11px;
             white-space: nowrap;
         }
-
+ 
         .custom-button:hover {
             background-color: #287BA4;
         }
-
+ 
         /* FOOTER */
-
+ 
         footer {
             padding: 40px 20px;
             text-align: center;
             background-color: #14264B;
             color: white;
         }
-
+ 
         .footer-logo {
             display: inline-block;
             padding: 10px 15px;
@@ -475,16 +414,16 @@
             font-family: Georgia, serif;
             font-size: 25px;
         }
-
+ 
         footer h2 {
             font-size: 25px;
         }
-
+ 
         footer > p {
             color: #D8F1FA;
             font-size: 12px;
         }
-
+ 
         footer a {
             display: inline-block;
             margin: 15px 10px;
@@ -492,131 +431,128 @@
             text-decoration: none;
             font-size: 12px;
         }
-
+ 
         footer a:hover {
             color: #B9E8F7;
         }
-
+ 
         footer .copyright {
             margin-top: 25px;
             font-size: 10px;
         }
-
+ 
     </style>
 </head>
-
+ 
 <body>
-
-    <!-- Navigation Bar -->
-    <header>
-        <div class="logo">
-            <!-- <span>H</span> -->
-            HOUSE OF HANDMADE
+                    <!-- .....NAV BAR..... -->
+ 
+        <div class="nav">
+            <img src="Assets/Images/Logo.png" alt="Logo">
+            <div class="left">
+                <h1>House Of <br> Handmade</h1>
+            </div>
+            <div class="right">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About.html">Our Story</a></li>
+                    <li><a href="collection.html">Shop</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
         </div>
-
-        <nav>
-            <a href="">Home</a>
-            <a href="Collection.html">Collections</a>
-            <a href="index.html">Our Story</a>
-            <a href="#contact">Contact</a>
-        </nav>
-
-        <a href="#gift-finder" class="nav-button">Find a Gift ↗</a>
-    </header>
-
-
     <!-- Hero Section -->
     <section class="hero">
-
+ 
         <div class="hero-text">
             <p class="label">A LITTLE SOMETHING FOR EVERYONE</p>
-
+ 
             <h1>
                 Tell us the feeling.<br>
                 <em>We'll wrap it up.</em>
             </h1>
-
+ 
             <p>
                 Sweet surprises, pretty bouquets and thoughtful
                 little things — find something that says what
                 words sometimes can't.
             </p>
-
+ 
             <a href="#collections" class="main-button">
                 EXPLORE OUR CREATIONS ↓
             </a>
         </div>
-
+ 
         <div class="hero-image">
-            <img src="Assets/Images/gift.jpg" alt="A beautiful handmade gift">
+            <img src="Assets/Images/gift.png" alt="A beautiful handmade gift">
             <p class="image-note">Made with love, just for you ♡</p>
         </div>
-
+ 
         <div class="floating-note">little things,<br>big feelings ♡</div>
-
+ 
     </section>
-
-
+ 
+ 
     <!-- Category Navigation -->
     <section class="category-section" id="collections">
-
+ 
         <p class="label">THE GIFTING CORNER</p>
         <h2>What are you in the mood for?</h2>
         <p class="section-description">
             Pick your kind of magic.
         </p>
-
+ 
         <div class="categories">
             <a href="#bouquets" class="category">
                 <span>✿</span>
                 Bouquets
             </a>
-
+ 
             <a href="#cakes" class="category">
                 <span>♡</span>
                 Cakes
             </a>
-
+ 
             <a href="#handmade" class="category">
                 <span>✧</span>
                 Handmade Gifts
             </a>
-
+ 
             <!-- <a href="#hampers" class="category">
                 <span>🎁</span>
                 Hampers
             </a> -->
         </div>
-
+ 
     </section>
-
-
+ 
+ 
     <!-- Bouquets -->
     <section class="product-section" id="bouquets">
-
+ 
         <div class="section-heading">
             <div>
                 <p class="label">01 / FLOWERS WITH FEELINGS</p>
                 <h2>Say it with flowers.</h2>
                 <p>For the people who make your world bloom.</p>
             </div>
-
+ 
             <span class="section-symbol">✿</span>
         </div>
-
+ 
         <div class="product-grid">
-
-            <a href="fnp.html" id="bouquet_1"><div class="product-card">
+ 
+            <a href="desserts.html" id="bouquet_1"><div class="product-card">
                 <div class="product-image">
-                    <img src="Assets/Images/Flower.JPG" alt="Pink flower bouquet">
+                    <img src="Assets/Images/Flower.png" alt="Pink flower bouquet">
                     <span class="product-tag">BESTSELLER</span>
                 </div>
-
+ 
                 <div class="product-info">
                     <p class="product-type">THE CLASSICS</p>
                     <h3>Flower Bouquet</h3>
                     <p>A soft, dreamy bunch for your favourite person.</p>
-
+ 
                     <details>
                         <summary>Discover this bouquet +</summary>
                         <p>
@@ -626,22 +562,22 @@
                             while placing your order.
                         </p>
                     </details>
-
+ 
                     <a href="mailto:hello@houseofhandmade.com?subject=Blush%20Bouquet%20Enquiry"
                        class="product-link">ENQUIRE NOW →</a>
                 </div>
             </div></a>
-
+ 
             <a href="fnp.html"><div class="product-card">
                 <div class="product-image">
-                    <img src="Assets/Images/ChocolateB.JPG" alt="Custom flower arrangement">
+                    <img src="Assets/Images/ChocolateB.png" alt="Custom flower arrangement">
                 </div>
-
+ 
                 <div class="product-info">
                     <p class="product-type">MADE FOR YOU</p>
                     <h3>Chocolate Bouquet</h3>
                     <p>Your colours, your flowers, your kind of magic.</p>
-
+ 
                     <details>
                         <summary>Discover this bouquet +</summary>
                         <p>
@@ -650,40 +586,40 @@
                             personalised to your preferences.
                         </p>
                     </details>
-
+ 
                     <a href="mailto:hello@houseofhandmade.com?subject=Custom%20Bouquet%20Enquiry"
                        class="product-link">CUSTOMISE YOURS →</a>
                 </div>
             </div></a>
-
+ 
         </div>
     </section>
-
-
+ 
+ 
     <!-- Cakes -->
     <section class="product-section alternate" id="cakes">
-
+ 
         <div class="section-heading">
             <div>
                 <p class="label">02 / A LITTLE SLICE OF HAPPINESS</p>
                 <h2>Life is batter with dessert.</h2>
                 <p>Because every little celebration deserves sweetness.</p>
             </div>
-
+ 
             <span class="section-symbol">♡</span>
         </div>
         
         <div class="product-grid">
             <a href="Desserts.html"><div class="product-card">
                 <div class="product-image">
-                    <img src="Assets/Images/red-velvet.jpg" alt="Decorated celebration cake">
+                    <img src="Assets/Images/red-velvet.png" alt="Decorated celebration cake">
                 </div>
-
+ 
                 <div class="product-info">
                     <p class="product-type">CELEBRATION CAKES</p>
                     <h3>A Cake to Remember</h3>
                     <p>Pretty cakes made for your special moments.</p>
-
+ 
                     <details>
                         <summary>What's the sweetest part? +</summary>
                         <p>
@@ -692,22 +628,22 @@
                             and pricing will be confirmed when ordering.
                         </p>
                     </details>
-
+ 
                     <a href="mailto:hello@houseofhandmade.com?subject=Cake%20Enquiry"
                        class="product-link">ORDER ENQUIRY →</a>
                 </div>
             </div></a>
-
+ 
             <a href="Desserts.html"><div class="product-card">
                 <div class="product-image">
-                    <img src="Assets/Images/Strawberry.JPG" alt="Premium made chocolates">
+                    <img src="Assets/Images/Strawberry.png" alt="Premium made chocolates">
                 </div>
-
+ 
                 <div class="product-info">
                     <p class="product-type">YOUR DREAM DESIGN</p>
                     <h3>Made Just for You</h3>
                     <p>A Chocolate that matches the moment perfectly.</p>
-
+ 
                     <details>
                         <summary>Let's talk Chocolate +</summary>
                         <p>
@@ -716,22 +652,22 @@
                             design that suits your occasion.
                         </p>
                     </details>
-
+ 
                     <a href="mailto:hello@houseofhandmade.com?subject=Custom%20Cake%20Enquiry"
                        class="product-link">PLAN YOUR CHOCOLATE →</a>
                 </div>
             </div></a>
             <a href="Desserts.html"><div class="product-card">
                 <div class="product-image">
-                    <img src="Assets/Images/Caramel.jpg" alt="Caramel Drizziled Waffle">
+                    <img src="Assets/Images/Caramel.png" alt="Caramel Drizziled Waffle">
                     <span class="product-tag">SWEET FAVOURITE</span>
                 </div>
-            
+ 
                 <div class="product-info">
                     <p class="product-type">WAFFELS</p>
                     <h3>A Waffle for craving moments</h3>
                     <p>Waffles baked and decorated with love</p>
-
+ 
                     <details>
                         <summary>What's the sweetest part? +</summary>
                         <p>
@@ -740,22 +676,22 @@
                             and pricing will be confirmed when ordering.
                         </p>
                     </details>
-
+ 
                     <a href="mailto:hello@houseofhandmade.com?subject=Cake%20Enquiry"
                        class="product-link">ORDER ENQUIRY →</a>
                 </div>
             </div></a>
-
+ 
             <a href="Desserts.html"><div class="product-card">
                 <div class="product-image">
-                    <img src="Assets/Images/whitecream.jpg" alt="Premium made chocolates">
+                    <img src="Assets/Images/whitecream.png" alt="Premium made chocolates">
                 </div>
-
+ 
                 <div class="product-info">
                     <p class="product-type">YOUR DREAM DESIGN</p>
                     <h3>Made Just for You</h3>
                     <p>A Chocolate that matches the moment perfectly.</p>
-
+ 
                     <details>
                         <summary>Let's talk Chocolate +</summary>
                         <p>
@@ -764,22 +700,22 @@
                             design that suits your occasion.
                         </p>
                     </details>
-
+ 
                     <a href="mailto:hello@houseofhandmade.com?subject=Custom%20Cake%20Enquiry"
                        class="product-link">PLAN YOUR CHOCOLATE →</a>
                 </div>
             </div></a>
             <a href="Desserts.html"><div class="product-card">
                 <div class="product-image">
-                    <img src="Assets/Images/Cookies.jpg" alt="Decorated celebration cake">
+                    <img src="Assets/Images/Cookies.png" alt="Decorated celebration cake">
                     <span class="product-tag">SWEET FAVOURITE</span>
                 </div>
-
+ 
                 <div class="product-info">
                     <p class="product-type">CELEBRATION CAKES</p>
                     <h3>A Cake to Remember</h3>
                     <p>Pretty cakes made for your special moments.</p>
-
+ 
                     <details>
                         <summary>What's the sweetest part? +</summary>
                         <p>
@@ -788,22 +724,22 @@
                             and pricing will be confirmed when ordering.
                         </p>
                     </details>
-
+ 
                     <a href="mailto:hello@houseofhandmade.com?subject=Cake%20Enquiry"
                        class="product-link">ORDER ENQUIRY →</a>
                 </div>
             </div></a>
-
+ 
             <a href="Desserts.html"><div class="product-card">
                 <div class="product-image">
-                    <img src="Assets/Images/Donut.jpg" alt="Premium made chocolates">
+                    <img src="Assets/Images/Donut.png" alt="Premium made chocolates">
                 </div>
-
+ 
                 <div class="product-info">
                     <p class="product-type">YOUR DREAM DESIGN</p>
                     <h3>Made Just for You</h3>
                     <p>A Chocolate that matches the moment perfectly.</p>
-
+ 
                     <details>
                         <summary>Let's talk Chocolate +</summary>
                         <p>
@@ -812,40 +748,40 @@
                             design that suits your occasion.
                         </p>
                     </details>
-
+ 
                     <a href="mailto:hello@houseofhandmade.com?subject=Custom%20Cake%20Enquiry"
                        class="product-link">PLAN YOUR CHOCOLATE →</a>
                 </div>
             </div></a>
         </div>
     </section>
-
-
+ 
+ 
     <!-- Handmade Gifts -->
     <section class="product-section" id="handmade">
-
+ 
         <div class="section-heading">
             <div>
                 <p class="label">03 / LITTLE THINGS, BIG FEELINGS</p>
                 <h2>Handmade, heart-made.</h2>
                 <p>Small details that make a gift feel like yours.</p>
             </div>
-
+ 
             <span class="section-symbol">✧</span>
         </div>
-
+ 
         <div class="product-grid">
-
+ 
             <a href=""><div class="product-card">
                 <div class="product-image">
-                    <img src="images/gifts.jpg" alt="Personalised handmade gift">
+                    <img src="Assets/Images/gift.png" alt="Personalised handmade gift">
                 </div>
-
+ 
                 <div class="product-info">
                     <p class="product-type">PERSONALISED TREASURES</p>
                     <h3>A Little Piece of You</h3>
                     <p>Thoughtful handmade gifts with a personal touch.</p>
-
+ 
                     <details>
                         <summary>Explore the little details +</summary>
                         <p>
@@ -854,23 +790,23 @@
                             Each creation is made with care.
                         </p>
                     </details>
-
+ 
                     <a href="mailto:hello@houseofhandmade.com?subject=Handmade%20Gift%20Enquiry"
                        class="product-link">MAKE IT PERSONAL →</a>
                 </div>
             </div></a>
-
+ 
             <a href=""><div class="product-card">
                 <div class="product-image">
-                    <img src="Assets/Images/rose.jpg" alt="Creative handmade keepsake">
+                    <img src="Assets/Images/rose.png" alt="Creative handmade keepsake">
                     <span class="product-tag">MADE WITH LOVE</span>
                 </div>
-
+ 
                 <div class="product-info">
                     <p class="product-type">KEEPSAKES & SURPRISES</p>
                     <h3>Memories in the Making</h3>
                     <p>A little something they will want to keep.</p>
-
+ 
                     <details>
                         <summary>Find your keepsake +</summary>
                         <p>
@@ -879,41 +815,41 @@
                             options based on availability.
                         </p>
                     </details>
-
+ 
                     <a href="mailto:hello@houseofhandmade.com?subject=Keepsake%20Gift%20Enquiry"
                        class="product-link">FIND A KEEPSAKE →</a>
                 </div>
             </div></a>
         </div>
     </section>
-
-
+ 
+ 
     <!-- Hampers -->
     <!-- <section class="product-section alternate" id="hampers">
-
+ 
         <div class="section-heading">
             <div>
                 <p class="label">04 / A BOX FULL OF HAPPINESS</p>
                 <h2>Good things come together.</h2>
                 <p>For when one gift just isn't enough.</p>
             </div>
-
+ 
             <span class="section-symbol"></span>
         </div>
-
+ 
         <div class="product-grid">
-
+ 
             <div class="product-card">
                 <div class="product-image">
                     <img src="images/hampers.jpg" alt="Gift hamper">
                     <span class="product-tag">GIFTING FAVOURITE</span>
                 </div>
-
+ 
                 <div class="product-info">
                     <p class="product-type">CURATED HAMPERS</p>
                     <h3>The Happy Box</h3>
                     <p>A collection of little surprises in one box.</p>
-
+ 
                     <details>
                         <summary>What's inside? +</summary>
                         <p>
@@ -923,42 +859,42 @@
                             before ordering.
                         </p>
                     </details>
-
+ 
                     <a href="mailto:hello@houseofhandmade.com?subject=Gift%20Hamper%20Enquiry"
                        class="product-link">BUILD YOUR HAMPER →</a>
                 </div>
             </div>
-
+ 
         </div>
     </section> -->
-
-
+ 
+ 
     <!-- Gift Finder -->
     <section class="gift-finder" id="gift-finder">
-
+ 
         <p class="label">NOT SURE WHAT TO PICK?</p>
-
+ 
         <h2>Okay, tell us the occasion. ♡</h2>
-
+ 
         <p>
             Whether it's a birthday, an anniversary or a
             random Tuesday, there's always a reason to make
             someone smile.
         </p>
-
+ 
         <div class="occasion-list">
             <a href="mailto:hello@houseofhandmade.com?subject=Birthday%20Gift">🎂 Birthday</a>
             <a href="mailto:hello@houseofhandmade.com?subject=Anniversary%20Gift">♡ Anniversary</a>
             <a href="mailto:hello@houseofhandmade.com?subject=Just%20Because%20Gift">✿ Just Because</a>
             <a href="mailto:hello@houseofhandmade.com?subject=Custom%20Gift">🎁 Something Else</a>
         </div>
-
+ 
         <a href="mailto:hello@houseofhandmade.com?subject=Help%20Me%20Choose%20a%20Gift"
            class="main-button">HELP ME FIND A GIFT →</a>
-
+ 
     </section>
-
-
+ 
+ 
     <!-- Custom Order Banner -->
     <section class="custom-order">
         <div>
@@ -966,29 +902,84 @@
             <h2>Your idea. Our little magic.</h2>
             <p>Let's create something that feels like them.</p>
         </div>
-
+ 
         <a href="mailto:hello@houseofhandmade.com?subject=Custom%20Order"
            class="custom-button">LET'S CREATE TOGETHER ↗</a>
     </section>
-
-
-    <!-- Footer -->
-    <footer id="contact">
-
-        <div class="footer-logo">H</div>
-
-        <h2>House of Handmade</h2>
-
-        <p>Thoughtful gifts. Beautiful moments. Made with love.</p>
-
-        <a href="index.html">Home</a>
-        <a href="#collections">Collections</a>
-        <a href="#gift-finder">Find a Gift</a>
-        <a href="mailto:hello@houseofhandmade.com">Email Us</a>
-
-        <p class="copyright">Made with ♡ for life's little moments.</p>
-
-    </footer>
-
+ 
+ 
+<div class="con4">
+ 
+    <div class="c4-main">
+ 
+        <div class="brand">
+            <h2>HOUSE OF<br>HANDMADE</h2>
+            <p>YOU CRAVE WE MAKE</p>
+        </div>
+ 
+        <div class="columns">
+ 
+            <div class="c4-col">
+                <h3>SHOP</h3>
+                <a href="shop.html">Cakes and Desserts</a>
+                <a href="shop.html">Gift Hampers</a>
+                <a href="shop.html">Chocolates</a>
+            </div>
+ 
+            <div class="c4-col">
+                <h3>BRAND</h3>
+                <a href="story.html">Our Story</a>
+                <a href="shop.html">Gallery</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+ 
+            <div class="c4-col">
+                <h3>HELP</h3>
+                <a href="contact.html">Order Enquiries</a>
+                <a href="contact.html">FAQs</a>
+            </div>
+ 
+        </div>
+    </div>
+ 
+    <div class="c4-below">
+ 
+        <div class="c4-contact">
+            <p>Get in touch with us</p>
+ 
+            <div class="socials">
+                <p>✉ <a href="mailto:houseofhandmade25@gmail.com">houseofhandmade25@gmail.com</a></p>
+                <p>☎ <a href="tel:+919828466656">+91 98284 66656</a></p>
+            </div>
+        </div>
+ 
+        <div class="c4-socials">
+            <div class="socials">
+                <a href="https://www.instagram.com/houseofhandmadebynandini/reels/">
+                    <i class="fa fa-brands fa-instagram"></i>
+                </a>
+ 
+                <a href="https://wa.me/919828466656">
+                    <i class="fa fa-brands fa-whatsapp"></i>
+                </a>
+ 
+                <a href="https://www.google.com/maps/place/House+Of+Handmade/@26.4775908,74.5973778,17z/">
+                    <i class="fa fa-solid fa-map-location-dot"></i>
+                </a>
+            </div>
+        </div>
+ 
+    </div>
+ 
+    <div class="c4-bottom">
+        <p>© House Of Handmade. All rights reserved.</p>
+    </div>
+</div>
 </body>
 </html>
+
+
+
+
+
+

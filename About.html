@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="Assets/Images/Logo.png" type="image/x-icon">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #14264B;
+        }
+
+        /* Common Headings */
+
+        h1, h2, h3 {
+            font-family: Georgia, serif;
+            font-weight: normal;
+        }
+
+        h2 {
+            font-size: 36px;
+        }
+
+        .small-heading {
+            color: #286B91;
+            font-size: 10px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        p {
+            line-height: 1.7;
+        }
+
+        /* Hero Section */
+
+        .hero {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            padding: 40px 6%;
+            background-color: #D8F1FA;
+        }
+
+        .hero-text {
+            width: 45%;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            line-height: 1.05;
+        }
+
+        .hero h1 i {
+            color: #176D9E;
+        }
+
+        .categories {
+            color: #286B91;
+            font-size: 10px;
+            letter-spacing: 2px;
+            margin-top: 30px;
+        }
+
+        .hero img {
+            border-radius: 20px;
+            width: 50%;
+            height: 500px;
+            object-fit: cover;
+        }
+        .main-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 20px;
+            background-color: #14264B;
+            color: white;
+            text-decoration: none;
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
+        .main-button:hover {
+            background-color: #287BA4;
+            transform: translateY(-3px);
+        }
+
+        /* Our Story */
+
+        .story {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            padding: 40px 8%;
+            background-color: #F5FAFC;
+        }
+
+        .story img {
+            width: 45%;
+            height: 450px;
+            object-fit: cover;
+            border: 8px solid #14264B;
+        }
+
+        .story div {
+            flex: 1;
+        }
+
+        /* Features */
+
+        .special {
+            padding: 35px 6%;
+            background-color: white;
+        }
+
+        .features {
+            display: flex;
+            gap: 20px;
+        }
+
+        .features div {
+            flex: 1;
+            padding: 15px;
+            border-right: 1px solid #DCE5EC;
+        }
+
+        .features div:last-child {
+            border-right: none;
+        }
+
+        .features h3 {
+            font-size: 17px;
+        }
+
+        .features p {
+            color: #52657B;
+            font-size: 12px;
+        }
+
+        /* Collections */
+
+        .collections {
+            display: flex;
+            gap: 20px;
+            padding: 40px 6%;
+            background-color: #EAF7FC;
+        }
+
+        .collection-text {
+            flex: 1.5;
+        }
+
+        .collection-text h2 {
+            font-size: 32px;
+        }
+
+        .product {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .product img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+        }
+
+        .product h3 {
+            font-size: 15px;
+        }
+
+        .product p {
+            font-size: 11px;
+            color: #52657B;
+        }
+
+
+
+    
+/* FAQ MAIN SECTION */
+.faq-container {
+    display: grid;
+    grid-template-columns: 36% 64%;
+    max-width: 1250px;
+    margin: 60px auto;
+    background-color: #FFFEFA;
+    border: 1px solid #E6EBED;
+    color: #172747;
+}
+
+
+/* LEFT INTRODUCTION */
+.faq-intro {
+    padding: 55px 38px;
+    border-right: 1px solid #E6EBED;
+    background-color: #FFFEFA;
+}
+
+.faq-label {
+    color: #477F9F;
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    margin-bottom: 22px;
+}
+
+.faq-intro h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(32px, 3.2vw, 46px);
+    line-height: 1.15;
+    color: #172747;
+    margin-bottom: 22px;
+}
+
+.faq-intro h2 span {
+    color: #477F9F;
+    font-style: italic;
+}
+
+.faq-description {
+    color: #657184;
+    font-size: 14px;
+    line-height: 1.9;
+    margin-bottom: 22px;
+}
+
+.faq-contact {
+    color: #657184;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.faq-contact a {
+    color: #172747;
+    text-decoration-color: #477F9F;
+    text-underline-offset: 4px;
+    overflow-wrap: anywhere;
+}
+
+.faq-contact a:hover {
+    color: #477F9F;
+}
+
+
+/* DECORATIVE ELEMENT */
+.faq-decoration {
+    width: 150px;
+    min-height: 115px;
+    margin-top: 35px;
+    padding: 17px;
+    background-color: #D9F0FA;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 8px;
+    transform: rotate(-3deg);
+}
+
+.faq-decoration span {
+    font-family: Georgia, serif;
+    font-size: 30px;
+    color: #477F9F;
+}
+
+.faq-decoration p {
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #172747;
+}
+
+
+/* RIGHT FAQ CONTENT */
+.faq-content {
+    min-width: 0;
+    background-color: #FFFEFA;
+}
+
+.faq-group {
+    scroll-margin-top: 25px;
+}
+
+.faq-category {
+    padding: 24px 30px 13px;
+    background-color: #F0F8FC;
+    color: #477F9F;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+
+/* EACH QUESTION */
+.faq-group details {
+    border-bottom: 1px solid #E6EBED;
+    background-color: #FFFEFA;
+    transition: background-color 0.25s;
+}
+
+.faq-group details:hover {
+    background-color: #F6FBFD;
+}
+
+
+/* QUESTION ROW */
+.faq-group summary {
+    list-style: none;
+    cursor: pointer;
+    position: relative;
+    padding: 23px 65px 23px 30px;
+    color: #172747;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.6;
+    transition: color 0.25s;
+}
+
+/* ANSWER */
+.faq-group details p {
+    padding: 0 65px 24px 30px;
+    color: #657184;
+    font-size: 13px;
+    line-height: 1.9;
+    max-width: 650px;
+}
+
+
+/* TABLET */
+@media (max-width: 850px) {
+    .faq-container {
+        grid-template-columns: 32% 68%;
+        margin: 30px 15px;
+    }
+
+    .faq-intro {
+        padding: 35px 22px;
+    }
+
+    .faq-category {
+        padding-left: 20px;
+    }
+
+    .faq-group summary {
+        padding-left: 20px;
+        padding-right: 55px;
+        font-size: 13px;
+    }
+
+    .faq-group summary::after {
+        right: 15px;
+    }
+
+    .faq-group details p {
+        padding-left: 20px;
+        padding-right: 25px;
+    }
+}
+
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .faq-container {
+        grid-template-columns: 1fr;
+        margin: 20px 12px;
+    }
+
+    .faq-intro {
+        padding: 35px 25px;
+        border-right: none;
+        border-bottom: 1px solid #E6EBED;
+    }
+
+    .faq-intro h2 {
+        font-size: 36px;
+    }
+
+    .faq-decoration {
+        margin-top: 25px;
+    }
+
+    .faq-category {
+        padding: 20px;
+    }
+
+    .faq-group summary {
+        padding: 20px 55px 20px 20px;
+        font-size: 13px;
+    }
+
+    .faq-group summary::after {
+        right: 15px;
+        width: 25px;
+        height: 25px;
+    }
+
+    .faq-group details p {
+        padding: 0 20px 22px;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+                    <!-- .....NAV BAR..... -->
+
+        <div class="nav">
+            <img src="Assets/Images/Logo.png" alt="Logo">
+            <div class="left">
+                <h1>House Of <br> Handmade</h1>
+            </div>
+            <div class="right">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About.html">Our Story</a></li>
+                    <li><a href="collection.html">Shop</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+
+        <div class="hero-text">
+            <p class="small-heading">ABOUT US</p>
+
+            <h1>
+                More than just<br>
+                a gift.<br>
+                <i>It's a feeling.</i>
+            </h1>
+
+            <p>
+                Well, it was an instinct I got when i was making chocolates for Diwali Celebration
+                at my home. I had 
+            </p>
+
+            <p class="categories">
+                CAKES • BOUQUETS • HANDMADE GIFTS
+            </p>
+
+            <a href="#story" class="main-button">
+                Know Our Story
+            </a>
+
+            <a href="#faq-container" class="main-button">
+                FAQs
+            </a>
+        </div>
+
+        <img src="Assets/Images/chocolate.jpg" alt="Handmade gifts">
+
+    </section>
+
+    <!-- Our Story -->
+    <section class="story" id="story">
+
+        <img src="Assets/Images/Nandini.PNG" alt="Our story">
+
+        <div>
+            <p class="small-heading">OUR STORY</p>
+
+            <h2>How it all began.</h2>
+
+            <p>
+                Well, it was an instinct I got when I was making chocolates for Diwali Celebration at my home. I had a thought in my mind for years to open a restaurant to set my cravings for a foodie cook!
+
+But, I analyzed that most of the delicious dishes I make are from the genre - "CHOCOLATE"!!
+
+Then a bell rang in my head, let's just start from here only. 
+
+I said, Why Not?? And here I am.....
+
+From basics to advanced, I am onto the path of new innovative flavors and tastes of chocolates. I am open to new suggestions and focus more on improving day by day.
+
+Making chocolates is really my mood-maker, my positive energy
+
+and looking at all those happy faces after eating my chocolates
+
+is seriously a BLISS!!!
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- Features -->
+    <section class="special">
+
+        <p class="small-heading">WHAT MAKES US SPECIAL</p>
+
+        <h2>Made with care. Always.</h2>
+
+        <div class="features">
+
+            <div>
+                <h3>♡</h3>
+                <h3>Fresh & Quality Ingredients</h3>
+                <p>We use only the best ingredients and flowers.</p>
+            </div>
+
+            <div>
+                <h3>♡</h3>
+                <h3>Handcrafted with Love</h3>
+                <p>Every gift is carefully made and packed.</p>
+            </div>
+
+            <div>
+                <h3>✧</h3>
+                <h3>Personalised Touches</h3>
+                <p>Every creation is special and unique.</p>
+            </div>
+
+            <div>
+                <h3>♡</h3>
+                <h3>Thoughtful Packaging</h3>
+                <p>Beautiful packaging makes every gift memorable.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    
+<!-- FAQ SECTION -->
+<section class="faq-container" id="faq-container">
+
+    <!-- LEFT SIDE -->
+    <div class="faq-intro">
+        <p class="faq-label">FREQUENTLY ASKED QUESTIONS</p>
+
+        <h2>Questions?<br>
+            <span>We've got you.</span>
+        </h2>
+
+        <p class="faq-description">
+            Everything you need to know about our handmade
+            creations, delivery and policies.
+        </p>
+
+        <p class="faq-contact">
+            Anything else? Email us at
+            <a href="mailto:hello@houseofhomemade.com">
+                hello@houseofhomemade.com
+            </a>
+        </p>
+
+        <div class="faq-decoration">
+            <span>♡</span>
+            <p>Little details.<br>Clear answers.</p>
+        </div>
+    </div>
+
+
+    <!-- RIGHT SIDE -->
+    <div class="faq-content">
+
+        <!-- PRODUCT QUESTIONS -->
+        <div class="faq-group" id="product-faq">
+            <p class="faq-category">01 — OUR PRODUCTS</p>
+
+            <details>
+                <summary>Are all your products handmade?</summary>
+                <p>
+                    Yes, every item on Crafting Gifts is 100% handmade
+                    with love and attention to detail.
+                </p>
+            </details>
+
+            <details>
+                <summary>Do you offer customization?</summary>
+                <p>
+                    Yes, we specialize in personalized gifting. You can
+                    share your preferences while ordering or contact us directly.
+                </p>
+            </details>
+
+            <details>
+                <summary>Can I see a sample before placing a bulk order?</summary>
+                <p>
+                    Yes, you can contact us to discuss samples and
+                    customization options before placing a bulk order.
+                </p>
+            </details>
+
+            <details>
+                <summary>What kind of occasions do you cater to?</summary>
+                <p>
+                    We create gifts for birthdays, anniversaries,
+                    weddings, festivals and other special occasions.
+                </p>
+            </details>
+
+            <details>
+                <summary>Can I include a personalized message or name?</summary>
+                <p>
+                    Yes! You can request a name, message or other
+                    personalized details while placing your order.
+                </p>
+            </details>
+        </div>
+
+
+        <!-- RETURNS AND EXCHANGES -->
+        <div class="faq-group" id="returns-faq">
+            <p class="faq-category">02 — RETURNS & EXCHANGES</p>
+
+            <details>
+                <summary>Can I cancel my order after placing it?</summary>
+                <p>
+                    Contact us as soon as possible. Cancellation depends
+                    on whether your order has already been prepared.
+                </p>
+            </details>
+
+            <details>
+                <summary>What if I receive a damaged or incorrect product?</summary>
+                <p>
+                    Please contact us with photographs of the product
+                    so we can help resolve the issue.
+                </p>
+            </details>
+
+            <details>
+                <summary>Do you accept returns or exchanges?</summary>
+                <p>
+                    Since our products are handmade and personalized,
+                    return and exchange requests are reviewed individually.
+                </p>
+            </details>
+
+            <details>
+                <summary>How will I receive my refund?</summary>
+                <p>
+                    If a refund is approved, we will inform you about
+                    the refund process and expected timeline.
+                </p>
+            </details>
+        </div>
+
+
+        <!-- SHIPPING QUESTIONS -->
+        <div class="faq-group" id="shipping-faq">
+            <p class="faq-category">03 — SHIPPING & DELIVERY</p>
+
+            <details>
+                <summary>Do you deliver all over India?</summary>
+                <p>
+                    Please contact us with your delivery PIN code to
+                    confirm whether we deliver to your location.
+                </p>
+            </details>
+
+            <details>
+                <summary>What is the estimated delivery time?</summary>
+                <p>
+                    Delivery time depends on your location and the time
+                    required to prepare your handmade order.
+                </p>
+            </details>
+
+            <details>
+                <summary>Will I receive tracking details?</summary>
+                <p>
+                    If tracking is available for your shipment,
+                    we will share the details with you.
+                </p>
+            </details>
+
+            <details>
+                <summary>Do you offer express delivery?</summary>
+                <p>
+                    Contact us before ordering to check whether express
+                    delivery is available for your order.
+                </p>
+            </details>
+        </div>
+
+    </div>
+
+</section>
+
+
+ <div class="con4">
+
+    <div class="c4-main">
+
+        <div class="brand">
+            <h2>HOUSE OF<br>HANDMADE</h2>
+            <p>YOU CRAVE WE MAKE</p>
+        </div>
+
+        <div class="columns">
+
+            <div class="c4-col">
+                <h3>SHOP</h3>
+                <a href="shop.html">Cakes and Desserts</a>
+                <a href="shop.html">Gift Hampers</a>
+                <a href="shop.html">Chocolates</a>
+            </div>
+
+            <div class="c4-col">
+                <h3>BRAND</h3>
+                <a href="story.html">Our Story</a>
+                <a href="shop.html">Gallery</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+
+            <div class="c4-col">
+                <h3>HELP</h3>
+                <a href="contact.html">Order Enquiries</a>
+                <a href="contact.html">FAQs</a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="c4-below">
+
+        <div class="c4-contact">
+            <p>Get in touch with us</p>
+
+            <div class="socials">
+                <p>✉ <a href="mailto:houseofhandmade25@gmail.com">houseofhandmade25@gmail.com</a></p>
+                <p>☎ <a href="tel:+919828466656">+91 98284 66656</a></p>
+            </div>
+        </div>
+
+        <div class="c4-socials">
+            <div class="socials">
+                <a href="https://www.instagram.com/houseofhandmadebynandini/reels/">
+                    <i class="fa fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="https://wa.me/919828466656">
+                    <i class="fa fa-brands fa-whatsapp"></i>
+                </a>
+
+                <a href="https://www.google.com/maps/place/House+Of+Handmade/@26.4775908,74.5973778,17z/">
+                    <i class="fa fa-solid fa-map-location-dot"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="c4-bottom">
+        <p>© House Of Handmade. All rights reserved.</p>
+    </div>
+</div>
+
+</body>
+</html>

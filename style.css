@@ -1,4 +1,36 @@
 /* =========================
+   NAVBAR + FOOTER ISOLATION
+   (keeps them looking identical on every page, whatever
+   global styles a page defines in its own <style> tag)
+   NOTE: this block must stay ABOVE the nav/footer rules below
+========================= */
+
+.nav,
+.nav *,
+.con4,
+.con4 * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.nav .left > h1,
+.brand > h2,
+.c4-col > h3 {
+    font-weight: bold;
+}
+
+.brand > h2,
+.c4-col > h3 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.con4 p {
+    line-height: normal;
+}
+
+
+/* =========================
    COMMON NAVBAR
 ========================= */
 
@@ -73,10 +105,6 @@
     align-items: flex-start;
     padding: 70px 8% 50px;
     gap: 50px;
-}
-
-.brand {
-    /* flex-shrink: 0; */
 }
 
 .brand > h2 {
