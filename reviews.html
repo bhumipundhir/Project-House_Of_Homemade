@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" href="Assets/Images/Logo.png" type="image/x-icon">
+    
+    <style>
+        .con1{
+            min-height: 800px;
+            width: 100%;
+            background-color: #a6e1fa44;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 0;
+        }
+        .con2{
+            width: 75%;
+            background-color: #FFFFFF;
+            border-radius: 30px;
+            padding: 30px 0;
+            overflow: hidden;
+        }
+        .con3{
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .con3>h1{
+            color: #001C55;
+            text-align: center;
+        }
+
+        .row{
+            overflow: hidden;
+            width: 100%;
+        }
+        .track{
+            display: flex;
+            gap: 24px;
+            width: max-content;
+            animation: slide-left 30s linear infinite;
+        }
+        .row.reverse .track{
+            animation-name: slide-right;
+        }
+
+        @keyframes slide-left{
+            from { transform: translateX(0); }
+            to   { transform: translateX(-50%); }
+        }
+        @keyframes slide-right{
+            from { transform: translateX(-50%); }
+            to   { transform: translateX(0); }
+        }
+
+        .review-box{
+            width: 350px;
+            flex-shrink: 0;
+            padding: 18px;
+            border: 1px solid #e3e3e3;
+            border-radius: 16px;
+            background-color: #fff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .review-box h3{
+            margin: 10px 0 6px;
+        }
+        .review-box p{
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .circle{
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            background-color: #A6E1FA;
+            color:#0E6BA8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
+
+    </style>
+</head>    
+<body>
+
+        <div class="nav">
+            <img src="Assets/Images/Logo.png" alt="Logo">
+            <div class="left">
+                <h1>House Of <br> Handmade</h1>
+            </div>
+            <div class="right">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About.html">Our Story</a></li>
+                    <li><a href="Collection.html">Shop</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+
+<div class="con1">
+    <div class="con2">
+        <div class="con3">
+            <h1>What our customers say!</h1>
+            <!-- ROW 1 : slides left -->
+            <div class="row">
+                <div class="track">
+                    <!-- set 1 (4 reviews) -->
+                    <div class="review-box">
+                        <div class="circle">AS</div>
+                        <h3>Aastha Saini</h3>
+                        <p>Just wanted to say the cake was absolutely delicious 😍 The taste, texture, everything was just perfect — super fresh and full of flavor! Everyone loved it. You really nailed it 👏 Can’t wait to order from you again soon! 🎂💖 Thankyou ma'am</p>
+                    </div>
+                    <div class="review-box">
+                        <div class="circle">NA</div>
+                        <h3>Nashida Arshi</h3>
+                        <p>The chocolate quality is consistently outstanding and super delicious, completely impressed with their creativity and customer service. I recommend them to anyone who has an interest in divine handmade chocolates. Thank you for all that you offer.</p>
+                    </div>
+                    <div class="review-box">
+                        <div class="circle">AC</div>
+                        <h3>Anshu Chaudhary</h3>
+                        <p>I really love House of Handmade’s variety of products, specially when I requested for vegan items, they agreed and starting making vegan items also. So really happy with that plus all their items are delicious</p>
+                    </div>
+                    <div class="review-box">
+                        <div class="circle">CT</div>
+                        <h3>Chirag Tolani</h3>
+                        <p>I ordered regularly from house of handmade
+                        And everytime i feel the new experience, the taste is always amazing like never before.</p>
+                    </div>
+
+                    <!-- set 2 = exact copy (for seamless loop) -->
+                    <div class="review-box" aria-hidden="true">
+                        <div class="circle">UJ</div>
+                        <h3>Utkarsh Jain</h3>
+                        <p>Love the pudding and cake's out here, got my self some rakhi hampers from them and they were soo delicious.
+                        Must order</p>
+                    </div>
+                    <div class="review-box" aria-hidden="true">
+                        <div class="circle">M</div>
+                        <h3>Mishika</h3>
+                        <p>Your cheesecakes are to die for. Never tried from others, after tasting yours !</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ROW 2 : slides right -->
+            <div class="row reverse">
+                <div class="track">
+                    <!-- set 1 (4 reviews) -->
+                    <div class="review-box" aria-hidden="true">
+                        <div class="circle">KS</div>
+                        <h3>Khushal Sharma</h3>
+                        <p>Everytime you go, there is something new, creative and flavorful item for your sweet tooth. Must try.</p>
+                    </div>
+                    <div class="review-box" aria-hidden="true">
+                        <div class="circle">AS</div>
+                        <h3>Anjana Sharma</h3>
+                        <p>Very tasty chocolates and brownies fast delivery</p>
+                    </div>
+                    <div class="review-box">
+                        <div class="circle">VB</div>
+                        <h3>Vivek Bhati</h3>
+                        <p>Tasty chocolate 🍫 u can grabs here</p>
+                    </div>
+                    <!-- set 2 = exact copy -->
+                    <div class="review-box" aria-hidden="true">
+                        <div class="circle">NA</div>
+                        <h3>Nashida Arshi</h3>
+                        <p>The chocolate quality is consistently outstanding and super delicious, completely impressed with their creativity and customer service. I recommend them to anyone who has an interest in divine handmade chocolates. Thank you for all that you offer.</p>
+                    </div>
+                    <div class="review-box" aria-hidden="true">
+                        <div class="circle">AC</div>
+                        <h3>Anshu Chaudhary</h3>
+                        <p>I really love House of Handmade’s variety of products, specially when I requested for vegan items, they agreed and starting making vegan items also. So really happy with that plus all their items are delicious</p>
+                    </div>
+                    <div class="review-box" aria-hidden="true">
+                        <div class="circle">AS</div>
+                        <h3>Aastha Saini</h3>
+                        <p>Just wanted to say the cake was absolutely delicious 😍 The taste, texture, everything was just perfect — super fresh and full of flavor! Everyone loved it. You really nailed it 👏 Can’t wait to order from you again soon! 🎂💖 Thankyou ma'am</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <div class="con4">
+                
+            <div class="c4-main">
+
+                <div class="brand">
+                    <h2>HOUSE OF<br>HANDMADE</h2>
+                    <p>YOU CRAVE WE MAKE</p>
+                </div>
+
+                <div class="columns">
+                    <div class="c4-col">
+                        <h3>SHOP</h3>
+                        <a href="">Cakes and Desserts</a>
+                        <a href="">Gift Hampers</a>
+                        <a href="">Chocolates</a>
+                    </div>
+
+                    <div class="c4-col">
+                        <h3>BRAND</h3>
+                        <a href="">Our Story</a>
+                        <a href="">Gallery</a>
+                        <a href="">Contact Us</a>
+                    </div>
+                    
+                    <div class="c4-col">
+                        <h3>HELP</h3>
+                        <a href="">Order Enquiries</a>
+                        <a href="">FAQs</a>
+                    </div>
+
+                </div>
+            </div>
+            
+
+
+            <div class="c4-below">
+
+                <div class="c4-contact">
+                    <p>Get in touch with us</p>
+
+                    <div class="socials">
+                        <p>✉ <a href="houseofhandmade25@gmail.com">houseofhandmade25@gmail.com</a></p>
+
+                        <p>☎ <a href="tel:+919828466656">+91 98284 66656</a></p>
+                    </div>
+                </div>
+
+                <div class="c4-socials">
+                    <div class="socials">
+                        <a href="https://www.instagram.com/houseofhandmadebynandini/reels/"><i class="fa fa-brands fa-instagram"></i></a>
+                        <a href="https://wa.me/919828466656"><i class="fa fa-brands fa-whatsapp"></i></a>
+                        <a href="https://www.google.com/maps/place/House+Of+Handmade/@26.4775908,74.5973778,17z/data=!3m1!4b1!4m6!3m5!1s0x396be72bc41f3697:0x2d3fc124467b0dc5!8m2!3d26.4775908!4d74.5973778!16s%2Fg%2F11jp8xmbd_?entry=ttu&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D"><i class="fa fa-solid fa-map-location-dot"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="c4-bottom">
+                <p>© House Of Handmade. All rights reserved.</p>
+            </div>
+
+    </div>
+</body>
+</html>

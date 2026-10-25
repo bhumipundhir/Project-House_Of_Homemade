@@ -1,10 +1,8 @@
-/* =========================
-   NAVBAR + FOOTER ISOLATION
-   (keeps them looking identical on every page, whatever
-   global styles a page defines in its own <style> tag)
-   NOTE: this block must stay ABOVE the nav/footer rules below
-========================= */
-
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 .nav,
 .nav *,
 .con4,
