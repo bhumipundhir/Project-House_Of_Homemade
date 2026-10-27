@@ -1,0 +1,345 @@
+/* =====================================================================
+   RESPONSIVE LAYER – House Of Handmade
+   ---------------------------------------------------------------------
+   Load this file LAST (after style.css and after each page's <style>).
+   It only adds rules inside media queries, so the laptop layout above
+   1100px is untouched. Existing CSS is never edited – it is overridden
+   here, which is why some rules use !important (the pages carry fixed
+   heights / widths in their own <style> blocks).
+
+   Breakpoints
+     <= 1100px  small laptop / tablet landscape (fine tuning)
+     <=  900px  tablet portrait  (columns stack, nav wraps)
+     <=  600px  phones
+     <=  400px  small phones
+===================================================================== */
+
+/* ---------- Safe defaults at every size ---------- */
+img, video, iframe { max-width: 100%; }
+body { overflow-x: clip; }              /* no sideways scroll, keeps sticky sidebar working */
+.contact-info a, .c4-contact a { overflow-wrap: anywhere; }
+
+
+/* =====================================================================
+   <= 1100px  –  small laptops
+===================================================================== */
+@media (max-width: 1100px) {
+    .nav > img            { margin-left: 24px; }
+    .nav ul               { gap: 16px; }
+    .nav .right           { margin-left: 10px; }
+
+    .con1 > .hero         { margin-left: 60px !important; }      /* index + HindiIndex */
+    .c4-main              { gap: 30px; }
+    .c4-main > .columns   { gap: 30px; }
+    .contact-section      { gap: 30px !important; padding: 20px 5% !important; }
+}
+
+
+/* =====================================================================
+   <= 900px  –  tablets
+===================================================================== */
+@media (max-width: 900px) {
+
+    /* type scale a little smaller (style.css already shrinks again <=650px) */
+    :root { --h1-size: 48px; --h2-size: 34px; }
+
+    /* ---------- NAV ---------- */
+    .nav {
+        height: auto !important;
+        flex-wrap: wrap;
+        gap: 10px 14px;
+        padding: 12px 16px;
+    }
+    .nav > img            { margin-left: 0; }
+    .nav .left            { flex: 1; min-width: 0; }
+    .nav a:has(> .but1)   { order: 2; }                 /* language button next to logo */
+    .nav .but1            { margin-right: 0; }
+    .nav .right {
+        order: 3;
+        flex: 0 0 100%;
+        margin-left: 0;
+        justify-content: center;
+    }
+    .nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px 20px;
+        font-size: 14px;
+    }
+
+    /* ---------- FOOTER ---------- */
+    .con4                 { min-height: 0; }
+    .c4-main {
+        flex-direction: column;
+        padding: 50px 6% 30px;
+        gap: 30px;
+    }
+    .brand > h2           { font-size: 38px; }
+    .c4-main > .columns   { flex-wrap: wrap; gap: 28px 40px; width: 100%; }
+    .c4-below {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 6% 28px;
+    }
+    .c4-contact           { font-size: 16px; }
+    .c4-bottom            { padding: 15px 6%; }
+
+    /* ---------- HOME (index / HindiIndex) ---------- */
+    .con1 { height: auto !important; padding-bottom: 40px; }
+    .con1 > .hero {
+        margin: 40px 6% 0 !important;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    .con1 > .hero > .hero-text  { width: 100% !important; }
+    .con1 > .hero > .hero-image { width: 100% !important; text-align: center; }
+    .con1 > .hero > .hero-image > img {
+        width: 100% !important;
+        max-width: 340px;
+        height: auto !important;
+        margin: 0 auto !important;
+    }
+    .hero-description     { line-height: 1.7 !important; }
+    .hero-buttons         { flex-wrap: wrap; }
+    .button1, .button2    { width: auto !important; min-width: 150px; padding: 0 18px; }
+
+    marquee               { height: 56px !important; font-size: 18px !important; }
+
+    body > .con2 { height: auto !important; padding: 0 4% 40px; }      /* "Cake O'Clock" block (home only) */
+    .cake {
+        height: auto !important;
+        flex-wrap: wrap;
+        gap: 18px;
+        justify-content: center;
+    }
+    .cake > img {
+        margin-top: 0 !important;
+        width: calc(50% - 10px) !important;
+        height: 240px !important;
+        object-fit: contain;
+    }
+    body > .con2 > h1, body > .con2 > p { padding-top: 10px; }
+
+    body > .con3 { height: auto !important; padding: 0 4% 50px; }
+    body > .con3 > h1            { line-height: 1.3 !important; padding: 30px 0 20px; }
+    .sq_1, .sq_2 {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+        justify-items: center;
+        margin-top: 20px !important;
+    }
+    .squares [class^="square"] {
+        width: 100% !important;
+        max-width: 280px;
+        height: auto !important;
+        padding-bottom: 14px;
+    }
+    .squares img          { height: 200px !important; object-fit: cover; }
+    .squares h1           { margin-top: 14px !important; }
+    #choco                { margin-top: 14px !important; }
+
+    /* ---------- REVIEWS ---------- */
+    .con1 > .con2         { width: 94% !important; }
+
+    /* ---------- CONTACT ---------- */
+    .contact-section {
+        flex-direction: column;
+        min-height: 0 !important;
+        padding: 30px 5% !important;
+        gap: 30px !important;
+    }
+    .contact-image        { width: 100% !important; height: 320px !important; }
+    .contact-image img    { height: 100% !important; }
+    .contact-content      { width: 100% !important; }
+    .contact-box          { grid-template-columns: 1fr !important; padding: 25px !important; gap: 30px !important; }
+
+    /* ---------- COLLECTION / HINDI COLLECTION + ABOUT / HINDI ABOUT (section.hero) ---------- */
+    section.hero {
+        flex-direction: column;
+        align-items: stretch !important;
+        gap: 28px !important;
+        padding: 40px 6% !important;
+    }
+    section.hero > .hero-text,
+    section.hero > .hero-image,
+    section.hero > img    { width: 100% !important; }
+    section.hero > img    { height: 300px !important; }
+    .hero-image img       { height: 260px !important; box-shadow: 6px 6px 0 var(--sky-pale) !important; }
+    .hero-text > p:not(.label):not(.eyebrow) { max-width: none !important; }
+    .floating-note {
+        position: static !important;
+        display: inline-block;
+        align-self: flex-start;
+        transform: rotate(-3deg) !important;
+        margin: 6px 0 0 6px;
+    }
+
+    .category-section     { padding: 45px 5%; }
+    .categories           { flex-wrap: wrap !important; }
+    .product-section      { padding: 45px 5% !important; }
+    .section-heading      { flex-wrap: wrap; gap: 10px; }
+    .section-symbol       { font-size: 34px !important; margin-right: 0 !important; }
+    div.product-card      { width: calc(50% - 12.5px); }       /* Collection pages keep 2 across (flex layout) */
+    .product-image img    { height: 220px !important; }
+    .custom-order {
+        flex-direction: column;
+        align-items: flex-start !important;
+        padding: 40px 6% !important;
+    }
+    .gift-finder          { padding: 50px 6% !important; }
+
+    /* ---------- ABOUT / HINDI ABOUT ---------- */
+    .story {
+        flex-direction: column;
+        align-items: stretch !important;
+        gap: 28px !important;
+        padding: 40px 6% !important;
+    }
+    .story img            { width: 100% !important; height: 320px !important; }
+    .special              { padding: 35px 6% !important; }
+    .features             { flex-direction: column; gap: 0 !important; }
+    .features div {
+        border-right: none !important;
+        border-bottom: 1px solid var(--border-light);
+        padding: 18px 4px !important;
+    }
+    .features div:last-child { border-bottom: none; }
+    .collections {
+        flex-wrap: wrap;
+        padding: 40px 6% !important;
+        gap: 20px !important;
+    }
+    .collection-text      { flex: 0 0 100% !important; }
+    .product              { flex: 1 1 140px !important; }
+
+    /* ---------- SIDEBAR PAGES (desserts / bouquets / gifts) ---------- */
+    body { grid-template-columns: minmax(0, 1fr) !important; }
+    .sidebar {
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important;
+        padding: 18px 5% !important;
+    }
+    .sidebar h2           { margin: 0 0 10px 0 !important; }
+    .sidebar-note         { display: none !important; }
+    .sidebar nav > a      { display: inline-block; padding: 10px 12px; }
+    .submenu {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        margin: 0 0 8px 0 !important;
+        padding-left: 0 !important;
+        border-left: none !important;
+    }
+    .sidebar nav .submenu a {
+        padding: 8px 12px !important;
+        border: 1px solid var(--sky-border);
+        border-radius: 20px;
+        background: var(--white);
+    }
+    .main-content .hero   { padding: 40px 6%; min-height: 360px; }
+    .hero-text            { max-width: 100%; }
+}
+
+
+/* =====================================================================
+   <= 600px  –  phones
+===================================================================== */
+@media (max-width: 600px) {
+
+    /* ---------- NAV ---------- */
+    .nav > img            { height: 48px; width: 48px; }
+    .nav .left > h1       { font-size: 15px; }
+    .nav ul               { gap: 4px 14px; font-size: 13px; }
+    .but1                 { min-height: 30px; padding: 5px 12px; }
+    .but1 p               { font-size: 11px; }
+
+    /* ---------- FOOTER ---------- */
+    .brand > h2           { font-size: 30px; }
+    .c4-main > .columns   { gap: 24px 30px; }
+    .c4-col               { min-width: 130px; }
+    .c4-contact           { font-size: 15px; }
+
+    /* ---------- HOME ---------- */
+    .con1 > .hero         { margin-top: 30px !important; }
+    .hero-subtitle        { font-size: 13px !important; letter-spacing: 1.5px !important; }
+    .hero-buttons         { flex-direction: column; gap: 12px !important; }
+    .button1, .button2    { width: 100% !important; }
+    .con1 > .hero > .hero-image > img { max-width: 280px; }
+
+    marquee               { height: 48px !important; font-size: 15px !important; }
+    .cake > img           { height: 180px !important; padding: 10px !important; border-radius: 14px !important; }
+    .cake > img:hover     { transform: scale(1.05); }          /* 1.16 zoom is too big on small screens */
+    body > .con2 > p      { font-size: 16px !important; padding: 0 10px; }
+
+    .sq_1, .sq_2          { gap: 12px; }
+    .squares [class^="square"] { max-width: none; }
+    .squares img          { height: 140px !important; }
+    .squares h1           { font-size: 17px !important; line-height: 1.3 !important; }
+
+    /* ---------- REVIEWS ---------- */
+    .con1 > .con2 {
+        width: 96% !important;
+        border-radius: 20px !important;
+        padding: 22px 0 !important;
+    }
+    .con1:has(> .con2)    { min-height: 0 !important; padding: 24px 0 !important; }
+    .review-box           { width: 270px !important; padding: 14px !important; }
+    .review-box p         { font-size: 13px !important; }
+
+    /* ---------- CONTACT ---------- */
+    .contact-image        { height: 220px !important; }
+    .contact-box          { padding: 18px !important; }
+    .form-group label     { font-size: 12px !important; letter-spacing: 1px !important; }
+    .social-links         { gap: 14px !important; }
+
+    /* ---------- COLLECTION PAGES ---------- */
+    section.hero          { padding: 30px 5% !important; }
+    section.hero > img    { height: 220px !important; }
+    .hero-image img       { height: 210px !important; }
+    .category             { padding: 12px 16px !important; font-size: 12px !important; }
+    div.product-card      { width: 100% !important; }
+    .product-image img    { height: 240px !important; }
+    .product-info         { padding: 18px !important; }
+    .custom-button        { white-space: normal !important; text-align: center; width: 100%; }
+    footer a              { margin: 10px 8px !important; }
+
+    /* ---------- ABOUT ---------- */
+    .story img            { height: 240px !important; }
+    .product              { flex: 1 1 120px !important; }
+    .product img          { height: 120px !important; }
+    .faq-container        { margin: 20px 10px !important; }
+
+    /* ---------- SIDEBAR PAGES ---------- */
+    .main-content .hero   { min-height: 320px; padding: 30px 5%; }
+    .hero-text > p:not(.eyebrow):not(.label) { line-height: 1.7; }
+    .category-section     { padding: 36px 5% !important; }
+    .section-heading h2   { line-height: 1.2; }
+    .product-grid         { gap: 14px; }
+    .product-card:hover   { transform: none; }                  /* no lift on touch screens */
+}
+
+
+/* =====================================================================
+   <= 480px  –  desserts / bouquets / gifts: one card per row
+===================================================================== */
+@media (max-width: 480px) {
+    .product-grid         { grid-template-columns: minmax(0, 1fr) !important; }
+    .product-card img     { height: 190px !important; }
+}
+
+
+/* =====================================================================
+   <= 400px  –  small phones
+===================================================================== */
+@media (max-width: 400px) {
+    :root { --h1-size: 34px; --h2-size: 27px; }
+    .nav .left > h1       { font-size: 14px; }
+    .nav ul               { gap: 4px 10px; font-size: 12px; }
+    .squares img          { height: 120px !important; }
+    .cake > img           { height: 150px !important; }
+    .review-box           { width: 245px !important; }
+    .c4-col               { min-width: 100%; }
+}
