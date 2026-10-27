@@ -17,54 +17,12 @@
         .con1{
             height:690px;
             width:100%;
-            /* background-color:#A6E1FA; */
-            background: radial-gradient(#A6E1FA, #FFFFFF);
+            /* background-color:var(--sky); */
+            background: radial-gradient(var(--sky), var(--white));
             }
-        /* .left>h1{
-            font-family: courier-new;
-            font-size: 17px;
-        }
-        .nav{
-            gap:20px;
-            height:90px;
-            width:100%;
-            background-color:#FFFFFF;
-            display:flex;
-            align-items:center;
-            color: #001C55;         
-        }
-        .right{
-            width:50%;
-            display:flex;
-            justify-content: space-around;
-            margin-left: 60px;
-        } */
-        /* ul{
-            list-style:none;
-            display:flex;
-            gap:25px;
-        }
-        a{
-            text-decoration:none;
-            color: #001C55;
-        }
-        a:hover{
-            color:#A6E1FA;
-        } */
-        /* .nav>img{
-            margin-left:50px;   
-            height:70%;
-            width:5%;
-            border-radius:50%;
-        } */
-        /* .conleft{
-            height: 80%;
-            margin-left: 50px;
-            margin-top: 50px;
-            line-height: 0.8;            
-        } */
+        
         .hero-subtitle{
-            color:#0E6BA8;
+            color:var(--blue);
             font-size: 15px;
             letter-spacing: 2.5px;
         }
@@ -80,7 +38,7 @@
         }
 
         .hero-image {
-            width: 50%;
+            width: 45%;
             /* min-width: 0;
             display: flex;
             justify-content: center;
@@ -97,19 +55,19 @@
         }
         .hero-text>h1{
             margin-top: 20px;
-            font-family: "Playfair Display", serif;
-            font-weight: 500;
-            letter-spacing: -2px;
-            font-size: 90px;            
+            font-family: var(--font-heading);
+            font-weight: normal;
+            letter-spacing: normal;
+            font-size: var(--h1-size);            
         }
         .hero-text>h1>.blue{
-            color:#0E6BA8;
+            color:var(--blue);
         }
         .hero-description{
             line-height: 30px;
             margin-top: 20px;
             font-size: 15px;
-            color:#001C55;
+            color:var(--navy);
         }
         .hero-buttons {
             display: flex;
@@ -117,39 +75,39 @@
             margin-top: 25px;
         }
         .button1{
-            background-color: #001C55;
+            background-color: var(--navy);
             height: 45px;
             width: 150px;
             text-align: center;
             line-height: 45px;
         }
         .button1>a{
-            color: #FFFFFF;
+            color: var(--white);
             font-size: 15px;
             text-decoration: none;
         }
         .button1:hover{
-            background: radial-gradient(#0E6BA8, #A6E1FA);
+            background: radial-gradient(var(--blue), var(--sky));
         }
         .button2{
-            background-color: #0E6BA8;
+            background-color: var(--blue);
             height: 45px;
             width: 200px;
             text-align: center;
             line-height: 45px;
         }
         .button2>a{
-            color: #FFFFFF;
+            color: var(--white);
             font-size: 15px;
             text-decoration: none;
         }
         .button2:hover{
-            background: radial-gradient(#0E6BA8, #A6E1FA);
+            background: radial-gradient(var(--blue), var(--sky));
         }
         .hero-note{
             margin-top: 30px;
             font-size: 15px;
-            color:#001C55;
+            color:var(--navy);
         }
 
         /* CONTAINER 2 */
@@ -158,22 +116,22 @@
             margin-top: 50px;
             height:550px;
             width:100%;
-            background-color:#ffffff;
+            background-color:var(--white);
         }
         .con2>h1{
-            font-family: "Playfair Display", serif;
-            font-weight: 500;
-            letter-spacing: -2px;
-            font-size: 70px;            
+            font-family: var(--font-heading);
+            font-weight: normal;
+            letter-spacing: normal;
+            font-size: var(--h2-size);            
             text-align: center;
         }
         .con2>p{
             text-align: center;
             font-size: 20px;
-            color:#0E6BA8;
+            color:var(--blue);
         }
         .cake{
-            /* border: 1px solid black; */
+            /* border: 1px solid var(--black); */
             height: 75%;
             display: flex;
             justify-content: space-evenly;
@@ -183,39 +141,43 @@
             height: 70%;
             width: 280px;
             transition: 1.0s ease;
-            /* border: 1px solid black; */
+            /* border: 1px solid var(--black); */
+            background-color: var(--sky-mist);
+            border-radius: 20px;
+            padding: 15px;
+            filter: drop-shadow(0px 0px 0px var(--navy));
         }
         .cake>img:hover{
-            filter: drop-shadow(0px 0px 20px #A6E1FA);
+            filter: drop-shadow(0px 0px 20px var(--sky));
             transform: scale(1.16);
         }
         #c4{
-            margin-top: 50px;
+            margin-top: 80px;
         }
         marquee{
             height: 70px;
             width: 100%;
-            background-color: #001C55;
-            color: #FFFFFF;
+            background-color: var(--navy);
+            color: var(--white);
             font-size: 25px;
             display: flex;
             justify-content: center;
             align-items: center;
         }
-
-            /* CONTAINER 3 */
-
+        
+        /* CONTAINER 3 */
+        
         .con3{
             height:1000px;
             width:100%;
-            background-color:#A6E1FA;
+            background-color:var(--sky);
         }
         .con3>h1{
             line-height: 150px;
-            font-family: "Playfair Display", serif;
-            font-weight: 500;
-            letter-spacing: -2px;
-            font-size: 70px;
+            font-family: var(--font-heading);
+            font-weight: normal;
+            letter-spacing: normal;
+            font-size: var(--h2-size);
             text-align: center;
         }
         .sq_1{
@@ -232,16 +194,16 @@
         .square1, .square2, .square3, .square4{
             border-radius: 10%;
             height: 350px;
-            width: 220px;
-            background-color: #FFFFFF;
-            /* border: 1px solid black; */
+            width: 250px;
+            background-color: var(--white);
+            /* border: 1px solid var(--black); */
         }
         .square5, .square6, .square7, .square8{
             border-radius: 10%;
             height: 350px;
-            width: 220px;
-            background-color: #FFFFFF;
-            /* border: 1px solid black; */
+            width: 250px;
+            background-color: var(--white);
+            /* border: 1px solid var(--black); */
         }
         .squares img{
             border-top-left-radius: 10%;
@@ -253,147 +215,17 @@
         .square5:hover, .square6:hover, .square7:hover, .square8:hover {
             transition: 0.3s ease;
             transform: translateY(-10px);
-            box-shadow: 0 15px 25px #FFFFFF;
+            box-shadow: 0 15px 25px var(--sky-mist);
         }
         .squares h1{
             text-align: center;
             line-height: 30px;
             margin-top: 30px;
+            font-size: var(--h3-size);
         }
         #choco{
             margin-top: 12px;
         }
-
-            /* CONTAINER 4 */
-
-                
-        /* FOOTER */
-        /* .con4 {
-            min-height: 500px;
-            width: 100%;
-            background-color: #001C55;
-            color: #FFFFFF;
-        } */
-
-        /* TOP ROW: BRAND + THREE LINK COLUMNS */
-        /* .c4-main {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            padding: 70px 8% 50px;
-            gap: 50px;
-        }
-
-        .brand {
-            flex-shrink: 0;
-        }
-
-        .brand > h2 {
-            font-size: 50px;
-        }
-
-        .brand > h2,
-        .brand > p {
-            color: #FFFFFF;
-        }
-
-        .c4-main > .columns {
-            display: flex;
-            justify-content: space-between;
-            gap: 50px;
-            margin-left: 0;
-        }
-
-        .c4-col {
-            min-width: 120px;
-        }
-
-        .c4-col > h3 {
-            color: #A6E1FA;
-            margin-bottom: 15px;
-        }
-
-        .c4-col > a {
-            display: block;
-            line-height: 35px;
-            color: #FFFFFF;
-            text-decoration: none;
-            transition: 0.3s ease;
-        }
-
-        .c4-col > a:hover {
-            color: #A6E1FA;
-            text-decoration: underline;
-            text-underline-offset: 5px;
-        } */
-
-        /* BOTTOM ROW: CONTACT + SOCIAL ICONS */
-        /* .c4-below {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 8% 30px;
-            gap: 30px;
-            border-top: 1px solid #294675;
-        }
-
-        .c4-contact {
-            display: block;
-            font-size: 18px;
-        }
-
-        .c4-contact > p {
-            margin-bottom: 15px;
-        }
-
-        .c4-contact .socials {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .c4-contact .socials p {
-            color: #FFFFFF;
-        }
-
-        .c4-contact a {
-            color: #FFFFFF;
-            text-decoration: none;
-            transition: 0.3s ease;
-        }
-
-        .c4-contact a:hover {
-            color: #A6E1FA;
-            text-decoration: underline;
-            text-underline-offset: 5px;
-        } */
-
-        /* SOCIAL ICONS */
-        /* .c4-socials .socials {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-        }
-
-        .c4-socials i {
-            font-size: 25px;
-            color: #FFFFFF;
-            cursor: pointer;
-            transition: 0.3s ease;
-        }
-
-        .c4-socials i:hover {
-            color: #A6E1FA;
-            transform: translateY(-4px);
-        } */
-
-        /* COPYRIGHT */
-        /* .c4-bottom {
-            padding: 15px 8%;
-            border-top: 1px solid #294675;
-            color: #FFFFFF;
-            text-align: center;
-        } */
 
     </style>
 </head>
@@ -413,8 +245,12 @@
                     <li><a href="About.html">Our Story</a></li>
                     <li><a href="Collection.html">Shop</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="reviews.html">Reviews</a></li>
                 </ul>
             </div>
+            <a href="HindiIndex.html" class="language"><div class="but1">
+                <p>See in Hindi</p>
+            </div></a>
         </div>
 
                      <!-- .....HERO SECTION..... -->
@@ -440,11 +276,11 @@
                 <div class="hero-buttons">
                     
                     <div class="button1">
-                        <a href="Collection.html">Gifts and Desserts</a>
+                        <a href="shop.html">Gifts and Desserts</a>
                     </div>
                     
                     <div class="button2">
-                        <a href="About.html">Discover Our Story</a>
+                        <a href="story.html">Discover Our Story</a>
                     </div>
                     
                 </div>
@@ -459,7 +295,7 @@
         </div>
     </div>
 
-    <marquee behavior="" direction="">Cakes :●: Cupcakes :●: Cookies :●: Donuts :●: Waffles :●: Chocolates :●: Gift Hampers :●: Chocolate Bouquets</marquee>
+    <marquee behavior="" direction="">Cakes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cupcakes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cookies&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Donuts&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Waffles&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chocolates&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gift Hampers&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chocolate Bouquets</marquee>
     <div class="con2">
         <h1>
             Cake O’Clock? Always.

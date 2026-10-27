@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="Assets/Images/Logo.png" type="image/x-icon">
+ 
+    <style>
+ 
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+ 
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: var(--ink);
+            background-color: var(--white);
+        }
+ 
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+            font-weight: normal;
+        }
+ 
+        p {
+            line-height: 1.7;
+        }
+ 
+        a {
+            transition: 0.3s;
+        }
+ 
+        /* COMMON LABELS */
+ 
+        .label {
+            font-size: 10px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            color: var(--steel-deep);
+        }
+ 
+        /* HERO SECTION */
+ 
+        .hero {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            padding: 55px 7%;
+            background-color: var(--sky-light);
+            overflow: hidden;
+        }
+ 
+        .hero-text {
+            width: 52%;
+        }
+ 
+        .hero h1 {
+            font-size: var(--h1-size);
+            line-height: 1.1;
+            margin: 20px 0;
+        }
+ 
+        .hero h1 em {
+            color: var(--steel-deep);
+        }
+ 
+        .hero-text > p:not(.label) {
+            max-width: 420px;
+            font-size: 14px;
+            color: var(--text-soft);
+        }
+ 
+        .main-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 20px;
+            background-color: var(--ink);
+            color: var(--white);
+            text-decoration: none;
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
+ 
+        .main-button:hover {
+            background-color: var(--steel-deep);
+            transform: translateY(-3px);
+        }
+ 
+        .hero-image {
+            width: 48%;
+        }
+ 
+        .hero-image img {
+            width: 100%;
+            height: 340px;
+            object-fit: cover;
+            box-shadow: 12px 12px 0 var(--sky-pale);
+        }
+ 
+        .image-note {
+            text-align: right;
+            font-family: Georgia, serif;
+            font-style: italic;
+            font-size: 14px;
+        }
+ 
+        .floating-note {
+            position: absolute;
+            left: 43%;
+            bottom: 25px;
+            background-color: var(--cream);
+            padding: 15px;
+            font-family: Georgia, serif;
+            font-style: italic;
+            font-size: 13px;
+            transform: rotate(-7deg);
+        }
+ 
+        /* CATEGORY LINKS */
+ 
+        .category-section {
+            text-align: center;
+            padding: 55px 6%;
+            background-color: var(--cream);
+        }
+ 
+        .category-section h2 {
+            font-size: var(--h2-size);
+            margin-bottom: 5px;
+        }
+ 
+        .section-description {
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+ 
+        .categories {
+            display: flex;
+            justify-content: center;
+            /* flex-wrap: wrap; */
+            gap: 15px;
+            margin-top: 30px;
+        }
+ 
+        .category {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 22px;
+            border: 1px solid var(--sky-border);
+            border-radius: 30px;
+            color: var(--ink);
+            text-decoration: none;
+            background-color: var(--white);
+            font-size: 13px;
+        }
+ 
+        .category span {
+            font-size: 20px;
+            color: var(--steel-deep);
+        }
+ 
+        .category:hover {
+            background-color: var(--sky-light);
+            border-color: var(--steel-deep);
+            transform: translateY(-4px);
+        }
+ 
+        /* PRODUCT SECTIONS */
+ 
+        .product-section {
+            padding: 55px 7%;
+            background-color: var(--white);
+        }
+ 
+        .alternate {
+            background-color: var(--bg-tint);
+        }
+ 
+        .section-heading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+ 
+        .section-heading h2 {
+            font-size: var(--h2-size);
+            margin: 12px 0;
+        }
+ 
+        .section-heading p:not(.label) {
+            color: var(--text-soft);
+            font-size: 13px;
+        }
+ 
+        .section-symbol {
+            font-size: 45px;
+            color: var(--steel-deep);
+            margin-right: 20px;
+        }
+ 
+        /* PRODUCT CARDS */
+ 
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+        } 
+ 
+        .product-card {
+            width: calc(50% - 12.5px);
+            background-color: var(--white);
+            border: 1px solid var(--border-light);
+            transition: 0.3s;
+        }
+ 
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 25px var(--shadow-soft);
+        }
+ 
+        .product-image {
+            position: relative;
+            overflow: hidden;
+        }
+ 
+        .product-image img {
+            display: block;
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            transition: 0.4s;
+        }
+ 
+        .product-card:hover .product-image img {
+            transform: scale(1.04);
+        }
+ 
+        .product-tag {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            padding: 8px 12px;
+            background-color: var(--cream);
+            color: var(--ink);
+            font-size: 9px;
+            letter-spacing: 1px;
+        }
+ 
+        .product-info {
+            padding: 22px;
+        }
+ 
+        .product-type {
+            color: var(--steel-deep);
+            font-size: 9px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+ 
+        .product-info h3 {
+            font-size: var(--h3-size);
+            margin: 10px 0;
+        }
+ 
+        .product-info > p:not(.product-type) {
+            font-size: 13px;
+            color: var(--text-soft);
+        }
+        .product-grid a{
+            text-decoration: none;
+            color: var(--black);
+        }
+        .product-grid a:hover{
+            text-decoration: none;
+            color: var(--blue);
+        }
+ 
+        /* EXPANDABLE PRODUCT DETAILS */
+ 
+        details {
+            margin-top: 18px;
+            padding: 12px 0;
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+        }
+ 
+        summary {
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: bold;
+            color: var(--ink);
+        }
+ 
+        details p {
+            font-size: 12px;
+            color: var(--text-soft);
+        }
+ 
+        .product-link {
+            display: inline-block;
+            margin-top: 18px;
+            color: var(--ink);
+            text-decoration: none;
+            font-size: 10px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            border-bottom: 1px solid var(--ink);
+            padding-bottom: 5px;
+        }
+ 
+        .product-link:hover {
+            color: var(--steel-deep);
+            border-color: var(--steel-deep);
+        }
+ 
+        /* GIFT FINDER */
+ 
+        .gift-finder {
+            padding: 65px 7%;
+            text-align: center;
+            background-color: var(--sky-light);
+        }
+ 
+        .gift-finder h2 {
+            font-size: var(--h2-size);
+        }
+ 
+        .gift-finder > p:not(.label) {
+            max-width: 500px;
+            margin: 15px auto;
+            color: var(--text-soft);
+            font-size: 13px;
+        }
+ 
+        .occasion-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 30px 0;
+        }
+ 
+        .occasion-list a {
+            padding: 13px 18px;
+            background-color: var(--white);
+            color: var(--ink);
+            border: 1px solid var(--sky-border);
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 12px;
+        }
+ 
+        .occasion-list a:hover {
+            background-color: var(--ink);
+            color: var(--white);
+        }
+ 
+        /* CUSTOM ORDER */
+ 
+        .custom-order {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 25px;
+            padding: 40px 7%;
+            background-color: var(--cream);
+        }
+ 
+        .custom-order h2 {
+            font-size: var(--h2-size);
+            margin: 12px 0;
+        }
+ 
+        .custom-order p:not(.label) {
+            color: var(--text-soft);
+            font-size: 13px;
+        }
+ 
+        .custom-button {
+            padding: 16px 20px;
+            background-color: var(--ink);
+            color: var(--white);
+            text-decoration: none;
+            font-size: 11px;
+            white-space: nowrap;
+        }
+ 
+        .custom-button:hover {
+            background-color: var(--steel-deep);
+        }
+ 
+        /* FOOTER */
+ 
+        footer {
+            padding: 40px 20px;
+            text-align: center;
+            background-color: var(--ink);
+            color: var(--white);
+        }
+ 
+        .footer-logo {
+            display: inline-block;
+            padding: 10px 15px;
+            border: 1px solid var(--sky-pale);
+            border-radius: 50%;
+            font-family: Georgia, serif;
+            font-size: 25px;
+        }
+ 
+        footer h2 {
+            font-size: var(--h2-size);
+        }
+ 
+        footer > p {
+            color: var(--sky-light);
+            font-size: 12px;
+        }
+ 
+        footer a {
+            display: inline-block;
+            margin: 15px 10px;
+            color: var(--white);
+            text-decoration: none;
+            font-size: 12px;
+        }
+ 
+        footer a:hover {
+            color: var(--sky-pale);
+        }
+ 
+        footer .copyright {
+            margin-top: 25px;
+            font-size: 10px;
+        }
+ 
+    </style>
+</head>
+ 
+<body>
+                    <!-- .....NAV BAR..... -->
+ 
+        <div class="nav">
+            <img src="Assets/Images/Logo.png" alt="Logo">
+            <div class="left">
+                <h1>House Of <br> Handmade</h1>
+            </div>
+            <div class="right">
+                <ul>
+                    <li><a href="HindiIndex.html">होम</a></li>
+                    <li><a href="HindiAbout.html">हमारी कहानी</a></li>
+                    <li><a href="HindiCollection.html">शॉप</a></li>
+                    <li><a href="HindiContact.html">हमसे संपर्क करें</a></li>
+                    <li><a href="HindiReview.html">समीक्षा</a></li>
+                </ul>
+            </div>
+            <a href="Collection.html"><div class="but1">
+                <p>See in English</p>
+            </div></a>
+        </div>
+    <!-- Hero Section -->
+    <section class="hero">
+ 
+        <div class="hero-text">
+            <p class="label">हर किसी के लिए कुछ खास</p>
+ 
+            <h1>
+                अपनी भावना बताइए।<br>
+                <em>हम उसे खूबसूरती से पैक कर देंगे।</em>
+            </h1>
+ 
+            <p>
+                मीठे सरप्राइज़, खूबसूरत गुलदस्ते और सोच-समझकर चुनी गई
+                छोटी-छोटी चीज़ें — कुछ ऐसा चुनें जो कह सके वह बात
+                जो कभी-कभी शब्द नहीं कह पाते।
+            </p>
+ 
+            <a href="#collections" class="main-button">
+                हमारी रचनाएँ देखें ↓
+            </a>
+        </div>
+ 
+        <div class="hero-image">
+            <img src="Assets/Images/gift.png" alt="A beautiful handmade gift">
+            <p class="image-note">सिर्फ़ आपके लिए, प्यार से बनाया गया ♡</p>
+        </div>
+ 
+        <div class="floating-note">छोटी-छोटी चीज़ें,<br>बड़ी-बड़ी भावनाएँ ♡</div>
+ 
+    </section>
+ 
+ 
+    <!-- Category Navigation -->
+    <section class="category-section" id="collections">
+ 
+        <p class="label">तोहफ़ों की दुनिया</p>
+        <h2>आज आपका मन किस चीज़ का है?</h2>
+        <p class="section-description">
+            अपनी पसंद का जादू चुनें।
+        </p>
+ 
+        <div class="categories">
+            <a href="#bouquets" class="category">
+                <span>✿</span>
+                फूलों के गुलदस्ते
+            </a>
+ 
+            <a href="#cakes" class="category">
+                <span>♡</span>
+                केक
+            </a>
+ 
+            <a href="#handmade" class="category">
+                <span>✧</span>
+                हाथ से बने तोहफ़े
+            </a>
+ 
+            <!-- <a href="#hampers" class="category">
+                <span>🎁</span>
+                Hampers
+            </a> -->
+        </div>
+ 
+    </section>
+ 
+ 
+    <!-- Bouquets -->
+    <section class="product-section" id="bouquets">
+ 
+        <div class="section-heading">
+            <div>
+                <p class="label">01 / एहसासों वाले फूल</p>
+                <h2>फूलों से अपनी बात कहें।</h2>
+                <p>उन लोगों के लिए जो आपकी दुनिया को खिलखिला देते हैं।</p>
+            </div>
+ 
+            <span class="section-symbol">✿</span>
+        </div>
+ 
+        <div class="product-grid">
+ 
+            <div class="product-card" id="bouquet_1">
+                <div class="product-image">
+                    <a href="desserts.html"><img src="Assets/Images/Flower.png" alt="Pink flower bouquet"></a>
+                    <span class="product-tag">सबसे ज़्यादा पसंद किया जाने वाला</span>
+                </div>
+ 
+                <div class="product-info">
+                    <p class="product-type">क्लासिक पसंद</p>
+                    <h3><a href="desserts.html">फूलों का गुलदस्ता</a></h3>
+                    <p>आपके पसंदीदा इंसान के लिए एक प्यारा-सा, ख़्वाबों जैसा गुलदस्ता।</p>
+ 
+                    <details>
+                        <summary>इस गुलदस्ते के बारे में जानें +</summary>
+                        <p>
+                            जन्मदिनों के लिए फूलों की सुंदर सजावट,
+                            सालगिरह और यूँ ही दिए जाने वाले सरप्राइज़।
+                            फूलों का चुनाव और आकार
+                            ऑर्डर देते समय तय किए जा सकते हैं।
+                        </p>
+                    </details>
+ 
+                    <a href="mailto:hello@houseofhandmade.com?subject=Blush%20Bouquet%20Enquiry"
+                       class="product-link">अभी जानकारी लें →</a>
+                </div>
+            </div>
+ 
+            <div class="product-card">
+                <div class="product-image">
+                    <a href="fnp.html"><img src="Assets/Images/ChocolateB.png" alt="Custom flower arrangement"></a>
+                </div>
+ 
+                <div class="product-info">
+                    <p class="product-type">आपके लिए बनाया गया</p>
+                    <h3><a href="fnp.html">चॉकलेट का गुलदस्ता</a></h3>
+                    <p>आपके रंग, आपके फूल, आपके अंदाज़ का जादू।</p>
+ 
+                    <details>
+                        <summary>इस गुलदस्ते के बारे में जानें +</summary>
+                        <p>
+                            हमें अपने पसंदीदा रंगों और फूलों के बारे में बताइए
+                            और अवसर के बारे में बताइए। हम ऐसे गुलदस्ते पर बात करेंगे
+                            जो आपकी पसंद के अनुसार बनाया जाएगा।
+                        </p>
+                    </details>
+ 
+                    <a href="mailto:hello@houseofhandmade.com?subject=Custom%20Bouquet%20Enquiry"
+                       class="product-link">अपनी पसंद के अनुसार बनवाएँ →</a>
+                </div>
+            </div>
+ 
+        </div>
+    </section>
+ 
+ 
+    <!-- Cakes -->
+    <section class="product-section alternate" id="cakes">
+ 
+        <div class="section-heading">
+            <div>
+                <p class="label">02 / खुशियों का एक मीठा टुकड़ा</p>
+                <h2>मिठाइयों से ज़िंदगी और भी मीठी हो जाती है।</h2>
+                <p>क्योंकि हर छोटा-सा जश्न भी मिठास का हक़दार है।</p>
+            </div>
+ 
+            <span class="section-symbol">♡</span>
+        </div>
+        
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <a href="Desserts.html"><img src="Assets/Images/red-velvet.png" alt="Decorated celebration cake"></a>
+                </div>
+ 
+                <div class="product-info">
+                    <p class="product-type">जश्न के केक</p>
+                    <h3><a href="Desserts.html">यादगार केक</a></h3>
+                    <p>आपके खास पलों के लिए खूबसूरत केक।</p>
+
+                    <details>
+                        <summary>सबसे मीठी बात क्या है? +</summary>
+                        <p>
+                            अपना पसंदीदा स्वाद, आकार,
+                            रंग और डिज़ाइन हमारे साथ तय करें। उपलब्धता
+                            और कीमत की पुष्टि ऑर्डर देते समय की जाएगी।
+                        </p>
+                    </details>
+ 
+                    <a href="mailto:hello@houseofhandmade.com?subject=Cake%20Enquiry"
+                       class="product-link">ऑर्डर के लिए पूछताछ करें →</a>
+                </div>
+            </div>
+ 
+            <div class="product-card">
+                <div class="product-image">
+                    <a href="Desserts.html"><img src="Assets/Images/Strawberry.png" alt="Premium made chocolates"></a>
+                </div>
+ 
+                <div class="product-info">
+                    <p class="product-type">आपके सपनों का डिज़ाइन</p>
+                    <h3><a href="Desserts.html">सिर्फ़ आपके लिए बनाया गया</a></h3>
+                    <p>ऐसी चॉकलेट जो उस खास पल के लिए बिल्कुल सही हो।</p>
+
+                    <details>
+                        <summary>चॉकलेट के बारे में बात करें +</summary>
+                        <p>
+                            अपना आइडिया, थीम और
+                            जश्न की तारीख़ साझा करें। हम ऐसे डिज़ाइन पर बात कर सकते हैं
+                            जो आपके अवसर के लिए उपयुक्त हो।
+                        </p>
+                    </details>
+ 
+                    <a href="mailto:hello@houseofhandmade.com?subject=Custom%20Cake%20Enquiry"
+                       class="product-link">अपनी चॉकलेट की योजना बनाएँ →</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <a href="Desserts.html"><img src="Assets/Images/Caramel.png" alt="Caramel Drizziled Waffle"></a>
+                    <span class="product-tag">सबकी पसंदीदा मिठाई</span>
+                </div>
+ 
+                <div class="product-info">
+                    <p class="product-type">वॉफल्स</p>
+                    <h3><a href="Desserts.html">जब वॉफल खाने का मन करे</a></h3>
+                    <p>प्यार से बनाए और सजाए गए वॉफल्स</p>
+ 
+                    <details>
+                        <summary>सबसे मीठी बात क्या है? +</summary>
+                        <p>
+                            अपना पसंदीदा स्वाद, आकार,
+                            रंग और डिज़ाइन हमारे साथ तय करें। उपलब्धता
+                            और कीमत की पुष्टि ऑर्डर देते समय की जाएगी।
+                        </p>
+                    </details>
+ 
+                    <a href="mailto:hello@houseofhandmade.com?subject=Cake%20Enquiry"
+                       class="product-link">ऑर्डर के लिए पूछताछ करें →</a>
+                </div>
+            </div>
+ 
+            <div class="product-card">
+                <div class="product-image">
+                    <a href="Desserts.html"><img src="Assets/Images/whitecream.png" alt="Premium made chocolates"></a>
+                </div>
+ 
+                <div class="product-info">
+                    <p class="product-type">आपके सपनों का डिज़ाइन</p>
+                    <h3><a href="Desserts.html">सिर्फ़ आपके लिए बनाया गया</a></h3>
+                    <p>ऐसी चॉकलेट जो उस खास पल के लिए बिल्कुल सही हो।</p>
+ 
+                    <details>
+                        <summary>चॉकलेट के बारे में बात करें +</summary>
+                        <p>
+                            अपना आइडिया, थीम और
+                            जश्न की तारीख़ साझा करें। हम ऐसे डिज़ाइन पर बात कर सकते हैं
+                            जो आपके अवसर के लिए उपयुक्त हो।
+                        </p>
+                    </details>
+ 
+                    <a href="mailto:hello@houseofhandmade.com?subject=Custom%20Cake%20Enquiry"
+                       class="product-link">अपनी चॉकलेट की योजना बनाएँ →</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <a href="Desserts.html"><img src="Assets/Images/Cookies.png" alt="Decorated celebration cake"></a>
+                    <span class="product-tag">सबकी पसंदीदा मिठाई</span>
+                </div>
+ 
+                <div class="product-info">
+                    <p class="product-type">जश्न के केक</p>
+                    <h3><a href="Desserts.html">यादगार केक</a></h3>
+                    <p>आपके खास पलों के लिए खूबसूरत केक।</p>
+ 
+                    <details>
+                        <summary>सबसे मीठी बात क्या है? +</summary>
+                        <p>
+                            अपना पसंदीदा स्वाद, आकार,
+                            रंग और डिज़ाइन हमारे साथ तय करें। उपलब्धता
+                            और कीमत की पुष्टि ऑर्डर देते समय की जाएगी।
+                        </p>
+                    </details>
+ 
+                    <a href="mailto:hello@houseofhandmade.com?subject=Cake%20Enquiry"
+                       class="product-link">ऑर्डर के लिए पूछताछ करें →</a>
+                </div>
+            </div>
+ 
+            <div class="product-card">
+                <div class="product-image">
+                    <a href="Desserts.html"><img src="Assets/Images/Donut.png" alt="Premium made chocolates"></a>
+                </div>
+ 
+                <div class="product-info">
+                    <p class="product-type">आपके सपनों का डिज़ाइन</p>
+                    <h3><a href="Desserts.html">सिर्फ़ आपके लिए बनाया गया</a></h3>
+                    <p>ऐसी चॉकलेट जो उस खास पल के लिए बिल्कुल सही हो।</p>
+ 
+                    <details>
+                        <summary>चॉकलेट के बारे में बात करें +</summary>
+                        <p>
+                            अपना आइडिया, थीम और
+                            जश्न की तारीख़ साझा करें। हम ऐसे डिज़ाइन पर बात कर सकते हैं
+                            जो आपके अवसर के लिए उपयुक्त हो।
+                        </p>
+                    </details>
+ 
+                    <a href="mailto:hello@houseofhandmade.com?subject=Custom%20Cake%20Enquiry"
+                       class="product-link">अपनी चॉकलेट की योजना बनाएँ →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+ 
+    <!-- Handmade Gifts -->
+    <section class="product-section" id="handmade">
+ 
+        <div class="section-heading">
+            <div>
+                <p class="label">03 / छोटी चीज़ें, बड़े एहसास</p>
+                <h2>हाथों से बना, दिल से बनाया।</h2>
+                <p>छोटी-छोटी बातें जो तोहफ़े को आपका अपना बना देती हैं।</p>
+            </div>
+ 
+            <span class="section-symbol">✧</span>
+        </div>
+ 
+        <div class="product-grid">
+ 
+            <div class="product-card">
+                <div class="product-image">
+                    <a href=""><img src="Assets/Images/gift.png" alt="Personalised handmade gift"></a>
+                </div>
+ 
+                <div class="product-info">
+                    <p class="product-type">आपके लिए खास ख़ज़ाने</p>
+                    <h3><a href="">आपकी एक छोटी-सी झलक</a></h3>
+                    <p>व्यक्तिगत अंदाज़ वाले, सोच-समझकर बनाए गए हस्तनिर्मित तोहफ़े।</p>
+ 
+                    <details>
+                        <summary>छोटी-छोटी खासियतें देखें +</summary>
+                        <p>
+                            उपलब्ध हस्तनिर्मित चीज़ों,
+                            रंगों और निजीकरण के विकल्पों के बारे में पूछें।
+                            हर चीज़ को पूरी देखभाल से बनाया जाता है।
+                        </p>
+                    </details>
+ 
+                    <a href="mailto:hello@houseofhandmade.com?subject=Handmade%20Gift%20Enquiry"
+                       class="product-link">इसे अपने अंदाज़ का बनाएँ →</a>
+                </div>
+            </div>
+ 
+            <div class="product-card">
+                <div class="product-image">
+                    <a href=""><img src="Assets/Images/rose.png" alt="Creative handmade keepsake"></a>
+                    <span class="product-tag">प्यार से बनाया गया</span>
+                </div>
+ 
+                <div class="product-info">
+                    <p class="product-type">यादगार चीज़ें और सरप्राइज़</p>
+                    <h3><a href="">यादें बनाने के लिए</a></h3>
+                    <p>एक छोटी-सी चीज़ जिसे वे संभालकर रखना चाहेंगे।</p>
+ 
+                    <details>
+                        <summary>अपनी यादगार चीज़ चुनें +</summary>
+                        <p>
+                            हमें उस व्यक्ति और अवसर के बारे में बताइए।
+                            हम उपयुक्त हस्तनिर्मित तोहफ़ों के विकल्पों पर बात कर सकते हैं
+                            जो उपलब्ध हों।
+                        </p>
+                    </details>
+ 
+                    <a href="mailto:hello@houseofhandmade.com?subject=Keepsake%20Gift%20Enquiry"
+                       class="product-link">एक यादगार तोहफ़ा चुनें →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+ 
+    <!-- Hampers -->
+    <!-- <section class="product-section alternate" id="hampers">
+ 
+        <div class="section-heading">
+            <div>
+                <p class="label">04 / A BOX FULL OF HAPPINESS</p>
+                <h2>Good things come together.</h2>
+                <p>For when one gift just isn't enough.</p>
+            </div>
+ 
+            <span class="section-symbol"></span>
+        </div>
+ 
+        <div class="product-grid">
+ 
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/hampers.jpg" alt="Gift hamper">
+                    <span class="product-tag">GIFTING FAVOURITE</span>
+                </div>
+ 
+                <div class="product-info">
+                    <p class="product-type">CURATED HAMPERS</p>
+                    <h3>The Happy Box</h3>
+                    <p>A collection of little surprises in one box.</p>
+ 
+                    <details>
+                        <summary>What's inside? +</summary>
+                        <p>
+                            Hamper contents can be discussed according
+                            to your occasion, preferences and budget.
+                            Final items and pricing are confirmed
+                            before ordering.
+                        </p>
+                    </details>
+ 
+                    <a href="mailto:hello@houseofhandmade.com?subject=Gift%20Hamper%20Enquiry"
+                       class="product-link">BUILD YOUR HAMPER →</a>
+                </div>
+            </div>
+ 
+        </div>
+    </section> -->
+ 
+ 
+    <!-- Gift Finder -->
+    <section class="gift-finder" id="gift-finder">
+ 
+        <p class="label">समझ नहीं आ रहा क्या चुनें?</p>
+ 
+        <h2>तो बताइए, अवसर क्या है? ♡</h2>
+ 
+        <p>
+            चाहे जन्मदिन हो, सालगिरह हो या
+            कोई आम-सा मंगलवार, किसी को
+            मुस्कुराने की वजह हमेशा होती है।
+        </p>
+ 
+        <div class="occasion-list">
+            <a href="mailto:hello@houseofhandmade.com?subject=Birthday%20Gift">🎂 जन्मदिन</a>
+            <a href="mailto:hello@houseofhandmade.com?subject=Anniversary%20Gift">♡ सालगिरह</a>
+            <a href="mailto:hello@houseofhandmade.com?subject=Just%20Because%20Gift">✿ बस यूँ ही</a>
+            <a href="mailto:hello@houseofhandmade.com?subject=Custom%20Gift">🎁 कुछ और</a>
+        </div>
+ 
+        <a href="mailto:hello@houseofhandmade.com?subject=Help%20Me%20Choose%20a%20Gift"
+           class="main-button">तोहफ़ा चुनने में मेरी मदद करें →</a>
+ 
+    </section>
+ 
+ 
+    <!-- Custom Order Banner -->
+    <section class="custom-order">
+        <div>
+            <p class="label">मन में कुछ खास है?</p>
+            <h2>आपका आइडिया। हमारा छोटा-सा जादू।</h2>
+            <p>आइए, कुछ ऐसा बनाएँ जो उनके व्यक्तित्व जैसा हो।</p>
+        </div>
+ 
+        <a href="mailto:hello@houseofhandmade.com?subject=Custom%20Order"
+           class="custom-button">आइए, मिलकर बनाएँ ↗</a>
+    </section>
+ 
+ 
+<div class="con4">
+                
+            <div class="c4-main">
+
+                <div class="brand">
+                    <h2>HOUSE OF<br>HANDMADE</h2>
+                    <p>आपकी चाहत, हमारी पेशकश</p>
+                </div>
+
+                <div class="columns">
+                    <div class="c4-col">
+                        <h3>खरीदारी</h3>
+                        <a href="">केक और मिठाइयाँ</a>
+                        <a href="">गिफ्ट हैम्पर्स</a>
+                        <a href="">चॉकलेट</a>
+                    </div>
+
+                    <div class="c4-col">
+                        <h3>हमारा ब्रांड</h3>
+                        <a href="">हमारी कहानी</a>
+                        <a href="">गैलरी</a>
+                        <a href="">संपर्क करें</a>
+                    </div>
+                    
+                    <div class="c4-col">
+                        <h3>सहायता</h3>
+                        <a href="">ऑर्डर संबंधी पूछताछ</a>
+                        <a href="">अक्सर पूछे जाने वाले सवाल</a>
+                    </div>
+
+                </div>
+            </div>
+            
+            <div class="c4-below">
+
+                <div class="c4-contact">
+                    <p>हमसे संपर्क करें</p>
+
+                    <div class="socials">
+                        <p>✉ <a href="houseofhandmade25@gmail.com">houseofhandmade25@gmail.com</a></p>
+
+                        <p>☎ <a href="tel:+919828466656">+91 98284 66656</a></p>
+                    </div>
+                </div>
+
+                <div class="c4-socials">
+                    <div class="socials">
+                        <a href="https://www.instagram.com/houseofhandmadebynandini/reels/"><i class="fa fa-brands fa-instagram"></i></a>
+                        <a href="https://wa.me/919828466656"><i class="fa fa-brands fa-whatsapp"></i></a>
+                        <a href="https://www.google.com/maps/place/House+Of+Handmade/@26.4775908,74.5973778,17z/data=!3m1!4b1!4m6!3m5!1s0x396be72bc41f3697:0x2d3fc124467b0dc5!8m2!3d26.4775908!4d74.5973778!16s%2Fg%2F11jp8xmbd_?entry=ttu&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D"><i class="fa fa-solid fa-map-location-dot"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="c4-bottom">
+                <p>© House Of Handmade. सर्वाधिकार सुरक्षित।</p>
+            </div>
+
+    </div>
+</body>
+</html>

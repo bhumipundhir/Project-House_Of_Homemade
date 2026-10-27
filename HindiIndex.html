@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="Assets/Images/Logo.png" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .con1{
+            height:690px;
+            width:100%;
+            /* background-color:var(--sky); */
+            background: radial-gradient(var(--sky), var(--white));
+            }
+        
+        .hero-subtitle{
+            color:var(--blue);
+            font-size: 15px;
+            letter-spacing: 2.5px;
+        }
+        .hero{
+            margin-left: 120px;
+            margin-top: 60px;
+            line-height: 1;
+            display: flex;
+        }
+       .hero-text {
+            width: 50%;
+            min-width: 0;
+        }
+
+        .hero-image {
+            width: 45%;
+            /* min-width: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center; */
+        }
+
+        .hero-image > img {
+            /* display: block; */
+            width: 60%;
+            margin-left: 20px;
+            /* max-width: 400px; */
+            height: 450px;
+            /* object-fit: contain; */
+        }
+        .hero-text>h1{
+            margin-top: 20px;
+            font-family: var(--font-heading);
+            font-weight: normal;
+            letter-spacing: normal;
+            font-size: var(--h1-size);            
+        }
+        .hero-text>h1>.blue{
+            color:var(--blue);
+        }
+        .hero-description{
+            line-height: 30px;
+            margin-top: 20px;
+            font-size: 15px;
+            color:var(--navy);
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 25px;
+            margin-top: 25px;
+        }
+        .button1{
+            background-color: var(--navy);
+            height: 45px;
+            width: 150px;
+            text-align: center;
+            line-height: 45px;
+        }
+        .button1>a{
+            color: var(--white);
+            font-size: 15px;
+            text-decoration: none;
+        }
+        .button1:hover{
+            background: radial-gradient(var(--blue), var(--sky));
+        }
+        .button2{
+            background-color: var(--blue);
+            height: 45px;
+            width: 200px;
+            text-align: center;
+            line-height: 45px;
+        }
+        .button2>a{
+            color: var(--white);
+            font-size: 15px;
+            text-decoration: none;
+        }
+        .button2:hover{
+            background: radial-gradient(var(--blue), var(--sky));
+        }
+        .hero-note{
+            margin-top: 30px;
+            font-size: 15px;
+            color:var(--navy);
+        }
+
+        /* CONTAINER 2 */
+        
+        .con2{
+            margin-top: 50px;
+            height:550px;
+            width:100%;
+            background-color:var(--white);
+        }
+        .con2>h1{
+            font-family: var(--font-heading);
+            font-weight: normal;
+            letter-spacing: normal;
+            font-size: var(--h2-size);            
+            text-align: center;
+        }
+        .con2>p{
+            text-align: center;
+            font-size: 20px;
+            color:var(--blue);
+        }
+        .cake{
+            /* border: 1px solid var(--black); */
+            height: 75%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .cake>img{
+            margin-top: 80px;
+            height: 70%;
+            width: 280px;
+            transition: 1.0s ease;
+            /* border: 1px solid var(--black); */
+            background-color: var(--sky);
+            border-radius: 20px;
+            padding: 15px;
+        }
+        .cake>img:hover{
+            filter: drop-shadow(0px 0px 20px var(--sky));
+            transform: scale(1.16);
+        }
+        #c4{
+            margin-top: 80px;
+        }
+        marquee{
+            height: 70px;
+            width: 100%;
+            background-color: var(--navy);
+            color: var(--white);
+            font-size: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+            /* CONTAINER 3 */
+
+        .con3{
+            height:1000px;
+            width:100%;
+            background-color:var(--sky);
+        }
+        .con3>h1{
+            line-height: 150px;
+            font-family: var(--font-heading);
+            font-weight: normal;
+            letter-spacing: normal;
+            font-size: var(--h2-size);
+            text-align: center;
+        }
+        .sq_1{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .sq_2{
+            margin-top: 80px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .square1, .square2, .square3, .square4{
+            border-radius: 10%;
+            height: 350px;
+            width: 220px;
+            background-color: var(--white);
+            /* border: 1px solid var(--black); */
+        }
+        .square5, .square6, .square7, .square8{
+            border-radius: 10%;
+            height: 350px;
+            width: 220px;
+            background-color: var(--white);
+            /* border: 1px solid var(--black); */
+        }
+        .squares img{
+            border-top-left-radius: 10%;
+            border-top-right-radius: 10%;
+            height: 70%;
+            width: 100%;
+        }
+        .square1:hover, .square2:hover, .square3:hover, .square4:hover,
+        .square5:hover, .square6:hover, .square7:hover, .square8:hover {
+            transition: 0.3s ease;
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px var(--white);
+        }
+        .squares h1{
+            text-align: center;
+            line-height: 30px;
+            margin-top: 30px;
+            font-size: var(--h3-size);
+        }
+        #choco{
+            margin-top: 12px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="con1">
+        
+                    <!-- .....NAV BAR..... -->
+
+        <div class="nav">
+            <img src="Assets/Images/Logo.png" alt="Logo">
+            <div class="left">
+                <h1>House Of <br> Handmade</h1>
+            </div>
+            <div class="right">
+                <ul>
+                    <li><a href="HindiIndex.html">होम</a></li>
+                    <li><a href="HindiAbout.html">हमारी कहानी</a></li>
+                    <li><a href="HindiCollection.html">शॉप</a></li>
+                    <li><a href="HindiContact.html">हमसे संपर्क करें</a></li>
+                    <li><a href="HindiReview.html">समीक्षा</a></li>
+
+                </ul>
+            </div>
+            <a href="index.html"><div class="but1">
+                <p>See in English</p>
+            </div></a>
+        </div>
+
+                     <!-- .....HERO SECTION..... -->
+    
+        <div class="hero">
+            <div class="hero-text">
+                <p class="hero-subtitle">
+                    --प्यार से बनाया, देखभाल से सजाया
+                </p>
+
+                <h1>
+                    एक छोटा-सा डिब्बा।<br>
+                    <div class="blue">ढेर सारा<br></div>
+                    प्यार और एहसास।
+                </h1>
+
+                <p class="hero-description">
+                    उन खास लोगों के लिए प्यारे उपहार और स्वादिष्ट मिठाइयाँ, जो
+                    आपकी दुनिया को खास बनाते हैं। <br> हर छोटी बात मायने रखती है,
+                    हर उपहार अपनी कहानी कहता है।
+                </p>
+                
+                <div class="hero-buttons">
+                    
+                    <div class="button1">
+                        <a href="shop.html">उपहार और मिठाइयाँ</a>
+                    </div>
+                    
+                    <div class="button2">
+                        <a href="story.html">हमारी कहानी जानें</a>
+                    </div>
+                    
+                </div>
+            
+                <div class="hero-note">
+                    <p>आपकी चाहत, हमारी पेशकश।</p>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="Assets/Images/img1.png" alt="hero-section-image">
+            </div>
+        </div>
+    </div>
+
+    <marquee behavior="" direction="">केक&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;कपकेक&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;कुकीज़&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;डोनट्स&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;वॉफल्स&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;चॉकलेट&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;गिफ्ट हैम्पर्स&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;चॉकलेट बुके</marquee>
+    <div class="con2">
+        <h1>
+            केक का समय? हमेशा!
+        </h1>
+        <p>कुछ खास स्वाद का एक टुकड़ा।.</p>
+        <div class="cake">
+            <img src="Assets/Images/cake1.png" alt="Cake image">
+            <img src="Assets/Images/cake2.png" alt="Cake image">
+            <img src="Assets/Images/cake3.png" alt="Cake image">
+            <img id="c4" src="Assets/Images/cake4.png" alt="Cake image">
+        </div>
+    </div>
+    
+                    <!-- CONTAINER 3 -->
+    
+    <div class="con3">
+        <h1>श्रेणी के अनुसार खरीदें</h1>
+        <div class="squares">
+            <div class="sq_1">
+                <div class="square1"><img src="Assets\Images\cat_cake.png" alt="cake image"><h1>केक</h1></div>
+                <div class="square2"><img src="Assets\Images\cat_cupcake.png" alt="cupcake image"><h1>कपकेक</h1></div>
+                <div class="square3"><img src="Assets\Images\cat_donut.png" alt="donut image"><h1>डोनट्स</h1></div>
+                <div class="square4"><img src="Assets\Images\cat_waffle.png" alt="waffle image"><h1>वॉफल्स</h1></div>
+            </div>
+            <div class="sq_2">
+                <div class="square5"><img src="Assets\Images\cat_choco.png" alt="chocolate image"><h1>चॉकलेट</h1></div>
+                <div class="square6"><img src="Assets\Images\cat_cookie.png" alt="cookie image"><h1>कुकीज़</h1></div>
+                <div class="square7"><img src="Assets\Images\cat_chocobouquet.png" alt="chocolate bouquet image"><h1 id="choco">चॉकलेट बुके</h1></div>
+                <div class="square8"><img src="Assets/Images/cat_gift.png" alt="gift image"><h1>गिफ्ट हैम्पर्स</h1></div>
+            </div>
+        </div>
+
+    </div>
+
+                    <!-- CONTAINER 4 -->
+
+    <div class="con4">
+                
+            <div class="c4-main">
+
+                <div class="brand">
+                    <h2>HOUSE OF<br>HANDMADE</h2>
+                    <p>आपकी चाहत, हमारी पेशकश</p>
+                </div>
+
+                <div class="columns">
+                    <div class="c4-col">
+                        <h3>खरीदारी</h3>
+                        <a href="">केक और मिठाइयाँ</a>
+                        <a href="">गिफ्ट हैम्पर्स</a>
+                        <a href="">चॉकलेट</a>
+                    </div>
+
+                    <div class="c4-col">
+                        <h3>हमारा ब्रांड</h3>
+                        <a href="">हमारी कहानी</a>
+                        <a href="">गैलरी</a>
+                        <a href="">संपर्क करें</a>
+                    </div>
+                    
+                    <div class="c4-col">
+                        <h3>सहायता</h3>
+                        <a href="">ऑर्डर संबंधी पूछताछ</a>
+                        <a href="">अक्सर पूछे जाने वाले सवाल</a>
+                    </div>
+
+                </div>
+            </div>
+            
+            <div class="c4-below">
+
+                <div class="c4-contact">
+                    <p>हमसे संपर्क करें</p>
+
+                    <div class="socials">
+                        <p>✉ <a href="houseofhandmade25@gmail.com">houseofhandmade25@gmail.com</a></p>
+
+                        <p>☎ <a href="tel:+919828466656">+91 98284 66656</a></p>
+                    </div>
+                </div>
+
+                <div class="c4-socials">
+                    <div class="socials">
+                        <a href="https://www.instagram.com/houseofhandmadebynandini/reels/"><i class="fa fa-brands fa-instagram"></i></a>
+                        <a href="https://wa.me/919828466656"><i class="fa fa-brands fa-whatsapp"></i></a>
+                        <a href="https://www.google.com/maps/place/House+Of+Handmade/@26.4775908,74.5973778,17z/data=!3m1!4b1!4m6!3m5!1s0x396be72bc41f3697:0x2d3fc124467b0dc5!8m2!3d26.4775908!4d74.5973778!16s%2Fg%2F11jp8xmbd_?entry=ttu&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D"><i class="fa fa-solid fa-map-location-dot"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="c4-bottom">
+                <p>© House Of Handmade. सर्वाधिकार सुरक्षित।</p>
+            </div>
+
+    </div>
+</body>
+</html>

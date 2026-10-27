@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="Assets/Images/Logo.png" type="image/x-icon">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: var(--ink);
+        }
+
+        /* Common Headings */
+
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+            font-weight: normal;
+        }
+
+        h2 {
+            font-size: var(--h2-size);
+        }
+
+        .small-heading {
+            color: var(--steel-deep);
+            font-size: 10px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        p {
+            line-height: 1.7;
+        }
+
+        /* Hero Section */
+
+        .hero {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            padding: 40px 6%;
+            background-color: var(--sky-light);
+        }
+
+        .hero-text {
+            width: 45%;
+        }
+
+        .hero h1 {
+            font-size: var(--h1-size);
+            line-height: 1.05;
+        }
+
+        .hero h1 i {
+            color: var(--blue);
+        }
+
+        .categories {
+            color: var(--steel-deep);
+            font-size: 10px;
+            letter-spacing: 2px;
+            margin-top: 30px;
+        }
+
+        .hero img {
+            border-radius: 20px;
+            width: 50%;
+            height: 500px;
+            object-fit: cover;
+        }
+        .main-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 20px;
+            background-color: var(--ink);
+            color: var(--white);
+            text-decoration: none;
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
+        .main-button:hover {
+            background-color: var(--steel-deep);
+            transform: translateY(-3px);
+        }
+
+        /* Our Story */
+
+        .story {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            padding: 40px 8%;
+            background-color: var(--bg-soft);
+        }
+
+        .story img {
+            width: 45%;
+            height: 450px;
+            object-fit: cover;
+        }
+
+        .story div {
+            flex: 1;
+        }
+
+        /* Features */
+
+        .special {
+            padding: 35px 6%;
+            background-color: var(--white);
+        }
+
+        .features {
+            display: flex;
+            gap: 20px;
+        }
+
+        .features div {
+            flex: 1;
+            padding: 15px;
+            border-right: 1px solid var(--border-light);
+        }
+
+        .features div:last-child {
+            border-right: none;
+        }
+
+        .features h3 {
+            font-size: var(--h3-size);
+        }
+
+        .features p {
+            color: var(--text-soft);
+            font-size: 12px;
+        }
+
+        /* Collections */
+
+        .collections {
+            display: flex;
+            gap: 20px;
+            padding: 40px 6%;
+            background-color: var(--bg-tint);
+        }
+
+        .collection-text {
+            flex: 1.5;
+        }
+
+        .collection-text h2 {
+            font-size: var(--h2-size);
+        }
+
+        .product {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .product img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+        }
+
+        .product h3 {
+            font-size: var(--h3-size);
+        }
+
+        .product p {
+            font-size: 11px;
+            color: var(--text-soft);
+        }
+
+
+
+    
+/* FAQ MAIN SECTION */
+.faq-container {
+    display: grid;
+    grid-template-columns: 36% 64%;
+    max-width: 1250px;
+    margin: 60px auto;
+    background-color: var(--cream);
+    border: 1px solid var(--border-light);
+    color: var(--ink);
+}
+
+
+/* LEFT INTRODUCTION */
+.faq-intro {
+    padding: 55px 38px;
+    border-right: 1px solid var(--border-light);
+    background-color: var(--cream);
+}
+
+.faq-label {
+    color: var(--steel);
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    margin-bottom: 22px;
+}
+
+.faq-intro h2 {
+    font-family: var(--font-heading);
+    font-size: var(--h2-size);
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 22px;
+}
+
+.faq-intro h2 span {
+    color: var(--steel);
+    font-style: italic;
+}
+
+.faq-description {
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.9;
+    margin-bottom: 22px;
+}
+
+.faq-contact {
+    color: var(--text-muted);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.faq-contact a {
+    color: var(--ink);
+    text-decoration-color: var(--steel);
+    text-underline-offset: 4px;
+    overflow-wrap: anywhere;
+}
+
+.faq-contact a:hover {
+    color: var(--steel);
+}
+
+
+/* DECORATIVE ELEMENT */
+.faq-decoration {
+    width: 150px;
+    min-height: 115px;
+    margin-top: 35px;
+    padding: 17px;
+    background-color: var(--sky-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 8px;
+    transform: rotate(-3deg);
+}
+
+.faq-decoration span {
+    font-family: Georgia, serif;
+    font-size: 30px;
+    color: var(--steel);
+}
+
+.faq-decoration p {
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--ink);
+}
+
+
+/* RIGHT FAQ CONTENT */
+.faq-content {
+    min-width: 0;
+    background-color: var(--cream);
+}
+
+.faq-group {
+    scroll-margin-top: 25px;
+}
+
+.faq-category {
+    padding: 24px 30px 13px;
+    background-color: var(--bg-tint);
+    color: var(--steel);
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+
+/* EACH QUESTION */
+.faq-group details {
+    border-bottom: 1px solid var(--border-light);
+    background-color: var(--cream);
+    transition: background-color 0.25s;
+}
+
+.faq-group details:hover {
+    background-color: var(--bg-soft);
+}
+
+
+/* QUESTION ROW */
+.faq-group summary {
+    list-style: none;
+    cursor: pointer;
+    position: relative;
+    padding: 23px 65px 23px 30px;
+    color: var(--ink);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.6;
+    transition: color 0.25s;
+}
+
+/* ANSWER */
+.faq-group details p {
+    padding: 0 65px 24px 30px;
+    color: var(--text-muted);
+    font-size: 13px;
+    line-height: 1.9;
+    max-width: 650px;
+}
+
+
+/* TABLET */
+@media (max-width: 850px) {
+    .faq-container {
+        grid-template-columns: 32% 68%;
+        margin: 30px 15px;
+    }
+
+    .faq-intro {
+        padding: 35px 22px;
+    }
+
+    .faq-category {
+        padding-left: 20px;
+    }
+
+    .faq-group summary {
+        padding-left: 20px;
+        padding-right: 55px;
+        font-size: 13px;
+    }
+
+    .faq-group summary::after {
+        right: 15px;
+    }
+
+    .faq-group details p {
+        padding-left: 20px;
+        padding-right: 25px;
+    }
+}
+
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .faq-container {
+        grid-template-columns: 1fr;
+        margin: 20px 12px;
+    }
+
+    .faq-intro {
+        padding: 35px 25px;
+        border-right: none;
+        border-bottom: 1px solid var(--border-light);
+    }
+
+    .faq-intro h2 {
+        font-size: var(--h2-size);
+    }
+
+    .faq-decoration {
+        margin-top: 25px;
+    }
+
+    .faq-category {
+        padding: 20px;
+    }
+
+    .faq-group summary {
+        padding: 20px 55px 20px 20px;
+        font-size: 13px;
+    }
+
+    .faq-group summary::after {
+        right: 15px;
+        width: 25px;
+        height: 25px;
+    }
+
+    .faq-group details p {
+        padding: 0 20px 22px;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+                    <!-- .....NAV BAR..... -->
+
+        <div class="nav">
+            <img src="Assets/Images/Logo.png" alt="Logo">
+            <div class="left">
+                <h1>House Of <br> Handmade</h1>
+            </div>
+            <div class="right">
+                <ul>
+                    <li><a href="HindiIndex.html">होम</a></li>
+                    <li><a href="HindiAbout.html">हमारी कहानी</a></li>
+                    <li><a href="HindiCollection.html">शॉप</a></li>
+                    <li><a href="HindiContact.html">हमसे संपर्क करें</a></li>
+                    <li><a href="HindiReview.html">समीक्षा</a></li>
+                </ul>
+            </div>
+            <a href="About.html"><div class="but1">
+                <p>See in English</p>
+            </div></a>
+        </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+
+        <div class="hero-text">
+            <p class="small-heading">हमारे बारे में</p>
+
+            <h1>
+                महज़ एक उपहार से कहीं अधिक।<br>
+                <i>यह एक भावना है।</i>
+            </h1>
+
+            <p>
+            दरअसल, यह विचार मुझे दिवाली के उत्सव के लिए घर पर चॉकलेट बनाते समय आया था।
+            यह विचार मुझे तब आया जब मैं अपने घर पर चॉकलेट बना रही थी।
+            </p>
+
+
+            <p class="categories">
+                केक • गुलदस्ते • हस्तनिर्मित उपहार
+            </p>
+
+            <a href="#story" class="main-button">
+                जानिए हमारी कहानी
+            </a>
+
+            <a href="#faq-container" class="main-button">
+                पूछे जाने वाले प्रश्न
+            </a>
+        </div>
+
+        <img src="Assets/Images/mango magic.PNG" alt="Handmade gifts">
+
+    </section>
+
+    <!-- Our Story -->
+    <section class="story" id="story">
+
+        <img src="Assets/Images/Nandini.png" alt="Our story">
+
+        <div>
+            <p class="small-heading">हमारी कहानी</p>
+
+            <h2>यह सब कैसे शुरू हुआ।</h2>
+
+            <p>
+                Wदरअसल, दिवाली के जश्न के लिए घर पर चॉकलेट बनाते समय मुझे यह ख्याल आया। कई सालों से मेरे मन में एक रेस्टोरेंट खोलने का विचार था, ताकि एक बेहतरीन शेफ बनने की मेरी ख्वाहिश पूरी हो सके!
+
+                लेकिन, मैंने गौर किया कि मैं जो भी स्वादिष्ट व्यंजन बनाती हूँ, उनमें से ज़्यादातर चॉकलेट से ही बने होते हैं!
+
+                तभी मेरे मन में एक विचार आया, चलो यहीं से शुरुआत करते हैं।
+
+                मैंने कहा, क्यों नहीं?? और बस, मैं यहाँ हूँ.....
+
+                बुनियादी बातों से लेकर उन्नत स्तर तक, मैं चॉकलेट के नए-नए और अनोखे स्वादों की खोज में लगी हूँ। मैं नए सुझावों के लिए तैयार हूँ और दिन-प्रतिदिन सुधार करने पर ज़्यादा ध्यान देती हूँ।
+
+                चॉकलेट बनाना सचमुच मेरा मूड अच्छा कर देता है, मेरी सकारात्मक ऊर्जा का स्रोत है।
+
+                और चॉकलेट खाने के बाद उन सभी खुश चेहरों को देखना
+
+                सचमुच एक आनंद है!
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- Features -->
+    <section class="special">
+
+        <p class="small-heading">हमें क्या खास बनाता है?</p>
+
+        <h2>पूरी सावधानी से बनाया गया। हमेशा।</h2>
+
+        <div class="features">
+
+            <div>
+                <h3>♡</h3>
+                <h3>ताज़ा और उच्च गुणवत्ता वाली सामग्री</h3>
+                <p>हम केवल सर्वोत्तम सामग्री और फूलों का उपयोग करते हैं।</p>
+            </div>
+
+            <div>
+                <h3>♡</h3>
+                <h3>प्यार से हस्तनिर्मित</h3>
+                <p>प्रत्येक उपहार को सावधानीपूर्वक बनाया और पैक किया जाता है।</p>
+            </div>
+
+            <div>
+                <h3>✧</h3>
+                <h3>व्यक्तिगत स्पर्श</h3>
+                <p>हर रचना विशेष और अनूठी होती है।</p>
+            </div>
+
+            <div>
+                <h3>♡</h3>
+                <h3>सोच-समझकर की गई पैकेजिंग</h3>
+                <p>खूबसूरत पैकेजिंग हर उपहार को यादगार बना देती है।</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    
+<!-- FAQ SECTION -->
+<section class="faq-container" id="faq-container">
+
+    <!-- LEFT SIDE -->
+    <div class="faq-intro">
+        <p class="faq-label">अक्सर पूछे जाने वाले प्रश्न</p>
+
+        <h2>कोई सवाल?<br>
+        <span>हम आपकी मदद के लिए मौजूद हैं।</span>
+        </h2>
+        <p class="faq-description">
+        हमारे हस्तनिर्मित उत्पादों, डिलीवरी और नीतियों के बारे में आपको जो कुछ भी जानना है, वह सब यहाँ है।
+        </p>
+
+        <p class="faq-contact">
+            और कुछ? हमें ईमेल करें।
+            <a href="mailto:hello@houseofhomemade.com">
+                hello@houseofhomemade.com
+            </a>
+        </p>
+
+        <div class="faq-decoration">
+            <span>♡</span>
+            <p>छोटी-छोटी बातें।<br>स्पष्ट उत्तर।</p>
+            </div>
+    </div>
+
+
+    <!-- RIGHT SIDE -->
+    <div class="faq-content">
+
+        <!-- PRODUCT QUESTIONS -->
+        <div class="faq-group" id="product-faq">
+            <p class="faq-category">01 — हमारे उत्पाद</p>
+
+            <details>
+                <summary>क्या आपके सभी उत्पाद हस्तनिर्मित हैं?</summary>
+                <p>
+                    जी हां, क्राफ्टिंग गिफ्ट्स पर मौजूद हर वस्तु 100% हस्तनिर्मित है,
+                    प्यार और बारीकी से ध्यान देकर बनाई गई है।
+                </p>
+            </details>
+
+            <details>
+                <summary>क्या आप अनुकूलन की सुविधा प्रदान करते हैं?</summary>
+                <p>
+                    जी हां, हम व्यक्तिगत उपहार बनाने में विशेषज्ञ हैं।
+                    आप ऑर्डर करते समय अपनी पसंद बता सकते हैं या सीधे हमसे संपर्क कर सकते हैं।
+                </p>
+            </details>
+
+            <details>
+                <summary>क्या मैं थोक ऑर्डर देने से पहले एक नमूना देख सकता हूँ?</summary>
+                <p>
+                    जी हां, थोक ऑर्डर देने से पहले आप हमसे संपर्क करके नमूनों और
+                    अनुकूलन विकल्पों पर चर्चा कर सकते हैं।
+                </p>
+            </details>
+
+            <details>
+                <summary>आप किस प्रकार के अवसरों के लिए सेवाएं प्रदान करते हैं?</summary>
+                <p>
+                    हम जन्मदिन, सालगिरह,
+                    शादी, त्योहारों और अन्य विशेष अवसरों के लिए उपहार बनाते हैं।
+                </p>
+            </details>
+
+            <details>
+                <summary>क्या मैं इसमें कोई व्यक्तिगत संदेश या नाम शामिल कर सकता हूँ?</summary>
+                <p>
+                    Yes! You can request a name, message or other
+                    personalized details while placing your order.
+                </p>
+            </details>
+        </div>
+
+
+        <!-- RETURNS AND EXCHANGES -->
+        <div class="faq-group" id="returns-faq">
+            <p class="faq-category">02 — वापसी और विनिमय</p>
+
+            <details>
+                <summary>क्या ऑर्डर देने के बाद मैं उसे रद्द कर सकता हूँ?</summary>
+                <p>
+                    कृपया जल्द से जल्द हमसे संपर्क करें। ऑर्डर रद्द करना इस बात पर निर्भर करता है कि
+                    आपका ऑर्डर तैयार हो चुका है या नहीं।
+                </p>
+            </details>
+
+            <details>
+                <summary>यदि मुझे क्षतिग्रस्त या गलत उत्पाद प्राप्त हो तो क्या होगा?</summary>
+                <p>
+                    कृपया उत्पाद की तस्वीरों के साथ हमसे संपर्क करें ताकि हम समस्या का समाधान करने में आपकी सहायता कर सकें।
+                </p>
+            </details>
+
+            <details>
+                <summary>क्या आप रिटर्न या एक्सचेंज स्वीकार करते हैं?</summary>
+                <p>
+                    क्योंकि हमारे उत्पाद हस्तनिर्मित और व्यक्तिगत रूप से निर्मित होते हैं,
+                    इसलिए वापसी और विनिमय अनुरोधों की समीक्षा व्यक्तिगत रूप से की जाती है।
+                </p>
+            </details>
+
+            <details>
+                <summary>मुझे मेरा रिफंड कैसे मिलेगा?</summary>
+                <p>
+                    यदि रिफंड स्वीकृत हो जाता है, तो हम आपको रिफंड प्रक्रिया और अपेक्षित समयसीमा के बारे में सूचित करेंगे।
+                </p>
+            </details>
+        </div>
+
+
+        <!-- SHIPPING QUESTIONS -->
+        <div class="faq-group" id="shipping-faq">
+            <p class="faq-category">03 — शिपिंग और डिलीवरी</p>
+
+            <details>
+                <summary>क्या आप पूरे भारत में डिलीवरी करते हैं?</summary>
+                <p>
+                    कृपया हमें अपना डिलीवरी पिन कोड भेजकर संपर्क करें ताकि हम पुष्टि कर सकें कि क्या हम आपके पते पर डिलीवरी करते हैं।
+                </p>
+            </details>
+
+            <details>
+                <summary>अनुमानित डिलीवरी का समय क्या है?</summary>
+                <p>
+                    डिलीवरी का समय आपके स्थान और आपके हस्तनिर्मित ऑर्डर को तैयार करने के लिए आवश्यक समय पर निर्भर करता है।
+                </p>
+            </details>
+
+            <details>
+                <summary>क्या मुझे ट्रैकिंग विवरण प्राप्त होंगे?</summary>
+                <p>
+                    यदि आपके शिपमेंट के लिए ट्रैकिंग उपलब्ध है,
+                    तो हम आपको विवरण साझा करेंगे।
+                </p>
+            </details>
+
+            <details>
+                <summary>क्या आप एक्सप्रेस डिलीवरी की सुविधा देते हैं?</summary>
+                <p>
+                    ऑर्डर देने से पहले हमसे संपर्क करके यह जांच लें कि आपके ऑर्डर के लिए एक्सप्रेस डिलीवरी उपलब्ध है या नहीं।
+                </p>
+            </details>
+        </div>
+
+    </div>
+
+</section>
+
+
+ <div class="con4">
+                
+            <div class="c4-main">
+
+                <div class="brand">
+                    <h2>HOUSE OF<br>HANDMADE</h2>
+                    <p>आपकी चाहत, हमारी पेशकश</p>
+                </div>
+
+                <div class="columns">
+                    <div class="c4-col">
+                        <h3>खरीदारी</h3>
+                        <a href="">केक और मिठाइयाँ</a>
+                        <a href="">गिफ्ट हैम्पर्स</a>
+                        <a href="">चॉकलेट</a>
+                    </div>
+
+                    <div class="c4-col">
+                        <h3>हमारा ब्रांड</h3>
+                        <a href="">हमारी कहानी</a>
+                        <a href="">गैलरी</a>
+                        <a href="">संपर्क करें</a>
+                    </div>
+                    
+                    <div class="c4-col">
+                        <h3>सहायता</h3>
+                        <a href="">ऑर्डर संबंधी पूछताछ</a>
+                        <a href="">अक्सर पूछे जाने वाले सवाल</a>
+                    </div>
+
+                </div>
+            </div>
+            
+            <div class="c4-below">
+
+                <div class="c4-contact">
+                    <p>हमसे संपर्क करें</p>
+
+                    <div class="socials">
+                        <p>✉ <a href="houseofhandmade25@gmail.com">houseofhandmade25@gmail.com</a></p>
+
+                        <p>☎ <a href="tel:+919828466656">+91 98284 66656</a></p>
+                    </div>
+                </div>
+
+                <div class="c4-socials">
+                    <div class="socials">
+                        <a href="https://www.instagram.com/houseofhandmadebynandini/reels/"><i class="fa fa-brands fa-instagram"></i></a>
+                        <a href="https://wa.me/919828466656"><i class="fa fa-brands fa-whatsapp"></i></a>
+                        <a href="https://www.google.com/maps/place/House+Of+Handmade/@26.4775908,74.5973778,17z/data=!3m1!4b1!4m6!3m5!1s0x396be72bc41f3697:0x2d3fc124467b0dc5!8m2!3d26.4775908!4d74.5973778!16s%2Fg%2F11jp8xmbd_?entry=ttu&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D"><i class="fa fa-solid fa-map-location-dot"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="c4-bottom">
+                <p>© House Of Handmade. सर्वाधिकार सुरक्षित।</p>
+            </div>
+
+    </div>
+</body>
+</html>

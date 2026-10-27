@@ -17,22 +17,22 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            color: #14264B;
+            color: var(--ink);
         }
 
         /* Common Headings */
 
         h1, h2, h3 {
-            font-family: Georgia, serif;
+            font-family: var(--font-heading);
             font-weight: normal;
         }
 
         h2 {
-            font-size: 36px;
+            font-size: var(--h2-size);
         }
 
         .small-heading {
-            color: #286B91;
+            color: var(--steel-deep);
             font-size: 10px;
             font-weight: bold;
             letter-spacing: 3px;
@@ -49,7 +49,7 @@
             align-items: center;
             gap: 50px;
             padding: 40px 6%;
-            background-color: #D8F1FA;
+            background-color: var(--sky-light);
         }
 
         .hero-text {
@@ -57,16 +57,16 @@
         }
 
         .hero h1 {
-            font-size: 48px;
+            font-size: var(--h1-size);
             line-height: 1.05;
         }
 
         .hero h1 i {
-            color: #176D9E;
+            color: var(--blue);
         }
 
         .categories {
-            color: #286B91;
+            color: var(--steel-deep);
             font-size: 10px;
             letter-spacing: 2px;
             margin-top: 30px;
@@ -82,14 +82,14 @@
             display: inline-block;
             margin-top: 20px;
             padding: 15px 20px;
-            background-color: #14264B;
-            color: white;
+            background-color: var(--ink);
+            color: var(--white);
             text-decoration: none;
             font-size: 11px;
             letter-spacing: 1px;
         }
         .main-button:hover {
-            background-color: #287BA4;
+            background-color: var(--steel-deep);
             transform: translateY(-3px);
         }
 
@@ -100,14 +100,13 @@
             align-items: center;
             gap: 60px;
             padding: 40px 8%;
-            background-color: #F5FAFC;
+            background-color: var(--bg-soft);
         }
 
         .story img {
             width: 45%;
             height: 450px;
             object-fit: cover;
-            border: 8px solid #14264B;
         }
 
         .story div {
@@ -118,7 +117,7 @@
 
         .special {
             padding: 35px 6%;
-            background-color: white;
+            background-color: var(--white);
         }
 
         .features {
@@ -129,7 +128,7 @@
         .features div {
             flex: 1;
             padding: 15px;
-            border-right: 1px solid #DCE5EC;
+            border-right: 1px solid var(--border-light);
         }
 
         .features div:last-child {
@@ -137,11 +136,11 @@
         }
 
         .features h3 {
-            font-size: 17px;
+            font-size: var(--h3-size);
         }
 
         .features p {
-            color: #52657B;
+            color: var(--text-soft);
             font-size: 12px;
         }
 
@@ -151,7 +150,7 @@
             display: flex;
             gap: 20px;
             padding: 40px 6%;
-            background-color: #EAF7FC;
+            background-color: var(--bg-tint);
         }
 
         .collection-text {
@@ -159,7 +158,7 @@
         }
 
         .collection-text h2 {
-            font-size: 32px;
+            font-size: var(--h2-size);
         }
 
         .product {
@@ -174,12 +173,12 @@
         }
 
         .product h3 {
-            font-size: 15px;
+            font-size: var(--h3-size);
         }
 
         .product p {
             font-size: 11px;
-            color: #52657B;
+            color: var(--text-soft);
         }
 
 
@@ -191,21 +190,21 @@
     grid-template-columns: 36% 64%;
     max-width: 1250px;
     margin: 60px auto;
-    background-color: #FFFEFA;
-    border: 1px solid #E6EBED;
-    color: #172747;
+    background-color: var(--cream);
+    border: 1px solid var(--border-light);
+    color: var(--ink);
 }
 
 
 /* LEFT INTRODUCTION */
 .faq-intro {
     padding: 55px 38px;
-    border-right: 1px solid #E6EBED;
-    background-color: #FFFEFA;
+    border-right: 1px solid var(--border-light);
+    background-color: var(--cream);
 }
 
 .faq-label {
-    color: #477F9F;
+    color: var(--steel);
     font-size: 11px;
     letter-spacing: 3px;
     font-weight: bold;
@@ -213,40 +212,40 @@
 }
 
 .faq-intro h2 {
-    font-family: Georgia, serif;
-    font-size: clamp(32px, 3.2vw, 46px);
+    font-family: var(--font-heading);
+    font-size: var(--h2-size);
     line-height: 1.15;
-    color: #172747;
+    color: var(--ink);
     margin-bottom: 22px;
 }
 
 .faq-intro h2 span {
-    color: #477F9F;
+    color: var(--steel);
     font-style: italic;
 }
 
 .faq-description {
-    color: #657184;
+    color: var(--text-muted);
     font-size: 14px;
     line-height: 1.9;
     margin-bottom: 22px;
 }
 
 .faq-contact {
-    color: #657184;
+    color: var(--text-muted);
     font-size: 13px;
     line-height: 1.9;
 }
 
 .faq-contact a {
-    color: #172747;
-    text-decoration-color: #477F9F;
+    color: var(--ink);
+    text-decoration-color: var(--steel);
     text-underline-offset: 4px;
     overflow-wrap: anywhere;
 }
 
 .faq-contact a:hover {
-    color: #477F9F;
+    color: var(--steel);
 }
 
 
@@ -256,7 +255,7 @@
     min-height: 115px;
     margin-top: 35px;
     padding: 17px;
-    background-color: #D9F0FA;
+    background-color: var(--sky-light);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -268,7 +267,7 @@
 .faq-decoration span {
     font-family: Georgia, serif;
     font-size: 30px;
-    color: #477F9F;
+    color: var(--steel);
 }
 
 .faq-decoration p {
@@ -276,14 +275,14 @@
     font-style: italic;
     font-size: 13px;
     line-height: 1.6;
-    color: #172747;
+    color: var(--ink);
 }
 
 
 /* RIGHT FAQ CONTENT */
 .faq-content {
     min-width: 0;
-    background-color: #FFFEFA;
+    background-color: var(--cream);
 }
 
 .faq-group {
@@ -292,8 +291,8 @@
 
 .faq-category {
     padding: 24px 30px 13px;
-    background-color: #F0F8FC;
-    color: #477F9F;
+    background-color: var(--bg-tint);
+    color: var(--steel);
     font-size: 10px;
     font-weight: bold;
     letter-spacing: 2px;
@@ -302,13 +301,13 @@
 
 /* EACH QUESTION */
 .faq-group details {
-    border-bottom: 1px solid #E6EBED;
-    background-color: #FFFEFA;
+    border-bottom: 1px solid var(--border-light);
+    background-color: var(--cream);
     transition: background-color 0.25s;
 }
 
 .faq-group details:hover {
-    background-color: #F6FBFD;
+    background-color: var(--bg-soft);
 }
 
 
@@ -318,7 +317,7 @@
     cursor: pointer;
     position: relative;
     padding: 23px 65px 23px 30px;
-    color: #172747;
+    color: var(--ink);
     font-size: 14px;
     font-weight: 600;
     line-height: 1.6;
@@ -328,7 +327,7 @@
 /* ANSWER */
 .faq-group details p {
     padding: 0 65px 24px 30px;
-    color: #657184;
+    color: var(--text-muted);
     font-size: 13px;
     line-height: 1.9;
     max-width: 650px;
@@ -377,11 +376,11 @@
     .faq-intro {
         padding: 35px 25px;
         border-right: none;
-        border-bottom: 1px solid #E6EBED;
+        border-bottom: 1px solid var(--border-light);
     }
 
     .faq-intro h2 {
-        font-size: 36px;
+        font-size: var(--h2-size);
     }
 
     .faq-decoration {
@@ -425,8 +424,12 @@
                     <li><a href="About.html">Our Story</a></li>
                     <li><a href="Collection.html">Shop</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="reviews.html">Reviews</a></li>
                 </ul>
             </div>
+            <a href="HindiAbout.html"><div class="but1">
+                <p>See in Hindi</p>
+            </div></a>
         </div>
 
     <!-- Hero Section -->
@@ -459,14 +462,14 @@
             </a>
         </div>
 
-        <img src="Assets/Images/chocolate.jpg" alt="Handmade gifts">
+        <img src="Assets/Images/mango magic.PNG" alt="Handmade gifts">
 
     </section>
 
     <!-- Our Story -->
     <section class="story" id="story">
 
-        <img src="Assets/Images/Nandini.PNG" alt="Our story">
+        <img src="Assets/Images/Nandini.png" alt="Our story">
 
         <div>
             <p class="small-heading">OUR STORY</p>
@@ -476,19 +479,19 @@
             <p>
                 Well, it was an instinct I got when I was making chocolates for Diwali Celebration at my home. I had a thought in my mind for years to open a restaurant to set my cravings for a foodie cook!
 
-But, I analyzed that most of the delicious dishes I make are from the genre - "CHOCOLATE"!!
+                But, I analyzed that most of the delicious dishes I make are from the genre - "CHOCOLATE"!!
 
-Then a bell rang in my head, let's just start from here only. 
+                Then a bell rang in my head, let's just start from here only. 
 
-I said, Why Not?? And here I am.....
+                I said, Why Not?? And here I am.....
 
-From basics to advanced, I am onto the path of new innovative flavors and tastes of chocolates. I am open to new suggestions and focus more on improving day by day.
+                From basics to advanced, I am onto the path of new innovative flavors and tastes of chocolates. I am open to new suggestions and focus more on improving day by day.
 
-Making chocolates is really my mood-maker, my positive energy
+                Making chocolates is really my mood-maker, my positive energy
 
-and looking at all those happy faces after eating my chocolates
+                and looking at all those happy faces after eating my chocolates
 
-is seriously a BLISS!!!
+                is seriously a BLISS!!!
             </p>
 
         </div>

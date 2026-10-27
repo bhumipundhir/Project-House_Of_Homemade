@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="Assets/Images/Logo.png" type="image/x-icon">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        body {
+            background-color: var(--white);
+            color: var(--navy);
+        }
+        
+        .contact-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 7%;
+            gap: 55px;
+        }
+        
+        /* LEFT IMAGE */
+        
+        .contact-image {
+            width: 40%;
+            height: 600px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+            background: var(--sky);
+        }
+        
+        .contact-image img {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .contact-image:hover img {
+            transform: scale(1.04);
+        }
+        
+        /* RIGHT CONTENT */
+        
+        .contact-content {
+            width: 60%;
+        }
+        
+        .contact-content h1 {
+            font-size: var(--h1-size);
+            font-weight: normal;
+            color: var(--navy);
+            margin-bottom: 30px;
+            letter-spacing: normal;
+        }
+        
+        .contact-box {
+            border: 1px solid var(--navy-soft);
+            padding: 35px;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 35px;
+            background-color: var(--white);
+        }
+        
+        /* FORM */
+        
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .form-group label {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--navy-soft);
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 10px;
+            border: none;
+            border-bottom: 2px solid var(--navy-soft);
+            outline: none;
+            background: transparent;
+            color: var(--navy);
+            font-size: 15px;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--navy);
+            background-color: var(--white);
+        }
+        
+        .form-group textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--navy-soft) 0.6;
+        }
+        
+        /* BUTTON */
+        
+        /* .contact-form>.send-btn {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid var(--navy);
+            align-items: center;
+            letter-spacing: 1px;
+            /* transition: all 0.3s ease; */
+            /* } */
+            .contact-form .send-btn {
+                height: 40px;
+                font-weight: 600;
+                font-size: 15px;
+                display: block;
+                box-sizing: border-box;
+                line-height: 40px;
+                text-align: center;
+                text-decoration: none;
+                font-family: Arial, Helvetica, sans-serif;
+                border-radius: 30px;
+                background-color: var(--navy);
+                color: var(--white);
+}
+        
+        .send-btn:hover {
+            background-color:var(--blue);
+            color: var(--navy);
+            border-color: var(--sky);
+            transform: translateY(-3px);
+        }
+        
+        /* CONTACT DETAILS */
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            padding-top: 5px;
+        }
+        
+        .info-item h3 {
+            font-size: var(--h3-size);
+            margin-bottom: 10px;
+            color: var(--navy);
+        }
+        
+        .info-item p,
+        .info-item a {
+            font-size: 14px;
+            line-height: 1.8;
+            color: var(--navy-soft);
+            text-decoration: none;
+            overflow-wrap: anywhere;
+        }
+        
+        .info-item a:hover {
+            color: var(--blue-hover);
+            text-decoration: underline;
+        }
+        
+        /* SOCIAL LINKS */
+        
+        .social-links {
+            display: flex;
+            gap: 20px;
+            /* margin-top: 2px; */
+            padding-top: 15px;
+        }
+        
+        .social-links a {
+            color: var(--white);
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--navy-soft);
+            border-radius: 50%;
+            background-color: var(--navy);
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--navy);
+            color: var(--white);
+            transform: translateY(-4px);
+        }
+        
+        /* iframe{
+            margin-top: 50px;
+        } */
+        </style>
+</head>
+
+<body>
+    <div class="nav">
+    <img src="Assets/Images/Logo.png" alt="House Of Handmade Logo">
+
+<div class="left">
+    <h1>House Of<br>Handmade</h1>
+</div>
+
+<div class="right">
+    <ul>
+        <li><a href="HindiIndex.html">होम</a></li>
+        <li><a href="HindiAbout.html">हमारी कहानी</a></li>
+        <li><a href="HindiCollection.html">शॉप</a></li>
+        <li><a href="HindiContact.html">हमसे संपर्क करें</a></li>
+        <li><a href="HindiReview.html">समीक्षा</a></li>
+    </ul>
+</div>
+<a href="contact.html"><div class="but1">
+    <p>See in English</p>
+    </div></a>
+</div>
+    <section class="contact-section">
+
+        <!-- LEFT IMAGE -->
+        <div class="contact-image">
+            <img
+                src="Assets/Images/contact.png"
+                alt="Meet The Chef"
+            >
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="contact-content">
+
+            <h1>संपर्क करें</h1>
+
+            <div class="contact-box">
+
+                <!-- CONTACT FORM -->
+                <form class="contact-form" action="#" method="post">
+
+                    <div class="form-group">
+                        <label for="name">पूरा नाम</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">ईमेल</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">फ़ोन नंबर</label>>
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="Enter your phone number"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">संदेश</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            placeholder="Write your message..."
+                            required
+                        ></textarea>
+                    </div>
+
+            <div class="contact-form">
+
+                <p>फ़ॉर्म भरें, इस पेज का स्क्रीनशॉट लें और नीचे क्लिक करके WhatsApp पर सीधे House Of Handmade से संपर्क करें। फिर वह स्क्रीनशॉट वहाँ भेज दें।</p>
+
+                <a class="send-btn"
+                href="https://wa.me/919251293700?text=Hello%20House%20Of%20Handmade!%20I%20would%20like%20to%20make%20an%20enquiry."
+                target="_blank">
+                    संदेश भेजें
+                </a>
+
+            </div>
+                </form>
+
+                <!-- CONTACT INFORMATION -->
+                <div class="contact-info">
+
+                    <div class="info-item">
+                        <h3>संपर्क</h3>
+                        <p>
+                            <a href="mailto:houseofhandmade25@gmail.com" target="_blank">
+                                houseofhandmade25@gmail.com
+                            </a>
+                        </p>
+                        <p>
+                            <a href="tel:+919828466656" target="_blank">
+                                    कॉल करने के लिए क्लिक करें
+                            </a>
+                        </p>
+                    </div>
+
+                    <div class="info-item">
+                        <h3>हमारा स्थान</h3>
+                        <p>भारत</p>
+                        <p> 58, opp. mangalam apartments, Pragati Nagar, Kotra, Ajmer, Rajasthan 305004</p>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/houseofhandmadebynandini/reels/" target="_blank"><i class="fa fa-brands fa-instagram"></i></a>
+                        <a href="https://wa.me/919828466656" target="_blank"><i class="fa fa-brands fa-whatsapp"></i></a>                
+                        <a href="https://www.google.com/maps/place/House+Of+Handmade/@26.4775908,74.5973778,17z/data=!3m1!4b1!4m6!3m5!1s0x396be72bc41f3697:0x2d3fc124467b0dc5!8m2!3d26.4775908!4d74.5973778!16s%2Fg%2F11jp8xmbd_?entry=ttu&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D" target="_blank"><i class="fa fa-solid fa-map-location-dot"></i></a>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>      
+</section>
+
+<!-- GOOGLE MAP SECTION -->
+
+<div class="map-section">
+<h2>हमें यहाँ खोजें</h2>
+
+<!-- Replace this iframe with the code copied from Google Maps -->
+<iframe
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3571.3215188792446!2d74.59737779999999!3d26.477590799999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396be72bc41f3697%3A0x2d3fc124467b0dc5!2sHouse%20Of%20Handmade!5e0!3m2!1sen!2sin!4v1792779881147!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+</div>
+<!-- COMMON FOOTER -->
+
+<div class="con4">
+                
+            <div class="c4-main">
+
+                <div class="brand">
+                    <h2>HOUSE OF<br>HANDMADE</h2>
+                    <p>आपकी चाहत, हमारी पेशकश</p>
+                </div>
+
+                <div class="columns">
+                    <div class="c4-col">
+                        <h3>खरीदारी</h3>
+                        <a href="">केक और मिठाइयाँ</a>
+                        <a href="">गिफ्ट हैम्पर्स</a>
+                        <a href="">चॉकलेट</a>
+                    </div>
+
+                    <div class="c4-col">
+                        <h3>हमारा ब्रांड</h3>
+                        <a href="">हमारी कहानी</a>
+                        <a href="">गैलरी</a>
+                        <a href="">संपर्क करें</a>
+                    </div>
+                    
+                    <div class="c4-col">
+                        <h3>सहायता</h3>
+                        <a href="">ऑर्डर संबंधी पूछताछ</a>
+                        <a href="">अक्सर पूछे जाने वाले सवाल</a>
+                    </div>
+
+                </div>
+            </div>
+            
+            <div class="c4-below">
+
+                <div class="c4-contact">
+                    <p>हमसे संपर्क करें</p>
+
+                    <div class="socials">
+                        <p>✉ <a href="houseofhandmade25@gmail.com">houseofhandmade25@gmail.com</a></p>
+
+                        <p>☎ <a href="tel:+919828466656">+91 98284 66656</a></p>
+                    </div>
+                </div>
+
+                <div class="c4-socials">
+                    <div class="socials">
+                        <a href="https://www.instagram.com/houseofhandmadebynandini/reels/"><i class="fa fa-brands fa-instagram"></i></a>
+                        <a href="https://wa.me/919828466656"><i class="fa fa-brands fa-whatsapp"></i></a>
+                        <a href="https://www.google.com/maps/place/House+Of+Handmade/@26.4775908,74.5973778,17z/data=!3m1!4b1!4m6!3m5!1s0x396be72bc41f3697:0x2d3fc124467b0dc5!8m2!3d26.4775908!4d74.5973778!16s%2Fg%2F11jp8xmbd_?entry=ttu&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D"><i class="fa fa-solid fa-map-location-dot"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="c4-bottom">
+                <p>© House Of Handmade. सर्वाधिकार सुरक्षित।</p>
+            </div>
+
+    </div>
+</body>
+</html>

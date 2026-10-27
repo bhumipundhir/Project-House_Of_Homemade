@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" href="Assets/Images/Logo.png" type="image/x-icon">
+    
+    <style>
+        .con1{
+            min-height: 800px;
+            width: 100%;
+            background-color: var(--sky-alpha);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 0;
+        }
+        .con2{
+            width: 75%;
+            background-color: var(--white);
+            border: 2px solid #001C55;
+            border-radius: 30px;
+            padding: 30px 0;
+            overflow: hidden;
+        }
+        .con3{
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .con3>h1{
+            color: var(--navy);
+            text-align: center;
+            font-size: var(--h2-size);
+        }
+
+        .row{
+            overflow: hidden;
+            width: 100%;
+        }
+        .track{
+            display: flex;
+            gap: 24px;
+            width: max-content;
+            animation: slide-left 30s linear infinite;
+        }
+        .row.reverse .track{
+            animation-name: slide-right;
+        }
+
+        @keyframes slide-left{
+            from { transform: translateX(0); }
+            to   { transform: translateX(-50%); }
+        }
+        @keyframes slide-right{
+            from { transform: translateX(-50%); }
+            to   { transform: translateX(0); }
+        }
+
+        .review-box{
+            width: 350px;
+            flex-shrink: 0;
+            padding: 18px;
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            background-color: var(--white);
+            box-shadow: 0 4px 12px var(--shadow-neutral);
+        }
+        .review-box h3{
+            margin: 10px 0 6px;
+            font-size: var(--h3-size);
+        }
+        .review-box p{
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .circle{
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            background-color: var(--sky);
+            color:var(--blue);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
+
+    </style>
+</head>    
+<body>
+
+        <div class="nav">
+            <img src="Assets/Images/Logo.png" alt="Logo">
+            <div class="left">
+                <h1>House Of <br> Handmade</h1>
+            </div>
+            <div class="right">
+                <ul>
+                    <li><a href="HindiIndex.html">होम</a></li>
+                    <li><a href="HindiAbout.html">हमारी कहानी</a></li>
+                    <li><a href="HindiCollection.html">शॉप</a></li>
+                    <li><a href="HindiContact.html">हमसे संपर्क करें</a></li>
+                    <li><a href="HindiReview.html">समीक्षा</a></li>
+
+
+                </ul>
+            </div>
+            <a href="reviews.html"><div class="but1">
+                <p>See in English</p>
+            </div></a>
+        </div>
+
+<div class="con1">
+    <div class="con2">
+        <div class="con3">
+            <h1>हमारे ग्राहक क्या कहते हैं!</h1>
+            <!-- ROW 1 : slides left -->
+            <div class="row">
+                <div class="track">
+                    <!-- set 1 (4 reviews) -->
+                    <div class="review-box">
+                        <div class="circle">AS</div>
+                        <h3>Aastha Saini</h3>
+                        <p>बस यह कहना था कि केक बेहद स्वादिष्ट था 😍 स्वाद, बनावट, सब कुछ बिल्कुल बेहतरीन था — बहुत ताज़ा और भरपूर स्वाद से भरा हुआ! सबको बहुत पसंद आया। आपने कमाल कर दिया 👏 जल्द ही दोबारा ऑर्डर करने का इंतज़ार नहीं हो रहा! 🎂💖 धन्यवाद मैम</p>
+                    </div>
+                    <div class="review-box">
+                        <div class="circle">NA</div>
+                        <h3>Nashida Arshi</h3>
+                        <p>चॉकलेट की गुणवत्ता हमेशा शानदार और बेहद स्वादिष्ट होती है। उनकी रचनात्मकता और ग्राहक सेवा ने मुझे बहुत प्रभावित किया। मैं बेहतरीन हस्तनिर्मित चॉकलेट पसंद करने वाले हर व्यक्ति को इनकी सलाह दूँगा/दूँगी। आपकी सभी पेशकशों के लिए धन्यवाद।</p>
+                    </div>
+                    <div class="review-box">
+                        <div class="circle">AC</div>
+                        <h3>Anshu Chaudhary</h3>
+                        <p>मुझे House of Handmade के उत्पादों की विविधता बहुत पसंद है। खासकर जब मैंने वीगन चीज़ों की माँग की, तो उन्होंने सहमति दी और वीगन उत्पाद बनाना भी शुरू कर दिया। इससे मैं बहुत खुश हूँ, और इनके सभी उत्पाद स्वादिष्ट भी हैं।</p>
+                    </div>
+                    <div class="review-box">
+                        <div class="circle">CT</div>
+                        <h3>Chirag Tolani</h3>
+                        <p>मैं House of Handmade से नियमित रूप से ऑर्डर करता/करती हूँ। हर बार एक नया अनुभव मिलता है और स्वाद हमेशा पहले से भी शानदार होता है।</p>
+                    </div>
+
+                    <!-- set 2 = exact copy (for seamless loop) -->
+                    <div class="review-box" aria-hidden="true">
+                        <div class="circle">UJ</div>
+                        <h3>Utkarsh Jain</h3>
+                        <p>यहाँ के पुडिंग और केक बहुत पसंद आए। मैंने इनसे राखी के हैम्पर्स भी लिए थे और वे बहुत स्वादिष्ट थे। ज़रूर ऑर्डर करें।</p>
+                    </div>
+                    <div class="review-box" aria-hidden="true">
+                        <div class="circle">M</div>
+                        <h3>Mishika</h3>
+                        <p>आपकी चीज़केक बेहद लाजवाब हैं। आपकी चीज़केक चखने के बाद मैंने किसी और की चीज़केक नहीं आज़माई!</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ROW 2 : slides right -->
+            <div class="row reverse">
+                <div class="track">
+                    <!-- set 1 (4 reviews) -->
+                    <div class="review-box" aria-hidden="true">
+                        <div class="circle">KS</div>
+                        <h3>Khushal Sharma</h3>
+                        <p>हर बार आने पर मीठा खाने के शौकीनों के लिए कुछ नया, रचनात्मक और स्वादिष्ट मिलता है। ज़रूर आज़माएँ।</p>
+                    </div>
+                    <div class="review-box" aria-hidden="true">
+                        <div class="circle">AS</div>
+                        <h3>Anjana Sharma</h3>
+                        <p>बहुत स्वादिष्ट चॉकलेट और ब्राउनी, साथ ही तेज़ डिलीवरी।</p>
+                    </div>
+                    <div class="review-box">
+                        <div class="circle">VB</div>
+                        <h3>Vivek Bhati</h3>
+                        <p>यहाँ आपको स्वादिष्ट चॉकलेट 🍫 मिल सकती हैं।</p>
+                    </div>
+                    <!-- set 2 = exact copy -->
+                    <div class="review-box" aria-hidden="true">
+                        <div class="circle">NA</div>
+                        <h3>Nashida Arshi</h3>
+                        <p>चॉकलेट की गुणवत्ता हमेशा शानदार और बेहद स्वादिष्ट होती है। उनकी रचनात्मकता और ग्राहक सेवा ने मुझे बहुत प्रभावित किया। मैं बेहतरीन हस्तनिर्मित चॉकलेट पसंद करने वाले हर व्यक्ति को इनकी सलाह दूँगा/दूँगी। आपकी सभी पेशकशों के लिए धन्यवाद।</p>
+                    </div>
+                    <div class="review-box" aria-hidden="true">
+                        <div class="circle">AC</div>
+                        <h3>Anshu Chaudhary</h3>
+                        <p>मुझे House of Handmade के उत्पादों की विविधता बहुत पसंद है। खासकर जब मैंने वीगन चीज़ों की माँग की, तो उन्होंने सहमति दी और वीगन उत्पाद बनाना भी शुरू कर दिया। इससे मैं बहुत खुश हूँ, और इनके सभी उत्पाद स्वादिष्ट भी हैं।</p>
+                    </div>
+                    <div class="review-box" aria-hidden="true">
+                        <div class="circle">AS</div>
+                        <h3>Aastha Saini</h3>
+                        <p>बस यह कहना था कि केक बेहद स्वादिष्ट था 😍 स्वाद, बनावट, सब कुछ बिल्कुल बेहतरीन था — बहुत ताज़ा और भरपूर स्वाद से भरा हुआ! सबको बहुत पसंद आया। आपने कमाल कर दिया 👏 जल्द ही दोबारा ऑर्डर करने का इंतज़ार नहीं हो रहा! 🎂💖 धन्यवाद मैम</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+    <div class="con4">
+                
+            <div class="c4-main">
+
+                <div class="brand">
+                    <h2>HOUSE OF<br>HANDMADE</h2>
+                    <p>आपकी चाहत, हमारी पेशकश</p>
+                </div>
+
+                <div class="columns">
+                    <div class="c4-col">
+                        <h3>खरीदारी</h3>
+                        <a href="">केक और मिठाइयाँ</a>
+                        <a href="">गिफ्ट हैम्पर्स</a>
+                        <a href="">चॉकलेट</a>
+                    </div>
+
+                    <div class="c4-col">
+                        <h3>हमारा ब्रांड</h3>
+                        <a href="">हमारी कहानी</a>
+                        <a href="">गैलरी</a>
+                        <a href="">संपर्क करें</a>
+                    </div>
+                    
+                    <div class="c4-col">
+                        <h3>सहायता</h3>
+                        <a href="">ऑर्डर संबंधी पूछताछ</a>
+                        <a href="">अक्सर पूछे जाने वाले सवाल</a>
+                    </div>
+
+                </div>
+            </div>
+            
+            <div class="c4-below">
+
+                <div class="c4-contact">
+                    <p>हमसे संपर्क करें</p>
+
+                    <div class="socials">
+                        <p>✉ <a href="houseofhandmade25@gmail.com">houseofhandmade25@gmail.com</a></p>
+
+                        <p>☎ <a href="tel:+919828466656">+91 98284 66656</a></p>
+                    </div>
+                </div>
+
+                <div class="c4-socials">
+                    <div class="socials">
+                        <a href="https://www.instagram.com/houseofhandmadebynandini/reels/"><i class="fa fa-brands fa-instagram"></i></a>
+                        <a href="https://wa.me/919828466656"><i class="fa fa-brands fa-whatsapp"></i></a>
+                        <a href="https://www.google.com/maps/place/House+Of+Handmade/@26.4775908,74.5973778,17z/data=!3m1!4b1!4m6!3m5!1s0x396be72bc41f3697:0x2d3fc124467b0dc5!8m2!3d26.4775908!4d74.5973778!16s%2Fg%2F11jp8xmbd_?entry=ttu&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D"><i class="fa fa-solid fa-map-location-dot"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="c4-bottom">
+                <p>© House Of Handmade. सर्वाधिकार सुरक्षित।</p>
+            </div>
+
+    </div>
+</body>
+</html>

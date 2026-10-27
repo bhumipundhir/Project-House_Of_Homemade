@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dessert Collection | House of Handmade</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 20px;
+}
+
+body {
+    font-family: var(--font-body);
+    background: var(--cream);
+    color: var(--ink);
+    display: grid;
+    grid-template-columns: 225px minmax(0, 1fr);
+    align-items: start;
+}
+
+/* NAV BAR AND FOOTER SPAN THE FULL WIDTH */
+body > .nav,
+body > .con4 {
+    grid-column: 1 / -1;
+}
+
+/* footer slides over the sticky sidebar instead of sitting beside it */
+body > .con4 {
+    position: relative;
+    z-index: 20;
+}
+
+/* SIDEBAR */
+.sidebar {
+    position: sticky;
+    top: 0;
+    width: 225px;
+    height: 100vh;
+    overflow-y: auto;
+    background: var(--bg-soft);
+    padding: 35px 20px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar h2 {
+    font-family: var(--font-heading);
+    font-size: var(--h3-size);
+    line-height: 1.1;
+    margin: 0 0 40px 8px;
+}
+
+.sidebar nav a,
+.sidebar summary {
+    display: block;
+    padding: 14px 10px;
+    border-radius: 4px;
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    list-style: none;
+    transition: 0.25s;
+}
+
+.sidebar summary::-webkit-details-marker {
+    display: none;
+}
+
+.sidebar nav a:hover,
+.sidebar summary:hover {
+    background: var(--sky-light);
+    color: var(--steel);
+}
+
+.submenu {
+    border-left: 2px solid var(--sky-border);
+    margin: 3px 0 8px 17px;
+    padding-left: 8px;
+}
+
+.sidebar nav .submenu a {
+    font-weight: normal;
+    padding: 11px 10px;
+}
+
+.sidebar-note {
+    margin-top: auto;
+    padding: 18px;
+    text-align: center;
+    background: var(--sky-light);
+    font-family: var(--font-heading);
+    font-style: italic;
+    line-height: 1.6;
+}
+
+/* MAIN CONTENT */
+.main-content {
+    min-width: 0;
+}
+
+/* VIDEO BANNER */
+.hero {
+    min-height: 420px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 50px;
+    background: var(--sky-light);
+}
+
+.hero video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(var(--sky-light-rgb), 0.97),
+        rgba(var(--sky-light-rgb), 0.84) 50%,
+        rgba(var(--sky-light-rgb), 0.15)
+    );
+}
+
+.hero-text {
+    position: relative;
+    z-index: 2;
+    max-width: 480px;
+}
+
+.eyebrow {
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: var(--steel);
+    margin-bottom: 17px;
+}
+
+.hero h1 {
+    font-family: var(--font-heading);
+    font-size: var(--h1-size);
+    line-height: 1.15;
+    margin-bottom: 18px;
+}
+
+.hero h1 span {
+    color: var(--steel);
+    font-style: italic;
+}
+
+.hero-text > p:not(.eyebrow) {
+    max-width: 390px;
+    font-size: 14px;
+    line-height: 1.9;
+    margin-bottom: 25px;
+}
+
+.hero-button {
+    display: inline-block;
+    background: var(--ink);
+    color: var(--white);
+    padding: 16px 22px;
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.hero-button:hover {
+    background: var(--steel);
+}
+
+/* CATEGORY BOXES */
+.category-section {
+    padding: 65px 35px;
+    background: var(--cream);
+    scroll-margin-top: 0;
+}
+
+.category-section.alternate {
+    background: var(--bg-tint);
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 38px;
+}
+
+.section-heading h2 {
+    font-family: var(--font-heading);
+    font-size: var(--h2-size);
+    margin: 12px 0;
+}
+
+.section-heading > p:last-child {
+    color: var(--text-muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* NINE PRODUCTS PER SECTION */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+/* PRODUCT CARDS */
+.product-card {
+    min-width: 0;
+    overflow: hidden;
+    background: var(--white);
+    border: 1px solid var(--border-light);
+    border-radius: 5px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px var(--shadow-medium);
+}
+
+.product-card img {
+    display: block;
+    width: 100%;
+    height: 175px;
+    object-fit: cover;
+    transition: transform 0.4s;
+}
+
+.product-card:hover img {
+    transform: scale(1.04);
+}
+
+.product-info {
+    padding: 17px;
+}
+
+.product-info h3 {
+    font-family: var(--font-heading);
+    font-size: var(--h3-size);
+    margin-bottom: 9px;
+}
+
+.product-info p {
+    color: var(--text-muted);
+    font-size: 12px;
+    line-height: 1.7;
+    min-height: 41px;
+    margin-bottom: 14px;
+}
+
+.product-info strong {
+    display: block;
+    padding-top: 13px;
+    border-top: 1px solid var(--border-light);
+    color: var(--steel);
+    font-size: 13px;
+}
+
+/* FOOTER */
+footer {
+    padding: 35px 20px;
+    text-align: center;
+    background: var(--sky-light);
+}
+
+footer h2 {
+    font-family: var(--font-heading);
+    font-size: var(--h2-size);
+    margin-bottom: 10px;
+}
+
+footer p {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 12px;
+}
+
+/* TABLET */
+@media (max-width: 1050px) {
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .category-section {
+        padding: 45px 24px;
+    }
+
+    .hero {
+        padding: 35px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 650px) {
+    body {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 22px;
+    }
+
+    .sidebar h2 {
+        margin-bottom: 20px;
+    }
+
+    .sidebar-note {
+        display: none;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .hero {
+        min-height: 370px;
+        padding: 25px;
+    }
+
+    .hero h1 {
+        font-size: var(--h1-size);
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .product-card img {
+        height: 145px;
+    }
+
+    .product-info {
+        padding: 12px;
+    }
+
+    .product-info h3 {
+        font-size: var(--h3-size);
+    }
+
+    .category-section {
+        padding: 38px 14px;
+    }
+}
+
+@media (max-width: 380px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+                    <!-- .....NAV BAR..... -->
+ 
+        <div class="nav">
+            <img src="Assets/Images/Logo.png" alt="Logo">
+            <div class="left">
+                <h1>House Of <br> Handmade</h1>
+            </div>
+            <div class="right">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About.html">Our Story</a></li>
+                    <li><a href="Collection.html">Shop</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="reviews.html">Reviews</a></li>
+                </ul>
+            </div>
+            <a href="HindiCollection.html" class="language"><div class="but1">
+                <p>See in Hindi</p>
+            </div></a>
+            
+            
+        </div>
+<!-- SIDEBAR -->
+<aside class="sidebar">
+    <h2>House of<br>Handmade</h2>
+
+    <nav>
+        <a href="bouquets.html">⌂ &nbsp; Bouquets</a>
+        <div class="submenu">
+                <a href="#bouquets">Flower Bouquets</a>
+                <a href="#chocolate-bouquet">Chocolate Bouquets</a>
+        </div>
+
+            <a href="desserts.html">♡ &nbsp; Desserts</a>
+            <div class="submenu">
+                <a href="#cake">Cake</a>
+                <a href="#chocolates">Chocolates</a>
+                <a href="#waffles">Waffles</a>
+                <a href="#cupcakes">Cupcakes</a>
+                <a href="#cookies">Cookies</a>
+                <a href="#donuts">Donuts</a>
+            </div>
+        
+
+        <a href="gifts.html">♡ &nbsp; Handmade Gifts</a>
+    </nav>
+
+    <p class="sidebar-note">Little things,<br>big feelings ♡</p>
+</aside>
+
+
+<!-- MAIN PAGE -->
+<main class="main-content">
+
+
+    <!-- VIDEO BANNER -->
+    <header class="hero">
+        <video autoplay muted loop playsinline>
+            <source src="Assets/Images/Elegant Gift Selection.mp4" type="video/mp4">
+        </video>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-text">
+            <p class="eyebrow">HANDCRAFTED BOUQUETS</p>
+            <h1>Fresh Blooms.<br>
+                <span>Lasting smiles.</span>
+            </h1>
+            <p>
+                Thoughtful handmade bouquets for every 
+                mood, moment and little celebration
+            </p>
+            <a href="#bouquets" class="hero-button">
+                EXPLORE BOUQUETS ↓
+            </a>
+        </div>
+    </header>
+
+
+    <!-- CAKES -->
+    <section class="category-section" id="bouquets">
+        <div class="section-heading">
+            <p class="eyebrow">01 / Crafted With Effort</p>
+            <h2>Our Bouquets</h2>
+            <p>Made for celebrations, surprises and everything in between.</p>
+        </div>
+
+        <div class="product-grid">
+
+            <article class="product-card">
+                <img src="Assets/Images/white.PNG" alt="white rose bouquet">
+                <div class="product-info">
+                    <h3>Rose Bouquet</h3>
+                    <p>bouquet for people who love snow white</p>
+                    <strong>From ₹699</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="Assets/Images/Sunflower.PNG" alt="A sunflower bouquet">
+                <div class="product-info">
+                    <h3>sunflowers</h3>
+                    <p>Soft sunflowers for sad days</p>
+                    <strong>From ₹599</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="Assets/Images/blue.PNG" alt="blue dandelions">
+                <div class="product-info">
+                    <h3>white roses with blue dandelions</h3>
+                    <p>white roses mixed with blue dandelions to create a dreamy effect</p>
+                    <strong>From ₹749</strong>
+                </div>
+            </article>
+
+
+        </div>
+    </section>
+
+
+    <!-- CHOCOLATES -->
+    <section class="category-section alternate" id="chocolate-bouquet">
+        <div class="section-heading">
+            <p class="eyebrow">02 / Sweet but in form of Bouquet</p>
+            <h2>Our Chocolate Bouquets</h2>
+            <p>Sweetness overloaded but not your classic boring way</p>
+        </div>
+
+        <div class="product-grid">
+
+            <article class="product-card">
+                <img src="Assets/Images/minis.PNG" alt="Chocolate bites">
+                <div class="product-info">
+                    <h3>Chocolate Bites</h3>
+                    <p>Rich, smooth bites of chocolate in pretty wrapping.</p>
+                    <strong>From ₹499</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="Assets/Images/Pinkbouquet.PNG" alt="chocolate in pink wrapping">
+                <div class="product-info">
+                    <h3>DairyMilk Delight</h3>
+                    <p>Chocolates made for gifting.</p>
+                    <strong>From ₹266</strong>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="Assets/Images/Dairymilk.PNG" alt="Ferrero Rocher Bouquet">
+                <div class="product-info">
+                    <h3>Ferrero Rocher</h3>
+                    <p>rich creamy flavour wrapper to please</p>
+                    <strong>From ₹654</strong>
+                </div>
+            </article>
+
+            
+        </div>
+    </section>
+
+
+</main>
+
+    <!-- FOOTER -->
+     <div class="con4">
+
+        <div class="c4-main">
+
+            <div class="brand">
+                <h2>HOUSE OF<br>HANDMADE</h2>
+                <p>YOU CRAVE WE MAKE</p>
+            </div>
+
+            <div class="columns">
+
+                <div class="c4-col">
+                    <h3>SHOP</h3>
+                    <a href="shop.html">Cakes and Desserts</a>
+                    <a href="shop.html">Gift Hampers</a>
+                    <a href="shop.html">Chocolates</a>
+                </div>
+
+                <div class="c4-col">
+                    <h3>BRAND</h3>
+                    <a href="story.html">Our Story</a>
+                    <a href="shop.html">Gallery</a>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+
+                <div class="c4-col">
+                    <h3>HELP</h3>
+                    <a href="contact.html">Order Enquiries</a>
+                    <a href="contact.html">FAQs</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="c4-below">
+
+            <div class="c4-contact">
+                <p>Get in touch with us</p>
+
+                <div class="socials">
+                    <p>✉ <a href="mailto:houseofhandmade25@gmail.com">houseofhandmade25@gmail.com</a></p>
+                    <p>☎ <a href="tel:+919828466656">+91 98284 66656</a></p>
+                </div>
+            </div>
+
+            <div class="c4-socials">
+                <div class="socials">
+                    <a href="https://www.instagram.com/houseofhandmadebynandini/reels/">
+                        <i class="fa fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="https://wa.me/919828466656">
+                        <i class="fa fa-brands fa-whatsapp"></i>
+                    </a>
+
+                    <a href="https://www.google.com/maps/place/House+Of+Handmade/@26.4775908,74.5973778,17z/">
+                        <i class="fa fa-solid fa-map-location-dot"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="c4-bottom">
+            <p>© House Of Handmade. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,8 +1,87 @@
-*{
+/* =========================
+   COLOUR PALETTE (all pages)
+   Change a colour here and it updates on every page.
+========================= */
+
+:root {
+    /* neutrals / backgrounds */
+    --white: #FFFFFF;
+    --black: #000000;
+    --cream: #FFFEFA;          /* main page background */
+    --bg-soft: #F3F7F8;        /* sidebar / soft panels */
+    --bg-tint: #F0F8FC;        /* alternate section background */
+    --border-light: #E4EBEF;   /* thin borders and dividers */
+
+    /* sky blues (brand light blues) */
+    --sky: #A6E1FA;
+    --sky-light: #D9F0FA;
+    --sky-pale: #B9E8F7;
+    --sky-mist: #CBEFFF;
+    --sky-border: #C6DFE9;
+    --sky-alpha: #A6E1FA44;    /* see-through sky blue */
+    --sky-light-rgb: 217, 240, 250;  /* for rgba() overlays */
+
+    /* accent blues */
+    --blue: #0E6BA8;
+    --blue-hover: #1686B5;
+    --steel: #477F9F;
+    --steel-deep: #287BA4;
+
+    /* navy / text */
+    --navy: #001C55;           /* nav, footer, headings */
+    --navy-soft: #294675;      /* labels, borders on navy */
+    --ink: #172747;            /* body text */
+    --text-muted: #657184;
+    --text-soft: #52657B;
+
+    /* shadows */
+    --shadow-soft: #17274712;
+    --shadow-medium: rgba(23, 39, 71, 0.12);
+    --shadow-neutral: rgba(0, 0, 0, 0.06);
+}
+
+/* =========================
+   SHARED TYPOGRAPHY (all pages)
+   Same fonts and the same heading sizes everywhere:
+   h1 = page / hero titles, h2 = section titles, h3 = card titles
+========================= */
+
+:root {
+    --font-heading: Georgia, "Times New Roman", serif;
+    --font-body: Arial, Helvetica, sans-serif;
+    --h1-size: 65px;
+    --h2-size: 40px;
+    --h3-size: 22px;
+}
+
+@media (max-width: 650px) {
+    :root {
+        --h1-size: 38px;
+        --h2-size: 30px;
+        --h3-size: 19px;
+    }
+}
+
+body {
+    font-family: var(--font-body);
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    font-weight: normal;
+    letter-spacing: normal;
+}
+
+h1 { font-size: var(--h1-size); }
+h2 { font-size: var(--h2-size); }
+h3 { font-size: var(--h3-size); }
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+ 
 .nav,
 .nav *,
 .con4,
@@ -11,38 +90,33 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+ 
 .nav .left > h1,
 .brand > h2,
 .c4-col > h3 {
     font-weight: bold;
 }
-
-.brand > h2,
-.c4-col > h3 {
-    font-family: Arial, Helvetica, sans-serif;
-}
-
+ 
 .con4 p {
     line-height: normal;
 }
-
-
+ 
+ 
 /* =========================
    COMMON NAVBAR
 ========================= */
-
+ 
 .nav {
     gap: 20px;
     height: 90px;
     width: 100%;
-    background-color: #FFFFFF;
+    background-color: var(--white);
     display: flex;
     align-items: center;
-    color: #001C55;
-    font-family: Arial, Helvetica, sans-serif;
+    color: var(--navy);
+    font-family: var(--font-body);
 }
-
+ 
 .nav > img {
     margin-left: 50px;
     height: 63px;
@@ -51,13 +125,13 @@
     object-fit: cover;
     flex-shrink: 0;
 }
-
+ 
 .nav .left > h1 {
-    font-family: "Courier New", monospace;
+    font-family: var(--font-heading);
     font-size: 17px;
-    color: #001C55;
+    color: var(--navy);
 }
-
+ 
 .nav .right {
     flex: 1;
     display: flex;
@@ -74,29 +148,57 @@
 
 .nav ul a {
     text-decoration: none;
-    color: #001C55;
+    color: var(--navy);
     transition: color 0.3s ease;
 }
 
-.nav ul a:hover {
-    color: #0E6BA8;
+.right ul li a:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--navy);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 5px;
 }
-
-
+ 
+.but1 {
+    height: 30px;
+    width: 50px;
+    border: 1px solid var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+ 
+.but2 {
+    height: 30px;
+    width: 30px;
+    border: 1px solid var(--black);
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ 
+.nav a {
+    text-decoration: none;
+    color: var(--black);
+}
+ 
+ 
 /* =========================
    COMMON FOOTER
 ========================= */
-
+ 
 .con4 {
     min-height: 500px;
     width: 100%;
-    background-color: #001C55;
-    color: #FFFFFF;
-    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--navy);
+    color: var(--white);
+    font-family: var(--font-body);
 }
-
+ 
 /* Top row */
-
+ 
 .c4-main {
     display: flex;
     justify-content: space-between;
@@ -104,117 +206,193 @@
     padding: 70px 8% 50px;
     gap: 50px;
 }
-
+ 
 .brand > h2 {
     font-size: 50px;
-    color: #FFFFFF;
+    color: var(--white);
 }
-
+ 
 .brand > p {
-    color: #FFFFFF;
+    color: var(--white);
 }
-
+ 
 .c4-main > .columns {
     display: flex;
     justify-content: space-between;
     gap: 50px;
     margin-left: 0;
 }
-
+ 
 .c4-col {
     min-width: 120px;
 }
-
+ 
 .c4-col > h3 {
-    color: #A6E1FA;
+    font-size: 1.17em;
+    color: var(--sky);
     margin-bottom: 15px;
 }
-
+ 
 .c4-col > a {
     display: block;
     line-height: 35px;
-    color: #FFFFFF;
+    color: var(--white);
     text-decoration: none;
     transition: 0.3s ease;
 }
-
+ 
 .c4-col > a:hover {
-    color: #A6E1FA;
+    color: var(--sky);
     text-decoration: underline;
     text-underline-offset: 5px;
 }
-
+ 
 /* Contact details row */
-
+ 
 .c4-below {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 8% 30px;
     gap: 30px;
-    border-top: 1px solid #294675;
+    border-top: 1px solid var(--navy-soft);
 }
-
+ 
 .c4-contact {
     display: block;
     font-size: 18px;
 }
-
+ 
 .c4-contact > p {
     margin-bottom: 15px;
 }
-
+ 
 .c4-contact .socials {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
-
+ 
 .c4-contact .socials p {
-    color: #FFFFFF;
+    color: var(--white);
 }
-
+ 
 .c4-contact a {
-    color: #FFFFFF;
+    color: var(--white);
     text-decoration: none;
     transition: 0.3s ease;
 }
-
+ 
 .c4-contact a:hover {
-    color: #A6E1FA;
+    color: var(--sky);
     text-decoration: underline;
     text-underline-offset: 5px;
 }
-
+ 
 /* Social media icons */
-
+ 
 .c4-socials .socials {
     display: flex;
     align-items: center;
     gap: 25px;
 }
-
+ 
 .c4-socials i {
     font-size: 25px;
-    color: #FFFFFF;
+    color: var(--white);
     cursor: pointer;
     transition: 0.3s ease;
 }
-
+ 
 .c4-socials a {
     text-decoration: none;
 }
-
+ 
 .c4-socials i:hover {
-    color: #A6E1FA;
+    color: var(--sky);
     transform: translateY(-4px);
 }
-
+ 
 /* Copyright */
-
+ 
 .c4-bottom {
     padding: 15px 8%;
-    border-top: 1px solid #294675;
-    color: #FFFFFF;
+    border-top: 1px solid var(--navy-soft);
+    color: var(--white);
     text-align: center;
+}
+
+/* =========================
+   LANGUAGE SWITCH BUTTON
+   ("See in Hindi" / "See in English")
+========================= */
+
+.but1 {
+    height: auto;
+    width: auto;
+    min-height: 32px;
+    padding: 6px 16px;
+    border: 1px solid var(--navy);
+    border-radius: 30px;
+    background-color: var(--white);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    white-space: nowrap;
+}
+
+.but1 p {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: var(--navy);
+    transition: color 0.3s ease;
+}
+
+.but1:hover {
+    background-color: var(--navy);
+    transform: translateY(-2px);
+}
+
+.but1:hover p {
+    color: var(--white);
+}
+
+
+/* =========================
+   MAP BOX (contact pages)
+   Map sits in a framed box, 80% of the page width
+========================= */
+
+.map-section {
+    width: 100%;
+    padding: 60px 0;
+    background-color: var(--white);
+    text-align: center;
+}
+
+.map-section h2 {
+    font-family: var(--font-heading);
+    font-size: var(--h2-size);
+    font-weight: normal;
+    color: var(--navy);
+    margin-bottom: 30px;
+}
+
+.map-section iframe {
+    display: block;
+    width: 80%;
+    height: 450px;
+    margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: 0 0 0 8px var(--sky-light), 0 12px 30px var(--shadow-medium);
+}
+
+@media (max-width: 650px) {
+    .map-section {
+        padding: 40px 0;
+    }
+
+    .map-section iframe {
+        width: 92%;
+        height: 320px;
+    }
 }

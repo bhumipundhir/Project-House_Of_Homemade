@@ -17,8 +17,8 @@
         }
         
         body {
-            background-color: #FFFFFF;
-            color: #001C55;
+            background-color: var(--white);
+            color: var(--navy);
         }
         
         .contact-section {
@@ -38,7 +38,7 @@
             position: relative;
             overflow: hidden;
             border-radius: 4px;
-            background: #A6E1FA;
+            background: var(--sky);
         }
         
         .contact-image img {
@@ -60,20 +60,20 @@
         }
         
         .contact-content h1 {
-            font-size: clamp(42px, 5vw, 68px);
-            font-weight: 700;
-            color: #001C55;
+            font-size: var(--h1-size);
+            font-weight: normal;
+            color: var(--navy);
             margin-bottom: 30px;
-            letter-spacing: -2px;
+            letter-spacing: normal;
         }
         
         .contact-box {
-            border: 1px solid #294675;
+            border: 1px solid var(--navy-soft);
             padding: 35px;
             display: grid;
             grid-template-columns: 1.5fr 1fr;
             gap: 35px;
-            background-color: #FFFFFF;
+            background-color: var(--white);
         }
         
         /* FORM */
@@ -95,7 +95,7 @@
             font-weight: 600;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            color: #294675;
+            color: var(--navy-soft);
         }
         
         .form-group input,
@@ -103,18 +103,18 @@
             width: 100%;
             padding: 12px 10px;
             border: none;
-            border-bottom: 2px solid #294675;
+            border-bottom: 2px solid var(--navy-soft);
             outline: none;
             background: transparent;
-            color: #001C55;
+            color: var(--navy);
             font-size: 15px;
             transition: border-color 0.3s ease;
         }
         
         .form-group input:focus,
         .form-group textarea:focus {
-            border-color: #001C55;
-            background-color: #FFFFFF;
+            border-color: var(--navy);
+            background-color: var(--white);
         }
         
         .form-group textarea {
@@ -124,7 +124,7 @@
         
         .form-group input::placeholder,
         .form-group textarea::placeholder {
-            color: #294675 0.6;
+            color: var(--navy-soft) 0.6;
         }
         
         /* BUTTON */
@@ -132,7 +132,7 @@
         /* .contact-form>.send-btn {
             width: 100%;
             padding: 15px 20px;
-            border: 2px solid #001C55;
+            border: 2px solid var(--navy);
             align-items: center;
             letter-spacing: 1px;
             /* transition: all 0.3s ease; */
@@ -148,14 +148,14 @@
                 text-decoration: none;
                 font-family: Arial, Helvetica, sans-serif;
                 border-radius: 30px;
-                background-color: #001C55;
-                color: #FFFFFF;
+                background-color: var(--navy);
+                color: var(--white);
 }
         
         .send-btn:hover {
-            background-color:#0E6BA8;
-            color: #001C55;
-            border-color: #A6E1FA;
+            background-color:var(--blue);
+            color: var(--navy);
+            border-color: var(--sky);
             transform: translateY(-3px);
         }
         
@@ -169,22 +169,22 @@
         }
         
         .info-item h3 {
-            font-size: 20px;
+            font-size: var(--h3-size);
             margin-bottom: 10px;
-            color: #001C55;
+            color: var(--navy);
         }
         
         .info-item p,
         .info-item a {
             font-size: 14px;
             line-height: 1.8;
-            color: #294675;
+            color: var(--navy-soft);
             text-decoration: none;
             overflow-wrap: anywhere;
         }
         
         .info-item a:hover {
-            color: #1686B5;
+            color: var(--blue-hover);
             text-decoration: underline;
         }
         
@@ -198,23 +198,23 @@
         }
         
         .social-links a {
-            color: #FFFFFF;
+            color: var(--white);
             width: 38px;
             height: 38px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 1px solid #294675;
+            border: 1px solid var(--navy-soft);
             border-radius: 50%;
-            background-color: #001C55;
+            background-color: var(--navy);
             font-weight: bold;
             text-decoration: none;
             transition: 0.3s ease;
         }
         
         .social-links a:hover {
-            background-color: #001C55;
-            color: #FFFFFF;
+            background-color: var(--navy);
+            color: var(--white);
             transform: translateY(-4px);
         }
         
@@ -238,8 +238,12 @@
         <li><a href="About.html">Our Story</a></li>
         <li><a href="Collection.html">Shop</a></li>
         <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
     </ul>
 </div>
+<a href="HindiContact.html"><div class="but1">
+    <p>See in Hindi</p>
+</div></a>
 
 </div>
     <section class="contact-section">
@@ -361,8 +365,8 @@
 
 <!-- Replace this iframe with the code copied from Google Maps -->
 <iframe
-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3571.3215188792446!2d74.59737779999999!3d26.477590799999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396be72bc41f3697%3A0x2d3fc124467b0dc5!2sHouse%20Of%20Handmade!5e0!3m2!1sen!2sin!4v1792779881147!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>"
-</iframe>
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3571.3215188792446!2d74.59737779999999!3d26.477590799999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396be72bc41f3697%3A0x2d3fc124467b0dc5!2sHouse%20Of%20Handmade!5e0!3m2!1sen!2sin!4v1792779881147!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+</div>
 <!-- COMMON FOOTER -->
 
 <div class="con4">
