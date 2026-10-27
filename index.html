@@ -157,15 +157,25 @@
         #c4{
             margin-top: 80px;
         }
-        marquee{
+        .marquee{
             height: 70px;
             width: 100%;
             background-color: var(--navy);
             color: var(--white);
             font-size: 25px;
             display: flex;
-            justify-content: center;
+            overflow: hidden;
+            white-space: nowrap;
             align-items: center;
+        }
+        .marquee>span{
+            display: inline-block;
+            padding-left: 100%;
+            animation: marquee-scroll 15s linear infinite;
+        }
+        @keyframes marquee-scroll{
+            from{ transform: translateX(0); }
+            to{ transform: translateX(-100%); }
         }
         
         /* CONTAINER 3 */
@@ -266,7 +276,7 @@
 
                 <h1>
                     A little box.<br>
-                    <div class="blue">A lot of<br></div>
+                    <span class="blue">A lot of</span><br>
                     meaning.
                 </h1>
 
@@ -298,7 +308,7 @@
         </div>
     </div>
 
-    <marquee behavior="" direction="">Cakes&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;Cupcakes&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;Cookies&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;Donuts&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;Waffles&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;Chocolates&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;Gift Hampers&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;Chocolate Bouquets</marquee>
+    <div class="marquee"><span>Cakes&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;Cupcakes&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;Cookies&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;Donuts&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;Waffles&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;Chocolates&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;Gift Hampers&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;Chocolate Bouquets</span></div>
     <div class="con2">
         <h1>
             Cake O’Clock? Always.
@@ -318,15 +328,15 @@
         <h1>Shop By Category</h1>
         <div class="squares">
             <div class="sq_1">
-                <div class="square1"><img src="Assets\Images\cat_cake.png" alt="cake image"><h1>Cakes</h1></div>
-                <div class="square2"><img src="Assets\Images\cat_cupcake.png" alt="cupcake image"><h1>Cupcakes</h1></div>
-                <div class="square3"><img src="Assets\Images\cat_donut.png" alt="donut image"><h1>Donuts</h1></div>
-                <div class="square4"><img src="Assets\Images\cat_waffle.png" alt="waffle image"><h1>Waffles</h1></div>
+                <div class="square1"><img src="Assets/Images/cat_cake.png" alt="cake image"><h1>Cakes</h1></div>
+                <div class="square2"><img src="Assets/Images/cat_cupcake.png" alt="cupcake image"><h1>Cupcakes</h1></div>
+                <div class="square3"><img src="Assets/Images/cat_donut.png" alt="donut image"><h1>Donuts</h1></div>
+                <div class="square4"><img src="Assets/Images/cat_waffle.png" alt="waffle image"><h1>Waffles</h1></div>
             </div>
             <div class="sq_2">
-                <div class="square5"><img src="Assets\Images\cat_choco.png" alt="chocolate image"><h1>Chocolates</h1></div>
-                <div class="square6"><img src="Assets\Images\cat_cookie.png" alt="cookie image"><h1>Cookies</h1></div>
-                <div class="square7"><img src="Assets\Images\cat_chocobouquet.png" alt="chocolate bouquet image"><h1 id="choco">Chocolate Bouquets</h1></div>
+                <div class="square5"><img src="Assets/Images/cat_choco.png" alt="chocolate image"><h1>Chocolates</h1></div>
+                <div class="square6"><img src="Assets/Images/cat_cookie.png" alt="cookie image"><h1>Cookies</h1></div>
+                <div class="square7"><img src="Assets/Images/cat_chocobouquet.png" alt="chocolate bouquet image"><h1 id="choco">Chocolate Bouquets</h1></div>
                 <div class="square8"><img src="Assets/Images/cat_gift.png" alt="gift image"><h1>Gift Hampers</h1></div>
             </div>
         </div>
